@@ -673,7 +673,7 @@
 2022,UNC,P,Ciencias Económicas y Administración,Maestria en Analitica de Datos en el Area Empresarial,14,5,19,0,0,0,19,1,2,3,Ciencias Económicas y Administración
 2022,UNC,P,Ciencias Económicas y Administración,Maestria en Auditoria,0,0,0,0,0,0,0,3,3,6,Ciencias Económicas y Administración
 2022,UNC,P,Medicina,Especializacion en Salud Publica,0,0,0,0,0,0,0,0,0,0,Salud
-2022,UNC,P,Medicina,Medicina Familiar,12,10,22,1,2,3,25,0,0,1,Salud
+2022,UNC,P,Medicina,Medicina Familiar,12,10,22,1,2,3,25,1,0,1,Salud
 2022,UNC,P,Humanidades y Ciencias de la Educacion,Capacitacion en Educacion Inclusiva,31,0,31,0,0,0,31,3,0,3,Educación y Humanidades
 2022,UNC,P,Humanidades y Ciencias de la Educacion,Capacitacion en adaptaciones curriculares para estudiantes con discapacidad,29,8,37,0,0,0,37,4,1,5,Educación y Humanidades
 2022,UNC,P,Humanidades y Ciencias de la Educacion,Especializacion en Educacion Escolar Basica,34,16,50,58,7,65,115,10,4,14,Educación y Humanidades
@@ -959,7 +959,7 @@
 2021,UNCA,G,Ciencias y Tecnologias,Electricidad,48,178,226,1,22,23,249,97,27,124,Ingeniería y Tecnología
 2021,UNCA,G,Ciencias y Tecnologias,Electronica,29,61,90,0,7,7,97,0,0,0,Ingeniería y Tecnología
 2021,UNCA,G,Ciencias y Tecnologias,Informatica,36,59,95,6,14,20,115,0,0,0,Ingeniería y Tecnología
-2021,UNCA,G,Ciencias y Tecnologias,Civil,105,164,269,6,9,50,319,0,0,0,Ingeniería y Tecnología
+2021,UNCA,G,Ciencias y Tecnologias,Civil,105,164,269,6,9,15,284,0,0,0,Ingeniería y Tecnología
 2021,UNCA,G,Odontologia,Odontologia,36,12,48,0,0,0,48,29,40,69,Salud
 2021,UNCA,P,Odontologia,Actualizacion en Cirugia Dentomaxilar-Tercera Cohorte (iniciado y concluido en 2021),9,1,10,8,0,8,18,0,2,2,Salud
 2021,UNCA,P,Odontologia,Actualizacion en Cirugia Dentomaxilar-Cuarta Cohorte (a concluir en diciembre de 2021),5,3,8,4,3,7,15,0,2,2,Salud
@@ -1009,14 +1009,14 @@
 2020,UNA,P,Facultad de Odontologia,Especializacion,70,21,91,0,0,0,91,20,7,27,Salud
 2020,UNA,P,Facultad de Odontologia,Capacitacion,5,0,5,0,0,0,5,2,0,2,Salud
 2020,UNA,P,Facultad de Ciencias Quimicas,Especializacion,101,9,110,15,1,16,126,23,3,26,Ciencias Básicas
-2020,UNA,P,Facultad de Ciencias Quimicas,Maestria,13,2,15,0,0,1,16,3,1,4,Ciencias Básicas
-2020,UNA,P,Facultad de Ciencias Quimicas,Doctorado,6,2,8,0,0,1,9,0,0,0,Ciencias Básicas
+2020,UNA,P,Facultad de Ciencias Quimicas,Maestria,13,2,15,1,0,1,16,3,1,4,Ciencias Básicas
+2020,UNA,P,Facultad de Ciencias Quimicas,Doctorado,6,2,8,1,0,1,9,0,0,0,Ciencias Básicas
 2020,UNA,P,Facultad de Filosofia,Actualizacion,30,22,52,0,0,0,52,1,1,2,Educación y Humanidades
 2020,UNA,P,Facultad de Filosofia,Especializacion,229,150,379,102,75,177,556,49,24,73,Educación y Humanidades
 2020,UNA,P,Facultad de Filosofia,Maestria,64,33,97,17,12,29,126,14,19,33,Educación y Humanidades
 2020,UNA,P,Facultad de Filosofia,Doctorado,15,6,21,5,1,6,27,3,5,8,Educación y Humanidades
 2020,UNA,P,Facultad de Ciencias Veterinarias,Maestria,10,19,29,0,0,0,29,5,6,11,Ciencias Veterinarias
-2020,UNA,P,Facultad de Ciencias Agrarias,Maestria,20,28,48,0,0,6,54,5,21,26,Ciencias Agrarias
+2020,UNA,P,Facultad de Ciencias Agrarias,Maestria,20,28,48,0,6,6,54,5,21,26,Ciencias Agrarias
 2020,UNA,P,Facultad de Ciencias Exactas y Naturales,Maestria,154,163,317,9,20,29,346,1,3,4,Ciencias Básicas
 2020,UNA,P,"Facultad de Arquitectura, Diseno y Arte",Especializacion,80,43,123,85,45,130,253,5,5,10,Ingeniería y Tecnología
 2020,UNA,P,Facultad Politecnica,Capacitacion,73,36,109,55,43,98,207,2,0,2,Ingeniería y Tecnología
@@ -1039,14 +1039,14 @@
 2020,UNE,P,Derecho y Ciencias Sociales,Especializacion en Ciencias Juridicas con enfasis en Derecho Civil y Penal,37,24,61,53,57,110,171,7,2,9,Derecho y Ciencias Sociales
 2020,UNE,P,Filosofia,Especializacion Didactica,47,115,162,0,0,0,162,10,7,17,Educación y Humanidades
 2020,UNE,P,Filosofia,Especializacion en Psicologia Clinica/2020,10,18,28,0,0,0,28,1,6,7,Educación y Humanidades
-2020,UNE,P,Filosofia,Especializacion en Psicologia Clinica/2020,9,21,30,0,0,0,30,3,3,3,Educación y Humanidades
+2020,UNE,P,Filosofia,Especializacion en Psicologia Clinica/2020,9,21,30,0,0,0,30,3,0,3,Educación y Humanidades
 2020,UNE,P,Filosofia,Especializacion en Evaluacion Educacional 2018/2019,5,23,28,0,0,0,28,1,1,2,Educación y Humanidades
-2020,UNE,P,Filosofia,Especializacion en Estadistica 2018/2019,22,25,47,0,0,0,47,2,2,2,Educación y Humanidades
+2020,UNE,P,Filosofia,Especializacion en Estadistica 2018/2019,22,25,47,0,0,0,47,2,0,2,Educación y Humanidades
 2020,UNE,P,Filosofia,Especializacion en Mediacion y resolucion de Conflicto,2,12,14,0,0,0,14,3,6,9,Educación y Humanidades
 2020,UNE,P,Ingenieria Agronomica,Maestria en Nutricion de Plantas y Produccion Agricola,13,4,17,0,0,0,17,9,1,10,Ciencias Agrarias
 2020,UNE,P,Ingenieria Agronomica,Maestria en Auditoria y Gestion Ambiental,4,3,7,0,0,0,7,3,5,8,Ciencias Agrarias
 2020,UNE,P,Ciencias de la Salud,"Especializaciones, Doctorado, Maestrias",150,119,269,21,11,32,0,0,0,0,Salud
-2020,UNE,P,Politecnica,"Especializaciones, Maestrias",31,86,117,10,1,10,127,7,36,43,Ingeniería y Tecnología
+2020,UNE,P,Politecnica,"Especializaciones, Maestrias",31,86,117,1,109,110,227,7,36,43,Ingeniería y Tecnología
 2020,UNP,G,Ciencias Contables Administrativas y Economicas,Grado,468,270,738,35,11,46,784,67,47,114,Ciencias Económicas y Administración
 2020,UNP,G,Ciencias Agropecuarias y Desarrollo Rural,Grado,116,145,261,9,11,20,281,31,43,74,Ciencias Agrarias
 2020,UNP,G,Derecho Ciencias Politicas y Sociales,Grado,615,357,972,55,23,78,1050,88,57,145,Derecho y Ciencias Sociales
@@ -1062,7 +1062,7 @@
 2020,UNI,G,Medicina,Grado,111,164,275,0,0,0,275,94,75,169,Salud
 2020,UNI,G,Ciencias Contables Administrativas y Economicas,Grado,1104,571,1675,82,37,119,1794,88,55,143,Ciencias Económicas y Administración
 2020,UNI,G,Humanidades,Grado,540,203,743,60,20,80,823,136,89,225,Educación y Humanidades
-2020,UNI,G,Derecho,Grado,484,266,750,33,14,47,797,0,0,57,Derecho y Ciencias Sociales
+2020,UNI,G,Derecho,Grado,484,266,750,33,14,47,797,30,27,57,Derecho y Ciencias Sociales
 2020,UNI,G,Agropecuaria,Grado,122,111,233,22,18,40,273,35,40,75,Ciencias Agrarias
 2020,UNI,G,Ciencias Tecnologias y Artes,Grado,230,182,412,18,20,38,450,106,62,168,Educación y Humanidades
 2020,UNI,P,Medicina,Especializacion en diferentes areas,142,83,225,104,38,142,367,17,15,32,Salud
@@ -1214,7 +1214,7 @@
 2019,UNA,P,Facultad de Ciencias Sociales,Actualizacion,281,66,347,281,66,347,694,1,3,4,Derecho y Ciencias Sociales
 2019,UNE,G,Facultad Politecnica,N/A,1180,1798,2978,19,20,39,3017,78,112,190,Ingeniería y Tecnología
 2019,UNE,G,Facultad de Derecho y Ciencias Sociales,N/A,655,570,1225,1189,1227,2416,3641,96,86,182,Derecho y Ciencias Sociales
-2019,UNE,G,Facultad de Ingenieria Agronomica,N/A,335,247,582,53,42,85,667,81,72,153,Ciencias Agrarias
+2019,UNE,G,Facultad de Ingenieria Agronomica,N/A,335,247,582,53,42,95,677,81,72,153,Ciencias Agrarias
 2019,UNE,G,Facultad de Ciencias Economicas,N/A,993,1696,2689,112,211,323,3012,321,283,604,Ciencias Económicas y Administración
 2019,UNE,G,Facultad de Ciencias de la Salud,N/A,152,230,382,45,40,85,467,73,92,165,Salud
 2019,UNE,G,Facultad de Ciencias Exactas y Naturales,Maestria y Doctorado,106,57,163,0,2,2,165,8,25,33,Ciencias Básicas
@@ -1224,7 +1224,7 @@
 2019,UNE,P,Derecho y Ciencias Sociales,Especializacion en Ciencias Juridicas: Enfasis en Derecho Civil o Derecho Penal,57,53,110,0,0,0,0,0,0,0,Derecho y Ciencias Sociales
 2019,UNE,P,Ciencias Economicas,Maestria en Administracion (MAE) - Grupo 1,19,10,29,14,10,24,53,3,2,5,Ciencias Económicas y Administración
 2019,UNE,P,Ciencias Economicas,Especializacion en Auditoria y Control de Gestion (EAGG) - Grupo 1,20,9,29,18,14,32,61,2,4,6,Ciencias Económicas y Administración
-2019,UNE,P,Ciencias Economicas,Maestria en Administracion (MAE 1) - Matriz - Grupo 1,20,12,32,0,0,0,32,112,4,16,Ciencias Económicas y Administración
+2019,UNE,P,Ciencias Economicas,Maestria en Administracion (MAE 1) - Matriz - Grupo 1,20,12,32,0,0,0,32,12,4,16,Ciencias Económicas y Administración
 2019,UNE,P,Ciencias Economicas,Especializacion en Auditoria y Control de Gestion (EAGG) - Grupo 2,21,8,29,0,0,0,29,10,4,14,Ciencias Económicas y Administración
 2019,UNE,P,Ingenieria Agronomica,Maestria en Agronegocios,2,8,10,0,3,3,13,1,4,5,Ciencias Agrarias
 2019,UNE,P,Ingenieria Agronomica,Maestria en Nutricion de Plantas y Produccion Agricola,6,19,25,0,7,7,32,1,9,10,Ciencias Agrarias
@@ -1234,11 +1234,11 @@
 2019,UNE,P,Ciencias de la Salud,"Especializacion en Ecografia General, Obstetrica y Ginecologica",28,26,54,4,6,10,64,12,14,26,Salud
 2019,UNE,P,Facultad Politecnica,Especializacion en Direccion y Alta Gerencia Hotelera,2,10,12,0,0,0,12,2,4,6,Ciencias Económicas y Administración
 2019,UNE,P,Facultad Politecnica,Especializacion en Desarrollo de Sistemas para ambiente Internet con Tecnologia Orientada a Objetos,15,5,20,1,2,3,23,7,2,9,Ingeniería y Tecnología
-2019,UNE,P,Ciencias de la Salud,Especializacion en Medicina Interna,0,0,15,2,3,5,20,5,2,7,Salud
-2019,UNE,P,Ciencias de la Salud,Especializacion en Ginecologia y Obstetricia,0,0,15,0,1,1,16,2,1,3,Salud
+2019,UNE,P,Ciencias de la Salud,Especializacion en Medicina Interna,9,6,15,2,3,5,20,5,2,7,Salud
+2019,UNE,P,Ciencias de la Salud,Especializacion en Ginecologia y Obstetricia,5,10,15,0,1,1,16,2,1,3,Salud
 2019,UNE,P,Ciencias de la Salud,Maestria en Nutricion Clinica,0,15,15,0,9,9,18,3,2,5,Salud
-2019,UNE,P,Ciencias de la Salud,Especializacion en Cirugia General,0,0,14,1,1,2,16,7,0,7,Salud
-2019,UNE,P,Ciencias de la Salud,Especializacion en Clinica Pediatrica,0,0,11,0,1,1,12,2,6,8,Salud
+2019,UNE,P,Ciencias de la Salud,Especializacion en Cirugia General,10,4,14,1,1,2,16,7,0,7,Salud
+2019,UNE,P,Ciencias de la Salud,Especializacion en Clinica Pediatrica,6,5,11,0,1,1,12,2,6,8,Salud
 2019,UNE,P,Ciencias de la Salud,Especializacion en Anestesiologia,1,0,1,0,2,2,3,3,3,6,Salud
 2019,UNE,P,Ciencias de la Salud,Enfermeria en Emergencias y Urgencias,0,0,0,0,1,1,1,1,0,1,Salud
 2019,UNE,P,Ciencias de la Salud,Especializacion en Enfermeria en Cuidados Criticos del Adulto,3,15,18,0,2,2,20,2,4,6,Salud
@@ -1350,9 +1350,9 @@
 2019,UNCA,G,Facultad Ciencias de la Produccion,Ingenieria Agroforestal Guajayvi,47,26,73,5,3,8,81,8,11,19,Ciencias Agrarias
 2019,UNCA,G,Facultad Ciencias de la Produccion,Ingenieria Zootecnica Itacurubi del Rosario,5,9,14,0,0,0,14,3,5,8,Ciencias Agrarias
 2019,UNCA,G,Facultad Ciencias de la Produccion,Ingenieria Agroforestal Vaqueria,22,18,40,2,4,6,46,13,9,22,Ciencias Agrarias
-2019,UNCA,G,Ciencias de la Salud,Licenciatura en Enfermeria Sede Coronel Oviedo,0,0,0,11,5,16,0,0,0,56,Salud
-2019,UNCA,G,Ciencias de la Salud,Licenciatura en Enfermeria Filial Dr. Juan Eulogio Estigarribia,0,0,0,4,1,5,0,0,0,36,Salud
-2019,UNCA,G,Ciencias de la Salud,Licenciatura en Nutricion Sede Coronel Oviedo,0,0,0,0,0,0,0,0,0,37,Salud
+2019,UNCA,G,Ciencias de la Salud,Licenciatura en Enfermeria Sede Coronel Oviedo,0,0,0,11,5,16,0,56,0,56,Salud
+2019,UNCA,G,Ciencias de la Salud,Licenciatura en Enfermeria Filial Dr. Juan Eulogio Estigarribia,0,0,0,4,1,5,0,36,0,36,Salud
+2019,UNCA,G,Ciencias de la Salud,Licenciatura en Nutricion Sede Coronel Oviedo,0,0,0,0,0,0,0,37,0,37,Salud
 2019,UNCA,G,Ciencias y Tecnologias,Ingenieria Civil,79,144,223,0,0,0,0,27,96,123,Ingeniería y Tecnología
 2019,UNCA,G,Ciencias y Tecnologias,Ingenieria en Electricidad,31,189,220,0,0,0,0,0,0,0,Ingeniería y Tecnología
 2019,UNCA,G,Ciencias y Tecnologias,Ingenieria en Electronica,20,54,74,0,0,0,0,0,0,0,Ingeniería y Tecnología
@@ -1365,7 +1365,7 @@
 2019,UNCA,P,FCP,Curso de capacitacion en informatica,20,15,35,10,10,20,55,0,2,2,Ingeniería y Tecnología
 2019,UNCA,P,FCP,Curso de capacitacion para la formacion de tutores,5,8,13,5,8,13,26,1,1,2,Educación y Humanidades
 2019,UNCA,P,FCP,Diplomado en produccion intensiva de hortalizas,0,8,8,0,8,8,0,0,2,2,Ciencias Agrarias
-2019,UNCA,P,Ciencias de la Salud,Maestria en Administracion Hospitalaria y Sistema de Salud,25,10,35,14,5,19,54,0,0,15,Salud
+2019,UNCA,P,Ciencias de la Salud,Maestria en Administracion Hospitalaria y Sistema de Salud,25,10,35,14,5,19,54,15,0,15,Salud
 2019,UNCA,P,Ciencias y Tecnologias,Curso de gestion de proyectos en el area de energia,24,1,25,0,0,0,20,2,0,2,Ingeniería y Tecnología
 2019,UNCA,P,Odontologia,Curso de Actualizacion en Cirugia Dentomaxilar - Primer Cohorte,0,0,0,5,1,6,6,0,2,2,Salud
 2019,UNCA,P,Odontologia,Curso de Actualizacion en Cirugia Dentomaxilar - Segunda Cohorte,3,3,6,0,0,0,6,2,0,2,Salud
@@ -1525,7 +1525,7 @@
 2018,UNA,P,Facultad de Filosofia,Maestria en Lengua y Cultura Guarani,0,0,0,1,0,1,1,0,0,0,Educación y Humanidades
 2018,UNA,P,Facultad de Filosofia,Doctorado en Educacion con enfasis en Gestion de la Educacion Superior,0,0,0,2,0,2,2,7,6,13,Educación y Humanidades
 2018,UNA,P,Facultad de Filosofia,Doctorado en Educacion,4,3,7,13,3,16,23,4,4,8,Educación y Humanidades
-2018,UNA,P,Facultad de Ciencias Veterinarias,Maestria en Ciencias de la Piscicultura,0,0,0,1,1,1,0,0,0,0,Ciencias Veterinarias
+2018,UNA,P,Facultad de Ciencias Veterinarias,Maestria en Ciencias de la Piscicultura,0,0,0,0,1,1,1,0,0,0,Ciencias Veterinarias
 2018,UNA,P,Facultad de Ciencias Veterinarias,Maestria en Produccion Animal y Zootecnia,0,0,0,1,0,1,1,0,0,0,Ciencias Veterinarias
 2018,UNA,P,Facultad de Ciencias Veterinarias,Maestria en Medicina Veterinaria Misiones,0,0,0,1,1,2,2,0,0,0,Ciencias Veterinarias
 2018,UNA,P,Facultad de Ciencias Veterinarias,Actualizacion busqueda Cientifica CICCO,0,0,0,14,8,22,22,0,0,0,Ciencias Veterinarias
@@ -1584,7 +1584,7 @@
 2018,UNA,P,Facultad de Enfermeria y Obstetricia,Especializacion en control de Infecciones y Epidemiologia Hospitalaria,0,0,0,4,1,5,5,0,0,0,Salud
 2018,UNA,P,Facultad de Enfermeria y Obstetricia,Especializacion en Investigacion en Salud,0,0,0,4,1,5,5,4,1,5,Salud
 2018,UNA,P,Facultad de Ciencias Sociales,Capacitacion en Nuevos Modelos de Intervencion en Trabajo Social,53,8,61,39,7,46,107,4,1,5,Derecho y Ciencias Sociales
-2018,UNE,G,Politécnica,Grado,1180,1655,2385,22,27,49,2434,61,94,155,Ingeniería y Tecnología
+2018,UNE,G,Politécnica,Grado,1180,1655,2835,22,27,49,2884,61,94,155,Ingeniería y Tecnología
 2018,UNE,G,Ingeniería Agronómica,Grado,184,365,549,18,39,57,606,66,72,138,Ciencias Agrarias
 2018,UNE,G,Ciencias de la Salud,Grado,154,246,400,25,43,68,468,95,126,221,Salud
 2018,UNE,G,Derecho y Ciencias Sociales,Grado,688,503,1191,1149,1131,2280,3471,81,97,178,Derecho y Ciencias Sociales
@@ -1597,7 +1597,7 @@
 2018,UNE,P,Facultad de Ingenieria Agronomica,Maestria de Nutricion de Plantas y Produccion Agricola,6,19,25,0,7,7,32,1,9,10,Ciencias Agrarias
 2018,UNE,P,Facultad de Ingenieria Agronomica,Maestria en Auditoria y Gestion Ambiental,14,5,19,0,0,0,19,5,3,8,Ciencias Agrarias
 2018,UNE,P,Facultad de Ciencias de la Salud,Ecografia General Obstetricia y Ginecologica,28,26,54,11,7,18,72,12,14,26,Salud
-2018,UNE,P,Facultad de Ciencias de la Salud,Clinica Pediatrica,3,7,10,2,11,23,23,2,6,8,Salud
+2018,UNE,P,Facultad de Ciencias de la Salud,Clinica Pediatrica,3,7,10,2,11,13,23,2,6,8,Salud
 2018,UNE,P,Facultad de Ciencias de la Salud,Ginecologia y Obstetricia,1,14,15,0,2,2,17,2,1,3,Salud
 2018,UNE,P,Facultad de Ciencias de la Salud,Medicina Interna,6,9,15,0,6,6,21,5,2,7,Salud
 2018,UNE,P,Facultad de Ciencias de la Salud,Cirugia General,10,4,14,8,0,8,22,7,0,7,Salud
@@ -1705,14 +1705,14 @@
 2018,UNCA,P,Facultad Ciencias Sociales y Politicas,Especializacion en Didactica Universitaria,15,15,30,14,13,27,57,12,20,32,Educación y Humanidades
 2018,UNCA,P,Facultad Ciencias y Tecnologias,Especializacion en Didactica Universitaria,38,10,48,0,0,0,48,0,0,0,Educación y Humanidades
 2018,UNCA,P,Facultad Ciencias y Tecnologias,Capacitacion en Pedagogia Universitaria y Metodologia de la Investigacion,38,9,47,0,47,47,0,0,0,0,Educación y Humanidades
-2018,UNCA,P,Facultad Ciencias y Tecnologias,Curso sobre Energia Solar para el Desarrollo Sostenible,14,4,18,0,0,0,18,0,0,1,Ingeniería y Tecnología
+2018,UNCA,P,Facultad Ciencias y Tecnologias,Curso sobre Energia Solar para el Desarrollo Sostenible,14,4,18,0,0,0,18,0,0,0,Ingeniería y Tecnología
 2018,UNCA,P,Facultad Ciencias de la Produccion,Innovacion Ganadera y Gerencia de Estancias Agropecuarias,18,7,25,18,7,25,50,5,0,5,Ciencias Agrarias
 2018,UNCA,P,Facultad Ciencias de la Produccion,Curso de Capacitacion Tecnicas y Metodologias de la Investigacion Aplicada a las Ciencias Agrarias,15,9,24,15,9,24,48,3,1,4,Ciencias Agrarias
 2018,UNCA,P,Facultad Ciencias de la Produccion,Ingles,23,14,37,23,14,37,74,1,1,2,Educación y Humanidades
 2018,UNCA,P,Facultad de Ciencias Medicas,Capacitacion en Neonatologia 2da Cohorte,4,23,27,0,0,0,27,5,2,7,Salud
 2018,UNCA,P,Facultad de Ciencias Medicas,Especializacion en Neonatologia 2da Cohorte,13,42,55,0,0,0,55,5,2,7,Salud
 2018,UNCA,P,Facultad de Ciencias Medicas,Especializacion en Patologia del Tracto Genital Inferior y Colposcopia 1ra Cohorte,18,57,75,0,0,0,75,4,8,12,Salud
-2018,UNCA,P,Facultad de Ciencias Medicas,Especializacion en Medicina Estetica y Envejecimiento Fisiologico 1ra Cohorte,6,16,22,0,0,0,22,4,4,9,Salud
+2018,UNCA,P,Facultad de Ciencias Medicas,Especializacion en Medicina Estetica y Envejecimiento Fisiologico 1ra Cohorte,6,16,22,0,0,0,22,4,5,9,Salud
 2018,UNCA,P,Facultad de Ciencias Medicas,Especializacion en Emergentologia 2da Cohorte,39,34,73,0,0,0,73,12,4,16,Salud
 2018,UNCA,P,Facultad de Ciencias Medicas,Especializacion en Cirugia General y Oncologica Residencia Medica,12,5,17,0,0,0,17,5,2,7,Salud
 2018,UNCA,P,Facultad de Ciencias Medicas,Especializacion en Oncologia Clinica Residencia Medica,3,4,7,0,0,0,7,6,4,10,Salud
@@ -1988,7 +1988,7 @@
 2017,UNCA,P,Rectorado,Especializacion en Didactica Superior Universitaria - Grupo E,56,28,84,0,0,0,84,6,12,18,Educación y Humanidades
 2017,UNCA,P,Rectorado,Especializacion en Didactica Superior Universitaria - Grupo F,48,17,65,0,0,0,65,6,12,18,Educación y Humanidades
 2017,UNCA,P,Rectorado,Maestria en Gestion de la Educacion Superior - 2da. Cohorte,27,17,44,1,1,2,46,5,15,20,Educación y Humanidades
-2017,UNCA,P,Facultad Ciencias de la Produccion,Capacitacion Herramientas Web 2.0 para el Docente,23,11,34,0,0,0,34,0,0,34,Educación y Humanidades
+2017,UNCA,P,Facultad Ciencias de la Produccion,Capacitacion Herramientas Web 2.0 para el Docente,23,11,34,0,0,0,34,0,2,2,Educación y Humanidades
 2017,UNCA,P,Facultad de Ciencias Economicas,Especializacion en Didactica Universitaria,51,34,85,0,0,0,85,6,8,14,Educación y Humanidades
 2017,UNCA,P,Facultad de Ciencias de la Salud,Maestria en Administracion Hospitalaria y Sistemas de Salud,12,36,48,0,0,0,48,6,19,25,Salud
 2017,UNCA,P,Facultad de Ciencias Sociales y Politicas,Sin especificar,0,0,0,0,0,0,0,0,0,0,Derecho y Ciencias Sociales
@@ -2190,7 +2190,7 @@
 2016,UNCA,G,FCP Filial Caaguazu,Ing Agroforestal,56,26,82,0,0,0,82,0,0,0,Ciencias Agrarias
 2016,UNCA,G,FCP Filial Caaguazu,Ing Agronomica,15,6,21,0,0,0,21,0,0,0,Ciencias Agrarias
 2016,UNCA,G,FCP Filial Juan Manuel Frutos,Ing Agronomica,132,56,188,12,10,22,210,0,0,0,Ciencias Agrarias
-2016,UNCA,G,FCP Filial Chore,Ing Agronomica,29,29,58,4,0,0,58,0,0,0,Ciencias Agrarias
+2016,UNCA,G,FCP Filial Chore,Ing Agronomica,29,29,58,4,0,4,62,0,0,0,Ciencias Agrarias
 2016,UNCA,G,FCP Filial Chore,Medicina Veterinaria,44,23,67,1,0,1,68,0,0,0,Ciencias Veterinarias
 2016,UNCA,G,FCP Filial Santa Rosa del Aguaray,Ing Agronomica,62,34,96,18,7,25,121,0,0,0,Ciencias Agrarias
 2016,UNCA,G,FCP Filial Santa Rosa del Aguaray,Ing Agroforestal,0,0,0,3,2,5,5,0,0,0,Ciencias Agrarias
@@ -2198,13 +2198,13 @@
 2016,UNCA,G,FCP Filial J Eulogio Estigarribia,Medicina Veterinaria,74,40,114,0,0,0,114,0,0,0,Ciencias Veterinarias
 2016,UNCA,G,FCP Filial San Juan Nepomuceno,Ing Agroforestal,25,26,51,5,5,10,61,0,0,0,Ciencias Agrarias
 2016,UNCA,G,FCP Filial San Juan Nepomuceno,Ing Zootecnica,10,6,16,1,0,1,17,0,0,0,Ciencias Veterinarias
-2016,UNCA,G,Facultad de Ciencias Medicas,Medicina,110,142,252,25,36,0,252,53,53,106,Salud
+2016,UNCA,G,Facultad de Ciencias Medicas,Medicina,110,142,252,25,36,61,313,53,53,106,Salud
 2016,UNCA,G,Facultad de Ciencias de la Salud,Ciencias de la Salud,32,176,208,6,35,41,249,29,76,105,Salud
 2016,UNCA,G,Facultad de Ciencias y sus Tecnologias,Ing Civil,101,54,155,0,0,0,155,103,12,115,Ingeniería y Tecnología
-2016,UNCA,G,Facultad de Ciencias y sus Tecnologias,Ing en Electricidad,134,20,154,2,1,0,154,0,0,0,Ingeniería y Tecnología
+2016,UNCA,G,Facultad de Ciencias y sus Tecnologias,Ing en Electricidad,134,20,154,2,1,3,157,0,0,0,Ingeniería y Tecnología
 2016,UNCA,G,Facultad de Ciencias y sus Tecnologias,Ing en Electronica,49,14,63,0,0,0,63,0,0,0,Ingeniería y Tecnología
-2016,UNCA,G,Facultad de Ciencias y sus Tecnologias,Ing Informatica,46,35,81,2,1,0,81,0,0,0,Ingeniería y Tecnología
-2016,UNCA,G,Escuela de Artes y Desarrollo de Talentos,Escuela de Artes,10,8,18,1,1,0,20,7,12,19,Educación y Humanidades
+2016,UNCA,G,Facultad de Ciencias y sus Tecnologias,Ing Informatica,46,35,81,2,1,3,84,0,0,0,Ingeniería y Tecnología
+2016,UNCA,G,Escuela de Artes y Desarrollo de Talentos,Escuela de Artes,10,8,18,1,1,2,20,7,12,19,Educación y Humanidades
 2016,UNCA,P,Facultad de Ciencias de la Salud,Especializacion en Administracion Hospitalaria y Sistemas de Salud,16,40,56,16,40,56,112,7,110,117,Salud
 2016,UNCA,P,Facultad de Ciencias de la Salud,Maestria en Administracion Hospitalaria y Sistemas de Salud,19,47,66,0,0,0,66,15,0,15,Salud
 2016,UNCA,P,FCS y P,Especializacion en Didactica Superior Universitario,11,16,27,11,16,27,54,3,0,3,Educación y Humanidades
@@ -2261,14 +2261,14 @@
 2015,UNA,P,Facultad de Ciencias Quimicas,"Especializacion, Actualizacion, Maestria, Doctorado",193,58,251,41,17,58,309,64,30,94,Ciencias Básicas
 2015,UNA,P,Facultad de Filosofia,"Especializacion, Actualizacion, Maestria, Doctorado",162,81,243,161,81,242,485,28,16,44,Educación y Humanidades
 2015,UNA,P,Facultad de Ciencias Veterinarias,"Especializacion, Actualizacion, Maestria, Doctorado",41,51,92,0,0,0,92,6,19,25,Ciencias Veterinarias
-2015,UNA,P,Facultad de Ciencias Agrarias,"Especializacion, Actualizacion, Maestria, Doctorado",29,17,46,3,1,4,50,17,24,39,Ciencias Agrarias
+2015,UNA,P,Facultad de Ciencias Agrarias,"Especializacion, Actualizacion, Maestria, Doctorado",29,17,46,3,1,4,50,17,24,41,Ciencias Agrarias
 2015,UNA,P,Facultad de Ciencias Exactas y Naturales,"Especializacion, Actualizacion, Maestria, Doctorado",380,153,533,317,128,445,978,20,44,64,Ciencias Básicas
 2015,UNA,P,"Facultad de Arquitectura, Diseño y Arte","Especializacion, Actualizacion, Maestria, Doctorado",198,189,387,87,39,126,513,4,20,24,Ingeniería y Tecnología
 2015,UNA,P,Facultad Politecnica,"Especializacion, Actualizacion, Maestria, Doctorado",221,294,515,79,44,123,638,23,46,69,Ingeniería y Tecnología
 2015,UNE,G,Facultad de Ingenieria Agronomica,Ingenieria Agronomica,137,193,330,9,24,33,363,0,0,0,Ciencias Agrarias
 2015,UNE,G,Facultad de Ingenieria Agronomica,Ingenieria Ambiental,62,46,108,11,7,18,126,0,0,0,Ingeniería y Tecnología
 2015,UNE,G,Facultad de Ciencias Economicas,Administracion,247,152,399,9,5,14,413,0,0,0,Ciencias Económicas y Administración
-2015,UNE,G,Facultad de Ciencias Economicas,Contabilidad,664,329,993,77,32,0,993,0,0,0,Ciencias Económicas y Administración
+2015,UNE,G,Facultad de Ciencias Economicas,Contabilidad,664,329,993,77,32,109,1102,0,0,0,Ciencias Económicas y Administración
 2015,UNE,G,Facultad de Ciencias Economicas,Economia,106,84,190,7,3,10,200,0,0,0,Ciencias Económicas y Administración
 2015,UNE,G,Facultad de Filosofia,Ciencias de la Educacion,87,25,112,8,3,11,123,0,0,0,Educación y Humanidades
 2015,UNE,G,Facultad de Filosofia,Psicologia,494,180,674,61,16,77,751,0,0,0,Salud
