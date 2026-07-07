@@ -430,7 +430,7 @@
 2023,UNP,P,Ciencias Tecnologias y Artes,Diplomado en Crimen Organizado,54,37,91,54,37,91,182,7,10,17,Derecho y Ciencias Sociales
 2023,UNI,G,Ingenieria,Ingenieria,258,651,909,14,57,71,980,69,38,107,Ingeniería y Tecnología
 2023,UNI,G,Medicina,Medicina,188,119,307,33,19,52,359,95,74,169,Salud
-2023,UNI,G,Ciencias Economicas y Administrativas,Ciencias Economicas y Administrativas,1675,558,2233,108,28,136,2369,91,51,142,Ciencias Económicas y Administración
+2023,UNI,G,Ciencias Económicas y Administración,Ciencias Económicas y Administración,1675,558,2233,108,28,136,2369,91,51,142,Ciencias Económicas y Administración
 2023,UNI,G,Humanidades Ciencias Sociales y Cultura Guarani,Humanidades Ciencias Sociales y Cultura Guarani,1125,487,1612,122,47,169,1781,163,60,223,Educación y Humanidades
 2023,UNI,G,Ciencias Juridicas,Ciencias Juridicas,389,257,646,31,13,44,690,46,43,89,Derecho y Ciencias Sociales
 2023,UNI,G,Ciencias Agropecuarias y Forestales,Ciencias Agropecuarias y Forestales,130,232,362,15,22,37,399,69,73,142,Ciencias Agrarias
@@ -438,13 +438,13 @@
 2023,UNI,P,Escuela de Postgrado,Especializacion y Maestria,132,63,195,161,65,226,421,13,12,25,Multidisciplinaria
 2023,UNI,P,Ingenieria,Maestria en Informatica Aplicada,0,0,0,0,2,2,2,0,0,0,Ingeniería y Tecnología
 2023,UNI,P,Medicina,Especializacion en diferentes areas,276,106,382,41,29,70,452,95,74,169,Salud
-2023,UNI,P,Ciencias Economicas y Administrativas,Especializacion en Gestion Contable e Impositiva,7,14,21,12,3,15,36,0,0,0,Ciencias Económicas y Administración
+2023,UNI,P,Ciencias Económicas y Administración,Especializacion en Gestion Contable e Impositiva,7,14,21,12,3,15,36,0,0,0,Ciencias Económicas y Administración
 2023,UNI,P,Humanidades Ciencias Sociales y Cultura Guarani,Curso Especializacion Maestria y Doctorado,136,40,176,41,15,56,232,1,0,1,Educación y Humanidades
 2023,UNI,P,Ciencias Juridicas,Especializacion de diferentes areas,97,64,161,7,3,10,171,0,1,1,Derecho y Ciencias Sociales
 2023,UNI,P,Ciencias Agropecuarias y Forestales,Maestria en Proteccion de Cultivos,21,18,39,4,4,8,47,2,2,4,Ciencias Agrarias
 2023,UNC,G,Odontologia,Odontologia,166,73,239,15,10,25,264,80,104,184,Salud
 2023,UNC,G,Ciencias Agrarias,Ciencias Agrarias,164,263,427,50,53,103,530,51,134,185,Ciencias Agrarias
-2023,UNC,G,Ciencias Economicas y Administrativas,Ciencias Economicas y Administrativas,606,452,1058,77,39,116,1174,84,95,179,Ciencias Económicas y Administración
+2023,UNC,G,Ciencias Económicas y Administración,Ciencias Económicas y Administración,606,452,1058,77,39,116,1174,84,95,179,Ciencias Económicas y Administración
 2023,UNC,G,Medicina,Medicina,151,132,283,19,8,27,310,67,75,142,Salud
 2023,UNC,G,Humanidades y Ciencias de la Educacion,Humanidades y Ciencias de la Educacion,768,239,1007,109,29,138,1145,75,38,113,Educación y Humanidades
 2023,UNC,G,Ciencias Exactas y Tecnologicas,Ciencias Exactas y Tecnologicas,127,200,327,6,13,19,346,17,27,44,Ingeniería y Tecnología
@@ -458,11 +458,11 @@
 2023,UNC,P,Ciencias Agrarias,Maestria en Produccion Vegetal,10,13,23,0,0,0,23,2,14,16,Ciencias Agrarias
 2023,UNC,P,Ciencias Agrarias,Maestria en Zootecnia,6,13,19,0,0,0,19,1,15,16,Ciencias Agrarias
 2023,UNC,P,Ciencias Agrarias,Especializacion en Fertilidad de suelo y nutricion de plantas,10,15,25,0,0,0,25,2,8,10,Ciencias Agrarias
-2023,UNC,P,Ciencias Economicas y Administrativas,Maestria en Administracion y Direccion de Empresas,0,0,0,25,16,41,41,0,0,0,Ciencias Económicas y Administración
-2023,UNC,P,Ciencias Economicas y Administrativas,Especializacion en Administracion Financiera Gubernamental,0,0,0,11,4,15,15,1,4,5,Ciencias Económicas y Administración
-2023,UNC,P,Ciencias Economicas y Administrativas,Maestria en Analitica de Datos en el Area Empresarial,2,1,3,0,0,0,3,1,1,2,Ciencias Económicas y Administración
-2023,UNC,P,Ciencias Economicas y Administrativas,Maestria en Contabilidad y Finanzas,6,3,9,0,0,0,9,1,3,4,Ciencias Económicas y Administración
-2023,UNC,P,Ciencias Economicas y Administrativas,Maestria en Auditoria,0,0,0,0,0,0,0,2,4,6,Ciencias Económicas y Administración
+2023,UNC,P,Ciencias Económicas y Administración,Maestria en Administracion y Direccion de Empresas,0,0,0,25,16,41,41,0,0,0,Ciencias Económicas y Administración
+2023,UNC,P,Ciencias Económicas y Administración,Especializacion en Administracion Financiera Gubernamental,0,0,0,11,4,15,15,1,4,5,Ciencias Económicas y Administración
+2023,UNC,P,Ciencias Económicas y Administración,Maestria en Analitica de Datos en el Area Empresarial,2,1,3,0,0,0,3,1,1,2,Ciencias Económicas y Administración
+2023,UNC,P,Ciencias Económicas y Administración,Maestria en Contabilidad y Finanzas,6,3,9,0,0,0,9,1,3,4,Ciencias Económicas y Administración
+2023,UNC,P,Ciencias Económicas y Administración,Maestria en Auditoria,0,0,0,0,0,0,0,2,4,6,Ciencias Económicas y Administración
 2023,UNC,P,Medicina,Especializacion en Salud Publica,70,13,83,0,0,0,83,6,9,15,Salud
 2023,UNC,P,Medicina,Medicina Familiar,10,13,23,0,0,0,23,3,2,5,Salud
 2023,UNC,P,Humanidades y Ciencias de la Educacion,Capacitacion en Investigacion Cientifica,4,1,5,4,1,5,10,1,0,1,Educación y Humanidades
@@ -1630,7 +1630,7 @@
 2018,UNP,P,Escuela de Postgrado,Especializacion en Docencia Universitaria,45,18,63,0,0,0,63,3,3,6,Educación y Humanidades
 2018,UNI,G,Ingenieria,Ingenieria,201,561,762,8,22,30,792,38,82,120,Ingeniería y Tecnología
 2018,UNI,G,Medicina,Medicina,165,102,267,23,14,37,304,102,93,195,Salud
-2018,UNI,G,Ciencias Economicas y Administrativas,Ciencias Economicas y Administrativas,802,485,1287,83,40,123,1410,89,59,148,Ciencias Económicas y Administración
+2018,UNI,G,Ciencias Económicas y Administración,Ciencias Económicas y Administración,802,485,1287,83,40,123,1410,89,59,148,Ciencias Económicas y Administración
 2018,UNI,G,Humanidades,Humanidades,399,279,678,76,30,106,784,161,85,246,Educación y Humanidades
 2018,UNI,G,Ciencias Juridicas,Ciencias Juridicas,374,204,578,49,48,97,675,36,31,67,Derecho y Ciencias Sociales
 2018,UNI,G,Ciencias Agropecuarias y Forestales,Ciencias Agropecuarias y Forestales,113,113,226,28,33,61,287,45,41,86,Ciencias Agrarias
@@ -1638,7 +1638,7 @@
 2018,UNI,P,Ingenieria,Especializacion en Direccion de Empresas de Ingenieria,1,11,12,0,0,0,12,1,6,7,Ingeniería y Tecnología
 2018,UNI,P,Medicina,Especializacion en Docencia Universitaria con enfasis en salud,18,13,31,0,0,0,31,15,14,29,Salud
 2018,UNI,P,Medicina,Cursos de Especializacion Nutricion Clinica Hipertension Arterial y Factores,38,34,72,0,0,0,72,15,14,29,Salud
-2018,UNI,P,Ciencias Economicas y Administrativas,Maestria en Administracion Financiera y Gestion por resultados,13,21,34,0,0,0,34,0,0,0,Ciencias Económicas y Administración
+2018,UNI,P,Ciencias Económicas y Administración,Maestria en Administracion Financiera y Gestion por resultados,13,21,34,0,0,0,34,0,0,0,Ciencias Económicas y Administración
 2018,UNI,P,Humanidades Ciencias Sociales y Cultura Guarani,Maestria en didactica de las matematicas,26,12,38,0,0,0,38,0,0,0,Educación y Humanidades
 2018,UNI,P,Humanidades Ciencias Sociales y Cultura Guarani,Doctorado en Educacion,2,0,2,6,1,7,9,0,1,1,Educación y Humanidades
 2018,UNI,P,Humanidades Ciencias Sociales y Cultura Guarani,Maestria en Educacion,7,4,11,1,0,1,12,6,3,9,Educación y Humanidades
@@ -1664,16 +1664,16 @@
 2018,UNI,P,Escuela de Postgrado,Especializacion en Gestion Ambiental,7,16,23,0,0,0,23,4,2,6,Ingeniería y Tecnología
 2018,UNC,G,Facultad de Odontologia,Odontologia,186,98,284,15,10,25,309,44,47,91,Salud
 2018,UNC,G,Facultad de Ciencias Agrarias,Ciencias Agrarias,240,413,653,28,49,77,730,26,53,79,Ciencias Agrarias
-2018,UNC,G,Facultad de Ciencias Economicas y Administrativas,Ciencias Economicas y Administrativas,545,430,975,16,21,37,1012,56,75,131,Ciencias Económicas y Administración
+2018,UNC,G,Facultad de Ciencias Económicas y Administración,Ciencias Económicas y Administración,545,430,975,16,21,37,1012,56,75,131,Ciencias Económicas y Administración
 2018,UNC,G,Facultad de Medicina,Medicina,152,130,282,19,24,43,325,51,70,121,Salud
 2018,UNC,G,Facultad de Humanidades y Ciencias de la Educacion,Humanidades y Ciencias de la Educacion,436,138,574,34,7,41,615,68,34,102,Educación y Humanidades
 2018,UNC,G,Facultad de Ciencias Exactas y Tecnologicas,Ciencias Exactas y Tecnologicas,203,69,272,0,0,0,272,27,8,35,Ingeniería y Tecnología
 2018,UNC,P,Rectorado,Especializacion en Didactica Superior,119,63,182,103,56,159,341,9,9,18,Educación y Humanidades
 2018,UNC,P,Rectorado,Especializacion en Metodologia de la Investigacion,5,3,8,0,0,0,8,3,1,4,Educación y Humanidades
 2018,UNC,P,Rectorado,Maestria en Educacion con Orientacion en Docencia Universitaria,17,16,33,2,5,7,40,5,1,6,Educación y Humanidades
-2018,UNC,P,Ciencias Economicas y Administrativas,Maestria en Administracion y Direccion de Empresas,0,0,0,3,8,11,11,0,0,0,Ciencias Económicas y Administración
-2018,UNC,P,Ciencias Economicas y Administrativas,Diplomado en Marketing y Ventas,34,18,52,0,0,0,52,3,5,8,Ciencias Económicas y Administración
-2018,UNC,P,Ciencias Economicas y Administrativas,Especializacion en Auditoria Impositiva - Filial Horqueta,0,1,1,0,0,0,1,3,3,6,Ciencias Económicas y Administración
+2018,UNC,P,Ciencias Económicas y Administración,Maestria en Administracion y Direccion de Empresas,0,0,0,3,8,11,11,0,0,0,Ciencias Económicas y Administración
+2018,UNC,P,Ciencias Económicas y Administración,Diplomado en Marketing y Ventas,34,18,52,0,0,0,52,3,5,8,Ciencias Económicas y Administración
+2018,UNC,P,Ciencias Económicas y Administración,Especializacion en Auditoria Impositiva - Filial Horqueta,0,1,1,0,0,0,1,3,3,6,Ciencias Económicas y Administración
 2018,UNC,P,Facultad de Medicina,Post Grado en Salud Publica,59,15,74,0,0,0,74,0,0,0,Salud
 2018,UNC,P,Humanidades y Ciencias de la Educacion,Especializacion en Evaluacion Educativa,0,0,0,10,2,12,12,2,1,3,Educación y Humanidades
 2018,UNC,P,Humanidades y Ciencias de la Educacion,Especializacion en Investigacion Cientifica,0,0,0,3,1,4,4,2,1,3,Educación y Humanidades
@@ -2461,46 +2461,46 @@
 2014,UNA,G,ITS,Trabajo Social,260,77,337,25,2,27,701,0,0,0,Ciencias Sociales
 2014,UNA,G,Derecho y Ciencias Sociales,Derecho Notariado Ciencias Sociales y Ciencias Politicas,4720,3967,8687,503,371,874,9561,0,0,0,Derecho y Ciencias Sociales
 2014,UNA,G,Ciencias Medicas,Medicina y Cirugia - Kinesiologia y Fisioterapia Instrumentacion,789,540,1329,61,50,111,1440,0,0,0,Salud
-2014,UNA,G,Ingenieria,Civil-Electromecanica-Industrial-Geografica-Mecatronica-Mecanica-Electronica,280,1382,1662,34,115,149,1811,0,0,0,Ingenieria y Tecnologia
-2014,UNA,G,Ciencias Economicas,Contaduria Publica-Economia-Administracion-CAES,10914,6933,17847,1462,781,2243,20090,0,0,0,Ciencias Economicas y Administracion
+2014,UNA,G,Ingenieria,Civil-Electromecanica-Industrial-Geografica-Mecatronica-Mecanica-Electronica,280,1382,1662,34,115,149,1811,0,0,0,Ingeniería y Tecnología
+2014,UNA,G,Ciencias Economicas,Contaduria Publica-Economia-Administracion-CAES,10914,6933,17847,1462,781,2243,20090,0,0,0,Ciencias Económicas y Administración
 2014,UNA,G,Odontologia,Odontologia,281,38,319,47,5,52,371,0,0,0,Salud
 2014,UNA,G,Ciencias Quimicas,Farmacia-Bioquimica-Nutricion-Ing. Quimica-Quimica Industrial,379,1149,1528,19,113,132,1660,0,0,0,Salud
-2014,UNA,G,Filosofia,Lengua-Filosofia-Historia-Letras-Ciencias de la Educacion-Ciencias de la Comunicacion y Psicologia,2467,1060,3527,109,269,378,3905,0,0,0,Educacion y Humanidades
+2014,UNA,G,Filosofia,Lengua-Filosofia-Historia-Letras-Ciencias de la Educacion-Ciencias de la Comunicacion y Psicologia,2467,1060,3527,109,269,378,3905,0,0,0,Educación y Humanidades
 2014,UNA,G,Ciencias Veterinarias,Veterinaria,1784,1242,3026,116,102,218,3244,0,0,0,Ciencias Veterinarias
 2014,UNA,G,Ciencias Agrarias,Ing. Agronomica-Forestal-Ecologia Humana-Ambiental-Agroalimentaria-Lic. Adm. Agropecuaria,2375,1590,3965,208,159,367,4332,0,0,0,Ciencias Agrarias
-2014,UNA,G,FACEN,Matematica-Estadistica-Biologia-Biotecnologia-Matematica Pura,995,1851,2846,30,75,105,2951,0,0,0,Ciencias Basicas
-2014,UNA,G,Arquitectura-Diseno y Arte,Arquitectura-Diseno Industrial-Lic. Musica-Danza-Artes Visuales-Diseno de Indumentaria,1757,3084,4841,16,30,46,4887,0,0,0,Ingenieria y Tecnologia
-2014,UNA,G,Politecnica,Ing. Aeronautica-Electricidad-Marketing-Tecnicos y Licenciaturas,4114,1897,6011,57,51,108,6119,0,0,0,Ingenieria y Tecnologia
+2014,UNA,G,FACEN,Matematica-Estadistica-Biologia-Biotecnologia-Matematica Pura,995,1851,2846,30,75,105,2951,0,0,0,Ciencias Básicas
+2014,UNA,G,Arquitectura-Diseno y Arte,Arquitectura-Diseno Industrial-Lic. Musica-Danza-Artes Visuales-Diseno de Indumentaria,1757,3084,4841,16,30,46,4887,0,0,0,Ingeniería y Tecnología
+2014,UNA,G,Politecnica,Ing. Aeronautica-Electricidad-Marketing-Tecnicos y Licenciaturas,4114,1897,6011,57,51,108,6119,0,0,0,Ingeniería y Tecnología
 2014,UNA,G,IAB,Enfermeria-Obstetricia,333,1265,1598,0,0,80,0,0,0,0,Salud
 2014,UNA,P,Rectorado-FLACSO-ITS,Capacitaciones Especializaciones y Maestrias,462,212,674,21,13,34,708,0,0,0,Multidisciplinaria
 2014,UNA,P,Derecho y Ciencias Sociales,Maestrias - Doctorados,333,335,668,150,58,208,876,0,0,0,Derecho y Ciencias Sociales
 2014,UNA,P,Ciencias Medicas,Especializaciones varias,220,261,481,41,21,62,543,0,0,0,Salud
-2014,UNA,P,Ingenieria,Curso de Actualizacion en Perfil 4 WIN,0,0,0,6,31,37,37,0,0,0,Ingenieria y Tecnologia
-2014,UNA,P,Ciencias Economicas,Capacitaciones Especializaciones y Maestrias,815,550,1365,419,217,636,2001,0,0,0,Ciencias Economicas y Administracion
+2014,UNA,P,Ingenieria,Curso de Actualizacion en Perfil 4 WIN,0,0,0,6,31,37,37,0,0,0,Ingeniería y Tecnología
+2014,UNA,P,Ciencias Economicas,Capacitaciones Especializaciones y Maestrias,815,550,1365,419,217,636,2001,0,0,0,Ciencias Económicas y Administración
 2014,UNA,P,Odontologia,Capacitaciones Especializaciones,147,47,194,145,51,196,390,0,0,0,Salud
-2014,UNA,P,Ciencias Quimicas,Actualizaciones en Plan de Negocio y Pyto de Inversion Especializaciones en Farmacia Maestrias en Quimica Industrial y Doctorado en Ciencias Farmaceutica,216,70,286,21,3,24,310,0,0,0,Ciencias Basicas
+2014,UNA,P,Ciencias Quimicas,Actualizaciones en Plan de Negocio y Pyto de Inversion Especializaciones en Farmacia Maestrias en Quimica Industrial y Doctorado en Ciencias Farmaceutica,216,70,286,21,3,24,310,0,0,0,Ciencias Básicas
 2014,UNA,P,Ciencias Veterinarias,Maestria en Medicina Veterinaria en Produccion Animal en Sanidad Animal y Piscicultura,41,51,92,0,0,0,92,0,0,0,Ciencias Veterinarias
-2014,UNA,P,Filosofia,Maestria en Ciencias de la Educacion Especializacion en Didactica Universitaria Maestria en Psicologia Maestria en Filosofia Politica Especializacion en Gestion Educativa,102,170,272,21,50,71,343,0,0,0,Educacion y Humanidades
+2014,UNA,P,Filosofia,Maestria en Ciencias de la Educacion Especializacion en Didactica Universitaria Maestria en Psicologia Maestria en Filosofia Politica Especializacion en Gestion Educativa,102,170,272,21,50,71,343,0,0,0,Educación y Humanidades
 2014,UNA,P,Ciencias Agrarias,Didactica Universitaria-Gestion de Agronegocios-Zootecnia-Fitosanidad-Desarrollo Rural,234,187,421,224,158,382,803,0,0,0,Ciencias Agrarias
-2014,UNA,P,FACEN,Maestria en Ciencias Fisicas-Didactica Universitaria-Sistemas de Produccion,151,74,225,0,0,0,225,0,0,0,Ciencias Basicas
-2014,UNA,P,Arquitectura Diseño y Arte,Maestria en Tecnologia de la Arquitectura,12,18,30,0,0,0,30,0,0,0,Ingenieria y Tecnologia
-2014,UNA,P,Politecnica,Capacitaciones Especializaciones y Maestrias,205,254,459,69,59,128,587,0,0,0,Ingenieria y Tecnologia
+2014,UNA,P,FACEN,Maestria en Ciencias Fisicas-Didactica Universitaria-Sistemas de Produccion,151,74,225,0,0,0,225,0,0,0,Ciencias Básicas
+2014,UNA,P,Arquitectura Diseño y Arte,Maestria en Tecnologia de la Arquitectura,12,18,30,0,0,0,30,0,0,0,Ingeniería y Tecnología
+2014,UNA,P,Politecnica,Capacitaciones Especializaciones y Maestrias,205,254,459,69,59,128,587,0,0,0,Ingeniería y Tecnología
 2014,UNA,P,IAB,Especializacion en Enfermeria-Capacitacion en Didactica Universitaria-Especializacion en Enfermeria en Cuidados Criticos del Adulto-Obstetricia,406,84,490,74,29,103,593,0,0,0,Salud
 2014,UNA,P,IICS,Maestria en Ciencias Biomedicas-Metodologia de la Investigacion I y II,57,12,69,0,0,0,69,0,0,0,Salud
-2014,UNE,G,Politecnica,Analisis de Sistemas,97,218,315,8,15,23,338,0,0,0,Ingenieria y Tecnologia
-2014,UNE,G,Politecnica,Ingenieria Electrica,87,251,338,5,12,17,355,0,0,0,Ingenieria y Tecnologia
-2014,UNE,G,Politecnica,Turismo,175,45,220,20,5,25,245,0,0,0,Otras
-2014,UNE,G,Politecnica,Ingenieria de Sistemas,81,146,227,15,20,35,262,0,0,0,Ingenieria y Tecnologia
+2014,UNE,G,Politecnica,Analisis de Sistemas,97,218,315,8,15,23,338,0,0,0,Ingeniería y Tecnología
+2014,UNE,G,Politecnica,Ingenieria Electrica,87,251,338,5,12,17,355,0,0,0,Ingeniería y Tecnología
+2014,UNE,G,Politecnica,Turismo,175,45,220,20,5,25,245,0,0,0,Multidisciplinaria
+2014,UNE,G,Politecnica,Ingenieria de Sistemas,81,146,227,15,20,35,262,0,0,0,Ingeniería y Tecnología
 2014,UNE,G,Filosofia,Psicologia,584,186,770,99,20,119,889,0,0,0,Salud
-2014,UNE,G,Filosofia,Matematica,79,47,126,20,6,26,152,0,0,0,Ciencias Basicas
-2014,UNE,G,Filosofia,Ciencias de la Comunicacion,109,63,172,7,6,13,185,0,0,0,Educacion y Humanidades
-2014,UNE,G,Filosofia,Ciencias de la Educacion,73,16,89,5,3,8,97,0,0,0,Educacion y Humanidades
-2014,UNE,G,Filosofia,Historia,15,13,28,2,2,4,32,0,0,0,Educacion y Humanidades
-2014,UNE,G,Filosofia,Filosofia,4,45,49,0,1,1,50,0,0,0,Educacion y Humanidades
-2014,UNE,G,Filosofia,Letras,34,15,49,6,5,11,60,0,0,0,Educacion y Humanidades
-2014,UNE,G,Ciencias Economicas,Contabilidad,914,468,1382,67,35,102,1484,0,0,0,Ciencias Economicas y Administracion
-2014,UNE,G,Ciencias Economicas,Administracion,348,249,597,15,7,22,619,0,0,0,Ciencias Economicas y Administracion
-2014,UNE,G,Ciencias Economicas,Economia,157,132,289,10,11,21,310,0,0,0,Ciencias Economicas y Administracion
+2014,UNE,G,Filosofia,Matematica,79,47,126,20,6,26,152,0,0,0,Ciencias Básicas
+2014,UNE,G,Filosofia,Ciencias de la Comunicacion,109,63,172,7,6,13,185,0,0,0,Educación y Humanidades
+2014,UNE,G,Filosofia,Ciencias de la Educacion,73,16,89,5,3,8,97,0,0,0,Educación y Humanidades
+2014,UNE,G,Filosofia,Historia,15,13,28,2,2,4,32,0,0,0,Educación y Humanidades
+2014,UNE,G,Filosofia,Filosofia,4,45,49,0,1,1,50,0,0,0,Educación y Humanidades
+2014,UNE,G,Filosofia,Letras,34,15,49,6,5,11,60,0,0,0,Educación y Humanidades
+2014,UNE,G,Ciencias Economicas,Contabilidad,914,468,1382,67,35,102,1484,0,0,0,Ciencias Económicas y Administración
+2014,UNE,G,Ciencias Economicas,Administracion,348,249,597,15,7,22,619,0,0,0,Ciencias Económicas y Administración
+2014,UNE,G,Ciencias Economicas,Economia,157,132,289,10,11,21,310,0,0,0,Ciencias Económicas y Administración
 2014,UNE,G,Ingenieria Agronomica,Agronomia,130,170,300,6,29,35,335,0,0,0,Ciencias Agrarias
 2014,UNE,G,Ingenieria Agronomica,Ambiental,150,120,270,12,4,16,286,0,0,0,Ciencias Agrarias
 2014,UNE,G,Ingenieria Agronomica,Filial Salto del Guaira,95,85,180,4,7,11,191,0,0,0,Ciencias Agrarias
@@ -2509,27 +2509,27 @@
 2014,UNE,G,Derecho y Ciencias Sociales,Notariado,66,26,92,14,3,17,109,0,0,0,Derecho y Ciencias Sociales
 2014,UNE,G,Ciencias de la Salud,Carrera de Medicina,355,207,562,47,27,74,636,0,0,0,Salud
 2014,UNE,G,Ciencias de la Salud,Carrera de Enfermeria,122,27,149,54,5,59,208,0,0,0,Salud
-2014,UNE,G,Escuela Superior de Educacion Cruce Itakyry,Contabilidad,81,40,121,6,7,13,134,0,0,0,Ciencias Economicas y Administracion
+2014,UNE,G,Escuela Superior de Educacion Cruce Itakyry,Contabilidad,81,40,121,6,7,13,134,0,0,0,Ciencias Económicas y Administración
 2014,UNE,G,Escuela Superior de Educacion Cruce Itakyry,Ingenieria Agronomica,36,86,122,1,10,11,133,0,0,0,Ciencias Agrarias
-2014,UNE,G,Escuela Superior de Bellas Artes,Teatro,6,13,19,0,0,0,19,0,0,0,Educacion y Humanidades
-2014,UNE,G,Escuela Superior de Bellas Artes,Danza,4,10,14,0,0,0,14,0,0,0,Educacion y Humanidades
-2014,UNE,G,Escuela Superior de Bellas Artes,Artes Visuales,14,14,28,0,0,0,28,0,0,0,Educacion y Humanidades
-2014,UNE,G,Escuela Superior de Bellas Artes,Musica,33,23,56,0,0,0,56,0,0,0,Educacion y Humanidades
-2014,UNE,P,Politecnica,Maestria en Ingenieria Electrica,4,22,26,0,3,3,29,0,0,0,Ingenieria y Tecnologia
-2014,UNE,P,Politecnica,Especializacion en Desarrollo de Sistema para Ambiente Internet,7,2,9,0,0,0,9,0,0,0,Ingenieria y Tecnologia
-2014,UNE,P,Politecnica,Maestria en Informatica y Computacion,7,7,14,1,2,3,17,0,0,0,Ingenieria y Tecnologia
+2014,UNE,G,Escuela Superior de Bellas Artes,Teatro,6,13,19,0,0,0,19,0,0,0,Educación y Humanidades
+2014,UNE,G,Escuela Superior de Bellas Artes,Danza,4,10,14,0,0,0,14,0,0,0,Educación y Humanidades
+2014,UNE,G,Escuela Superior de Bellas Artes,Artes Visuales,14,14,28,0,0,0,28,0,0,0,Educación y Humanidades
+2014,UNE,G,Escuela Superior de Bellas Artes,Musica,33,23,56,0,0,0,56,0,0,0,Educación y Humanidades
+2014,UNE,P,Politecnica,Maestria en Ingenieria Electrica,4,22,26,0,3,3,29,0,0,0,Ingeniería y Tecnología
+2014,UNE,P,Politecnica,Especializacion en Desarrollo de Sistema para Ambiente Internet,7,2,9,0,0,0,9,0,0,0,Ingeniería y Tecnología
+2014,UNE,P,Politecnica,Maestria en Informatica y Computacion,7,7,14,1,2,3,17,0,0,0,Ingeniería y Tecnología
 2014,UNE,P,Filosofia,Maestria en Psicologia Laboral,13,2,15,0,0,0,15,0,0,0,Salud
-2014,UNE,P,Filosofia,Maestria en Educacion Superior,7,5,12,0,0,0,12,0,0,0,Educacion y Humanidades
-2014,UNE,P,Filosofia,Especializacion en Didactica Universitaria,31,15,46,0,0,0,46,0,0,0,Educacion y Humanidades
-2014,UNE,P,Filosofia,Maestria en Historia del Paraguay,4,8,12,0,0,0,12,0,0,0,Educacion y Humanidades
-2014,UNE,P,Filosofia,Postgrado de Especializacion en Didactica Universitaria,99,47,146,0,0,0,146,0,0,0,Educacion y Humanidades
+2014,UNE,P,Filosofia,Maestria en Educacion Superior,7,5,12,0,0,0,12,0,0,0,Educación y Humanidades
+2014,UNE,P,Filosofia,Especializacion en Didactica Universitaria,31,15,46,0,0,0,46,0,0,0,Educación y Humanidades
+2014,UNE,P,Filosofia,Maestria en Historia del Paraguay,4,8,12,0,0,0,12,0,0,0,Educación y Humanidades
+2014,UNE,P,Filosofia,Postgrado de Especializacion en Didactica Universitaria,99,47,146,0,0,0,146,0,0,0,Educación y Humanidades
 2014,UNE,P,Filosofia,Especializacion en Mediacion y Resolucion de Conflictos,17,7,24,15,7,22,46,0,0,0,Derecho y Ciencias Sociales
-2014,UNE,P,Filosofia,Especializacion en Lengua Guarani,8,2,10,0,0,0,10,0,0,0,Educacion y Humanidades
+2014,UNE,P,Filosofia,Especializacion en Lengua Guarani,8,2,10,0,0,0,10,0,0,0,Educación y Humanidades
 2014,UNE,P,Filosofia,Especializacion en Psicologia Clinica,24,6,30,0,0,0,30,0,0,0,Salud
-2014,UNE,P,Ciencias Economicas,Especializacion en Auditoria y Control de Gestion,18,8,26,0,0,0,26,0,0,0,Ciencias Economicas y Administracion
-2014,UNE,P,Ciencias Economicas,Especializacion en Finanzas con enfasis en Proyectos de Inversion,5,17,22,0,0,0,22,0,0,0,Ciencias Economicas y Administracion
-2014,UNE,P,Ciencias Economicas,Maestria en Administracion de Empresas,11,9,20,0,0,0,20,0,0,0,Ciencias Economicas y Administracion
-2014,UNE,P,Ciencias Economicas,Maestria en Gerenciamiento Deportivo,7,8,15,0,0,0,15,0,0,0,Ciencias Economicas y Administracion
+2014,UNE,P,Ciencias Economicas,Especializacion en Auditoria y Control de Gestion,18,8,26,0,0,0,26,0,0,0,Ciencias Económicas y Administración
+2014,UNE,P,Ciencias Economicas,Especializacion en Finanzas con enfasis en Proyectos de Inversion,5,17,22,0,0,0,22,0,0,0,Ciencias Económicas y Administración
+2014,UNE,P,Ciencias Economicas,Maestria en Administracion de Empresas,11,9,20,0,0,0,20,0,0,0,Ciencias Económicas y Administración
+2014,UNE,P,Ciencias Economicas,Maestria en Gerenciamiento Deportivo,7,8,15,0,0,0,15,0,0,0,Ciencias Económicas y Administración
 2014,UNE,P,Ciencias de la Salud,Especializacion Ecografia General Obstetrica y Ginecologica,12,18,30,0,0,0,30,0,0,0,Salud
 2014,UNE,P,Ciencias de la Salud,Especializacion Clinica Pediatrica,7,1,8,3,2,5,13,0,0,0,Salud
 2014,UNE,P,Ciencias de la Salud,Especializacion Ginecologia y Obstetricia,5,2,7,4,2,6,13,0,0,0,Salud
@@ -2541,68 +2541,68 @@
 2014,UNE,P,Ciencias de la Salud,Especializacion Enfermeria en Emergencias y Urgencias,19,7,26,0,0,0,26,0,0,0,Salud
 2014,UNE,P,Ciencias de la Salud,Maestria en Ciencias Medicas,12,17,29,0,0,0,29,0,0,0,Salud
 2014,UNE,P,Ciencias de la Salud,Doctorado en Ciencias Medicas,1,4,5,0,1,1,6,0,0,0,Salud
-2014,UNE,P,Escuela de Posgrado,Capacitacion en Ingles,10,1,11,0,0,0,11,0,0,0,Educacion y Humanidades
-2014,UNE,P,Escuela de Posgrado,Curso de Especializacion en Didactica Universitaria,96,44,140,33,11,44,184,0,0,0,Educacion y Humanidades
-2014,UNE,P,Escuela de Posgrado,Curso de Especializacion en Administracion Publica,24,15,39,5,5,10,49,0,0,0,Ciencias Economicas y Administracion
+2014,UNE,P,Escuela de Posgrado,Capacitacion en Ingles,10,1,11,0,0,0,11,0,0,0,Educación y Humanidades
+2014,UNE,P,Escuela de Posgrado,Curso de Especializacion en Didactica Universitaria,96,44,140,33,11,44,184,0,0,0,Educación y Humanidades
+2014,UNE,P,Escuela de Posgrado,Curso de Especializacion en Administracion Publica,24,15,39,5,5,10,49,0,0,0,Ciencias Económicas y Administración
 2014,UNE,P,Escuela de Posgrado,Maestria en Ciencias Sociales,24,23,47,3,6,9,56,0,0,0,Derecho y Ciencias Sociales
 2014,UNE,P,Escuela de Posgrado,Maestria en Investigacion Cientifica,43,25,68,0,0,0,68,0,0,0,Multidisciplinaria
-2014,UNE,P,Escuela de Posgrado,Maestria en Comunicacion para el Desarrollo,5,2,7,0,0,0,7,0,0,0,Educacion y Humanidades
-2014,UNE,P,Escuela de Posgrado,Maestria en Gestion y Politica Universitaria,6,6,12,0,0,0,12,0,0,0,Educacion y Humanidades
-2014,UNE,P,Escuela de Posgrado,Doctorado en Educacion con enfasis en Gestion de la Educacion Superior,9,13,22,0,0,0,22,0,0,0,Educacion y Humanidades
-2014,UNP,G,Ciencias Contables Administrativas y Economicas,Auditoria y Contaduria Publica,40,16,56,4,4,8,64,0,0,0,Ciencias Economicas y Administracion
-2014,UNP,G,Ciencias Contables Administrativas y Economicas,Ciencias Administrativas,298,182,480,11,2,13,493,0,0,0,Ciencias Economicas y Administracion
-2014,UNP,G,Ciencias Contables Administrativas y Economicas,Ciencias Contables,238,141,379,1,1,2,381,0,0,0,Ciencias Economicas y Administracion
+2014,UNE,P,Escuela de Posgrado,Maestria en Comunicacion para el Desarrollo,5,2,7,0,0,0,7,0,0,0,Educación y Humanidades
+2014,UNE,P,Escuela de Posgrado,Maestria en Gestion y Politica Universitaria,6,6,12,0,0,0,12,0,0,0,Educación y Humanidades
+2014,UNE,P,Escuela de Posgrado,Doctorado en Educacion con enfasis en Gestion de la Educacion Superior,9,13,22,0,0,0,22,0,0,0,Educación y Humanidades
+2014,UNP,G,Ciencias Contables Administrativas y Economicas,Auditoria y Contaduria Publica,40,16,56,4,4,8,64,0,0,0,Ciencias Económicas y Administración
+2014,UNP,G,Ciencias Contables Administrativas y Economicas,Ciencias Administrativas,298,182,480,11,2,13,493,0,0,0,Ciencias Económicas y Administración
+2014,UNP,G,Ciencias Contables Administrativas y Economicas,Ciencias Contables,238,141,379,1,1,2,381,0,0,0,Ciencias Económicas y Administración
 2014,UNP,G,Ciencias Agropecuarias y Desarrollo Rural,Ingenieria Agropecuaria,102,186,288,0,0,0,288,0,0,0,Ciencias Agrarias
 2014,UNP,G,Ciencias Agropecuarias y Desarrollo Rural,Tecnico en Establecimiento Ganadero,18,25,43,0,0,0,43,0,0,0,Ciencias Agrarias
 2014,UNP,G,Derecho Ciencias Politicas y Sociales,Derecho,443,314,757,0,0,0,757,0,0,0,Derecho y Ciencias Sociales
 2014,UNP,G,Derecho Ciencias Politicas y Sociales,Ciencias Politicas,21,13,34,0,0,0,34,0,0,0,Derecho y Ciencias Sociales
 2014,UNP,G,Derecho Ciencias Politicas y Sociales,Trabajo Social,52,6,58,0,0,0,58,0,0,0,Derecho y Ciencias Sociales
 2014,UNP,G,Derecho Ciencias Politicas y Sociales,Notariado,6,1,7,0,0,0,7,0,0,0,Derecho y Ciencias Sociales
-2014,UNP,G,Humanidades y Ciencias de la Educacion,Ciencias de la Educacion,124,31,155,10,1,11,166,0,0,0,Educacion y Humanidades
-2014,UNP,G,Humanidades y Ciencias de la Educacion,Estadistica,1,1,2,0,0,0,2,0,0,0,Ciencias Basicas
-2014,UNP,G,Humanidades y Ciencias de la Educacion,Matematica,24,18,42,1,0,1,43,0,0,0,Ciencias Basicas
+2014,UNP,G,Humanidades y Ciencias de la Educacion,Ciencias de la Educacion,124,31,155,10,1,11,166,0,0,0,Educación y Humanidades
+2014,UNP,G,Humanidades y Ciencias de la Educacion,Estadistica,1,1,2,0,0,0,2,0,0,0,Ciencias Básicas
+2014,UNP,G,Humanidades y Ciencias de la Educacion,Matematica,24,18,42,1,0,1,43,0,0,0,Ciencias Básicas
 2014,UNP,G,Humanidades y Ciencias de la Educacion,Psicologia con Orientacion Educacional,31,7,38,8,1,9,47,0,0,0,Salud
 2014,UNP,G,Humanidades y Ciencias de la Educacion,Psicologia Laboral,111,18,129,3,0,3,132,0,0,0,Salud
-2014,UNP,G,Humanidades y Ciencias de la Educacion,Profesorado en Informatica,6,6,12,25,10,35,47,0,0,0,Educacion y Humanidades
-2014,UNP,G,Humanidades y Ciencias de la Educacion,Profesorado en Ciencias Sociales,14,4,18,0,0,0,18,0,0,0,Educacion y Humanidades
-2014,UNP,G,Ciencias Aplicadas,Analisis de Sistema,94,135,229,0,0,0,229,0,0,0,Ingenieria y Tecnologia
+2014,UNP,G,Humanidades y Ciencias de la Educacion,Profesorado en Informatica,6,6,12,25,10,35,47,0,0,0,Educación y Humanidades
+2014,UNP,G,Humanidades y Ciencias de la Educacion,Profesorado en Ciencias Sociales,14,4,18,0,0,0,18,0,0,0,Educación y Humanidades
+2014,UNP,G,Ciencias Aplicadas,Analisis de Sistema,94,135,229,0,0,0,229,0,0,0,Ingeniería y Tecnología
 2014,UNP,G,Ciencias Aplicadas,Ciencias Ambientales,90,79,169,0,0,0,169,0,0,0,Ciencias Agrarias
-2014,UNP,G,Ciencias Aplicadas,Ingenieria Ambiental,29,19,48,0,0,0,48,0,0,0,Ingenieria y Tecnologia
-2014,UNP,G,Ciencias Aplicadas,Educacion Fisica,28,40,68,0,0,0,68,0,0,0,Educacion y Humanidades
+2014,UNP,G,Ciencias Aplicadas,Ingenieria Ambiental,29,19,48,0,0,0,48,0,0,0,Ingeniería y Tecnología
+2014,UNP,G,Ciencias Aplicadas,Educacion Fisica,28,40,68,0,0,0,68,0,0,0,Educación y Humanidades
 2014,UNP,G,Ciencias Aplicadas,Enfermeria,93,39,132,0,0,0,132,0,0,0,Salud
-2014,UNP,G,Ciencias Aplicadas,Ingenieria Industrial,110,214,324,0,0,0,324,0,0,0,Ingenieria y Tecnologia
+2014,UNP,G,Ciencias Aplicadas,Ingenieria Industrial,110,214,324,0,0,0,324,0,0,0,Ingeniería y Tecnología
 2014,UNP,G,Ciencias Aplicadas,Tec. Sup. en Terapia Fisica,9,4,13,0,0,0,13,0,0,0,Salud
 2014,UNP,P,Derecho Ciencias Politicas y Sociales,Postitulo Notariado,24,22,46,0,0,0,46,0,0,0,Derecho y Ciencias Sociales
 2014,UNP,P,Derecho Ciencias Politicas y Sociales,Actualizacion en Gestion y Direccion de Recursos,42,33,75,0,0,0,75,0,0,0,Derecho y Ciencias Sociales
 2014,UNP,P,Derecho Ciencias Politicas y Sociales,Actualizacion en Peritaje y Criminalistica Forense,53,15,68,0,0,0,68,0,0,0,Derecho y Ciencias Sociales
 2014,UNP,P,Escuela de Postgrado,Maestria en Evaluacion de Impacto y Gestion Ambiental,17,14,31,0,0,0,31,0,0,0,Multidisciplinaria
 2014,UNP,P,Escuela de Postgrado,Actualizacion en Derecho Procesal Laboral,39,18,57,0,0,0,57,0,0,0,Derecho y Ciencias Sociales
-2014,UNP,P,Escuela de Postgrado,Maestria en Ciencias de la Educacion,9,4,13,7,3,10,23,0,0,0,Educacion y Humanidades
-2014,UNI,G,Ingenieria,Electromecanica,8,123,131,1,5,6,6,0,0,0,Ingenieria y Tecnologia
-2014,UNI,G,Ingenieria,Civil,89,201,290,0,11,11,11,0,0,0,Ingenieria y Tecnologia
-2014,UNI,G,Ingenieria,Informatica,31,54,85,3,7,10,10,0,0,0,Ingenieria y Tecnologia
+2014,UNP,P,Escuela de Postgrado,Maestria en Ciencias de la Educacion,9,4,13,7,3,10,23,0,0,0,Educación y Humanidades
+2014,UNI,G,Ingenieria,Electromecanica,8,123,131,1,5,6,6,0,0,0,Ingeniería y Tecnología
+2014,UNI,G,Ingenieria,Civil,89,201,290,0,11,11,11,0,0,0,Ingeniería y Tecnología
+2014,UNI,G,Ingenieria,Informatica,31,54,85,3,7,10,10,0,0,0,Ingeniería y Tecnología
 2014,UNI,G,Medicina,Medicina,121,89,210,13,17,30,30,0,0,0,Salud
-2014,UNI,G,Ciencias Economicas y Administrativas,Licenciatura en Administracion,228,145,373,36,25,61,61,0,0,0,Ciencias Economicas y Administracion
-2014,UNI,G,Ciencias Economicas y Administrativas,Licenciatura en Ciencias Contables,264,158,422,45,19,64,64,0,0,0,Ciencias Economicas y Administracion
-2014,UNI,G,Ciencias Economicas y Administrativas,Ingenieria Comercial,209,117,326,14,6,20,20,0,0,0,Ciencias Economicas y Administrativas
+2014,UNI,G,Ciencias Económicas y Administración,Licenciatura en Administracion,228,145,373,36,25,61,61,0,0,0,Ciencias Económicas y Administración
+2014,UNI,G,Ciencias Económicas y Administración,Licenciatura en Ciencias Contables,264,158,422,45,19,64,64,0,0,0,Ciencias Económicas y Administración
+2014,UNI,G,Ciencias Económicas y Administración,Ingenieria Comercial,209,117,326,14,6,20,20,0,0,0,Ciencias Económicas y Administración
 2014,UNI,G,Facultad de Humanidades Ciencias Sociales y Cultura Guarani,Psicologia,136,42,178,31,1,32,32,0,0,0,Salud
-2014,UNI,G,Facultad de Humanidades Ciencias Sociales y Cultura Guarani,Ciencias de la Educacion,57,27,84,43,14,57,57,0,0,0,Educacion y Humanidades
-2014,UNI,G,Facultad de Humanidades Ciencias Sociales y Cultura Guarani,Bilinguismo,59,31,90,6,0,6,6,0,0,0,Educacion y Humanidades
+2014,UNI,G,Facultad de Humanidades Ciencias Sociales y Cultura Guarani,Ciencias de la Educacion,57,27,84,43,14,57,57,0,0,0,Educación y Humanidades
+2014,UNI,G,Facultad de Humanidades Ciencias Sociales y Cultura Guarani,Bilinguismo,59,31,90,6,0,6,6,0,0,0,Educación y Humanidades
 2014,UNI,G,Facultad de Humanidades Ciencias Sociales y Cultura Guarani,Ciencias Sociales,136,73,209,17,4,21,21,0,0,0,Derecho y Ciencias Sociales
-2014,UNI,G,Facultad de Humanidades Ciencias Sociales y Cultura Guarani,Licenciatura en Matematica,5,1,6,0,3,3,3,0,0,0,Ciencias Basicas
-2014,UNI,G,Facultad de Humanidades Ciencias Sociales y Cultura Guarani,Lengua Inglesa,13,11,24,0,0,0,0,0,0,0,Educacion y Humanidades
+2014,UNI,G,Facultad de Humanidades Ciencias Sociales y Cultura Guarani,Licenciatura en Matematica,5,1,6,0,3,3,3,0,0,0,Ciencias Básicas
+2014,UNI,G,Facultad de Humanidades Ciencias Sociales y Cultura Guarani,Lengua Inglesa,13,11,24,0,0,0,0,0,0,0,Educación y Humanidades
 2014,UNI,G,Ciencias Juridicas,Derecho,287,192,479,23,24,47,47,0,0,0,Derecho y Ciencias Sociales
 2014,UNI,G,Ciencias Agropecuarias y Forestales,Ingenieria Agropecuaria,80,129,209,10,26,36,36,0,0,0,Ciencias Agrarias
-2014,UNI,G,Ciencias Agropecuarias y Forestales,Licenciatura en Cooperativismo,37,27,64,9,5,14,14,0,0,0,Ciencias Economicas y Administracion
-2014,UNI,G,Facultad de Ciencias y Tecnologia,Informatica Empresarial,43,79,122,1,0,1,1,0,0,0,Ingenieria y Tecnologia
-2014,UNI,G,Facultad de Ciencias y Tecnologia,Licenciatura en Electronica,0,33,33,1,4,5,5,0,0,0,Ingenieria y Tecnologia
-2014,UNI,G,Facultad de Ciencias y Tecnologia,Ingenieria Ambiental,102,51,153,0,0,0,0,0,0,0,Ingenieria y Tecnologia
-2014,UNI,G,Facultad de Ciencias y Tecnologia,Licenciatura en Alimentos,58,16,74,8,0,8,8,0,0,0,Ingenieria y Tecnologia
-2014,UNI,G,Facultad de Ciencias y Tecnologia,Tecnico Superior en Electricidad,14,27,41,0,0,0,0,0,0,0,Ingenieria y Tecnologia
-2014,UNI,G,Facultad de Ciencias y Tecnologia,Ingenieria en Alimentos,6,0,6,0,0,0,0,0,0,0,Ingenieria y Tecnologia
-2014,UNI,P,Escuela de Posgrado,Diplomado en Gestion de la Energia,9,17,26,0,0,0,0,0,0,0,Ingenieria y Tecnologia
-2014,UNI,P,Escuela de Posgrado,Diplomado en Lengua Inglesa,7,2,9,0,0,0,0,0,0,0,Educacion y Humanidades
-2014,UNI,P,Escuela de Posgrado,Diplomado en Lengua Portuguesa,1,1,2,21,6,27,27,0,0,0,Educacion y Humanidades
+2014,UNI,G,Ciencias Agropecuarias y Forestales,Licenciatura en Cooperativismo,37,27,64,9,5,14,14,0,0,0,Ciencias Económicas y Administración
+2014,UNI,G,Facultad de Ciencias y Tecnologia,Informatica Empresarial,43,79,122,1,0,1,1,0,0,0,Ingeniería y Tecnología
+2014,UNI,G,Facultad de Ciencias y Tecnologia,Licenciatura en Electronica,0,33,33,1,4,5,5,0,0,0,Ingeniería y Tecnología
+2014,UNI,G,Facultad de Ciencias y Tecnologia,Ingenieria Ambiental,102,51,153,0,0,0,0,0,0,0,Ingeniería y Tecnología
+2014,UNI,G,Facultad de Ciencias y Tecnologia,Licenciatura en Alimentos,58,16,74,8,0,8,8,0,0,0,Ingeniería y Tecnología
+2014,UNI,G,Facultad de Ciencias y Tecnologia,Tecnico Superior en Electricidad,14,27,41,0,0,0,0,0,0,0,Ingeniería y Tecnología
+2014,UNI,G,Facultad de Ciencias y Tecnologia,Ingenieria en Alimentos,6,0,6,0,0,0,0,0,0,0,Ingeniería y Tecnología
+2014,UNI,P,Escuela de Posgrado,Diplomado en Gestion de la Energia,9,17,26,0,0,0,0,0,0,0,Ingeniería y Tecnología
+2014,UNI,P,Escuela de Posgrado,Diplomado en Lengua Inglesa,7,2,9,0,0,0,0,0,0,0,Educación y Humanidades
+2014,UNI,P,Escuela de Posgrado,Diplomado en Lengua Portuguesa,1,1,2,21,6,27,27,0,0,0,Educación y Humanidades
 2014,UNI,P,Escuela de Posgrado,Diplomado en Salud Publica,15,3,18,0,0,0,0,0,0,0,Salud
 2014,UNI,P,Escuela de Posgrado,Diplomado en Alta Direccion de Salud,17,26,43,0,0,0,0,0,0,0,Salud
 2014,UNI,P,Escuela de Posgrado,Especializacion en Ciencias Forenses,1,2,3,0,0,0,0,0,0,0,Derecho y Ciencias Sociales
@@ -2612,14 +2612,14 @@
 2014,UNI,P,Escuela de Posgrado,Especializacion en Investigacion Cientifica del Delito,0,0,0,17,7,24,24,0,0,0,Derecho y Ciencias Sociales
 2014,UNI,P,Escuela de Posgrado,Especializacion en Neutopsicopatologia Infantil,0,0,0,10,0,10,10,0,0,0,Salud
 2014,UNI,P,Escuela de Posgrado,Maestria en Ciencias Forenses,0,1,1,5,0,5,5,0,0,0,Derecho y Ciencias Sociales
-2014,UNI,P,Escuela de Posgrado,Maestria en Docencia e Investigacion Universitaria,50,21,71,22,14,36,36,0,0,0,Educacion y Humanidades
+2014,UNI,P,Escuela de Posgrado,Maestria en Docencia e Investigacion Universitaria,50,21,71,22,14,36,36,0,0,0,Educación y Humanidades
 2014,UNI,P,Escuela de Posgrado,Maestria en Gestion Ambiental,11,18,29,9,11,20,20,0,0,0,Multidisciplinaria
-2014,UNI,P,Escuela de Posgrado,Maestria en Gestion de la Energia,9,6,15,0,0,0,0,0,0,0,Ingenieria y Tecnologia
-2014,UNI,P,Escuela de Posgrado,Maestria en Planificacion Estrategica,1,0,1,0,0,0,0,0,0,0,Ciencias Economicas y Administracion
+2014,UNI,P,Escuela de Posgrado,Maestria en Gestion de la Energia,9,6,15,0,0,0,0,0,0,0,Ingeniería y Tecnología
+2014,UNI,P,Escuela de Posgrado,Maestria en Planificacion Estrategica,1,0,1,0,0,0,0,0,0,0,Ciencias Económicas y Administración
 2014,UNI,P,Coordinacion Academica,Diplomado Produccion Lechera,13,35,48,0,0,0,0,0,0,0,Ciencias Agrarias
 2014,UNI,P,Coordinacion Academica,Diplomado Produccion Animal con Nutricion,2,0,2,0,0,0,0,0,0,0,Ciencias Agrarias
-2014,UNI,P,Coordinacion Academica,Diplomado en Bioestadistica Intro. Diseño,7,8,15,0,0,0,0,0,0,0,Ciencias Basicas
-2014,UNI,P,Ingenieria,Maestria en Informatica Aplicada,1,2,3,0,0,0,0,0,0,0,Ingenieria y Tecnologia
+2014,UNI,P,Coordinacion Academica,Diplomado en Bioestadistica Intro. Diseño,7,8,15,0,0,0,0,0,0,0,Ciencias Básicas
+2014,UNI,P,Ingenieria,Maestria en Informatica Aplicada,1,2,3,0,0,0,0,0,0,0,Ingeniería y Tecnología
 2014,UNI,P,Medicina,Post Grado Hipertension Arterial,16,10,26,0,0,0,0,0,0,0,Salud
 2014,UNI,P,Medicina,Post Grado Epidemiologia,13,2,15,0,0,0,0,0,0,0,Salud
 2014,UNI,P,Medicina,Diplomado Actualizacion en Urgencia Medicas en Adultos,10,10,20,0,0,0,0,0,0,0,Salud
@@ -2628,33 +2628,33 @@
 2014,UNC,G,Ciencias Agrarias,Ingenieria Agronomica,88,161,249,6,18,24,273,0,0,0,Ciencias Agrarias
 2014,UNC,G,Ciencias Agrarias,Licenciatura en Administracion Agropecuaria,25,75,100,0,0,0,100,0,0,0,Ciencias Agrarias
 2014,UNC,G,Ciencias Agrarias,Licenciatura en Administracion Agronegocios,59,85,144,0,0,0,144,0,0,0,Ciencias Agrarias
-2014,UNC,G,Ciencias Economicas y Administrativas,Ingenieria Comercial,255,224,479,0,0,0,479,0,0,0,Ciencias Economicas y Administracion
-2014,UNC,G,Ciencias Economicas y Administrativas,Licenciatura en Ciencias Contables,84,81,165,0,0,0,165,0,0,0,Ciencias Economicas y Administracion
-2014,UNC,G,Ciencias Economicas y Administrativas,Ingenieria Informatica Empresarial,51,89,140,0,0,0,140,0,0,0,Ingenieria y Tecnologia
-2014,UNC,G,Ciencias Economicas y Administrativas,Administracion,2,4,6,0,0,0,6,0,0,0,Ciencias Economicas y Administracion
+2014,UNC,G,Ciencias Económicas y Administración,Ingenieria Comercial,255,224,479,0,0,0,479,0,0,0,Ciencias Económicas y Administración
+2014,UNC,G,Ciencias Económicas y Administración,Licenciatura en Ciencias Contables,84,81,165,0,0,0,165,0,0,0,Ciencias Económicas y Administración
+2014,UNC,G,Ciencias Económicas y Administración,Ingenieria Informatica Empresarial,51,89,140,0,0,0,140,0,0,0,Ingeniería y Tecnología
+2014,UNC,G,Ciencias Económicas y Administración,Administracion,2,4,6,0,0,0,6,0,0,0,Ciencias Económicas y Administración
 2014,UNC,G,Medicina,Nutricion,2,4,6,0,0,0,6,0,0,0,Salud
 2014,UNC,G,Medicina,Medicina,145,127,272,19,15,34,306,0,0,0,Salud
-2014,UNC,G,Humanidades y Ciencias de la Educacion,Licenciatura en Ciencias de la Educacion,191,63,254,18,7,25,279,0,0,0,Educacion y Humanidades
-2014,UNC,G,Humanidades y Ciencias de la Educacion,Licenciatura en Ciencias de la Comunicacion para el Desarrollo,15,10,25,0,0,0,25,0,0,0,Educacion y Humanidades
-2014,UNC,G,Humanidades y Ciencias de la Educacion,Licenciatura en Psicopedagogia,32,2,34,0,0,0,34,0,0,0,Educacion y Humanidades
-2014,UNC,G,Ciencias Exactas y Tecnologicas,Licenciatura en Matematica y Fisica,15,14,29,0,0,0,29,0,0,0,Ciencias Basicas
-2014,UNC,G,Ciencias Exactas y Tecnologicas,Ingenieria Civil,0,0,0,0,0,0,0,0,0,0,Ingenieria y Tecnologia
-2014,UNC,P,Rectorado,Didactica para la Educacion Superior,100,49,149,31,15,46,195,0,0,0,Educacion y Humanidades
-2014,UNC,P,Rectorado,Maestria en Docencia Universitaria,24,16,40,0,0,0,40,0,0,0,Educacion y Humanidades
+2014,UNC,G,Humanidades y Ciencias de la Educacion,Licenciatura en Ciencias de la Educacion,191,63,254,18,7,25,279,0,0,0,Educación y Humanidades
+2014,UNC,G,Humanidades y Ciencias de la Educacion,Licenciatura en Ciencias de la Comunicacion para el Desarrollo,15,10,25,0,0,0,25,0,0,0,Educación y Humanidades
+2014,UNC,G,Humanidades y Ciencias de la Educacion,Licenciatura en Psicopedagogia,32,2,34,0,0,0,34,0,0,0,Educación y Humanidades
+2014,UNC,G,Ciencias Exactas y Tecnologicas,Licenciatura en Matematica y Fisica,15,14,29,0,0,0,29,0,0,0,Ciencias Básicas
+2014,UNC,G,Ciencias Exactas y Tecnologicas,Ingenieria Civil,0,0,0,0,0,0,0,0,0,0,Ingeniería y Tecnología
+2014,UNC,P,Rectorado,Didactica para la Educacion Superior,100,49,149,31,15,46,195,0,0,0,Educación y Humanidades
+2014,UNC,P,Rectorado,Maestria en Docencia Universitaria,24,16,40,0,0,0,40,0,0,0,Educación y Humanidades
 2014,UNC,P,Ciencias Agrarias,Maestria en Produccion Vegetal - Control y manejo integrado de enfermedades,6,24,30,0,0,0,30,0,0,0,Ciencias Agrarias
-2014,UNC,P,Ciencias Economicas y Administrativas,Post Grado,1,0,1,0,0,0,1,0,0,0,Ciencias Economicas y Administracion
-2014,UNC,P,Ciencias Economicas y Administrativas,Maestria en Auditoria Integral,11,14,25,0,0,0,25,0,0,0,Ciencias Economicas y Administracion
+2014,UNC,P,Ciencias Económicas y Administración,Post Grado,1,0,1,0,0,0,1,0,0,0,Ciencias Económicas y Administración
+2014,UNC,P,Ciencias Económicas y Administración,Maestria en Auditoria Integral,11,14,25,0,0,0,25,0,0,0,Ciencias Económicas y Administración
 2014,UNC,P,Medicina,Post Grado de Especializacion en Salud Publica,0,0,0,14,2,16,16,0,0,0,Salud
-2014,UNC,P,Humanidades y Ciencias de la Educacion,Maestria en Investigacion Cientifica,19,3,22,0,0,0,22,0,0,0,Educacion y Humanidades
-2014,UNVES,G,Ciencias Economicas,Grado,420,290,710,57,18,75,785,0,0,0,Ciencias Economicas y Administracion
-2014,UNVES,G,Filosofia y Ciencias Humanas,Grado,129,127,256,26,12,38,294,0,0,0,Educacion y Humanidades
-2014,UNVES,G,Politecnica,Grado,241,288,529,7,11,18,547,0,0,0,Ingenieria y Tecnologia
+2014,UNC,P,Humanidades y Ciencias de la Educacion,Maestria en Investigacion Cientifica,19,3,22,0,0,0,22,0,0,0,Educación y Humanidades
+2014,UNVES,G,Ciencias Economicas,Grado,420,290,710,57,18,75,785,0,0,0,Ciencias Económicas y Administración
+2014,UNVES,G,Filosofia y Ciencias Humanas,Grado,129,127,256,26,12,38,294,0,0,0,Educación y Humanidades
+2014,UNVES,G,Politecnica,Grado,241,288,529,7,11,18,547,0,0,0,Ingeniería y Tecnología
 2014,UNVES,G,Postgrado,Grado,380,312,692,92,29,121,813,0,0,0,Multidisciplinaria
 2014,UNVES,G,Ciencias de la Salud,Grado,387,187,574,63,15,78,652,0,0,0,Salud
 2014,UNVES,G,Ciencias Agrarias,Grado,207,159,366,0,0,0,366,0,0,0,Ciencias Agrarias
-2014,UNVES,G,Ciencias Fisicas Quimicas y Matematica,Grado,220,180,400,2,0,2,402,0,0,0,Ciencias Basicas
+2014,UNVES,G,Ciencias Fisicas Quimicas y Matematica,Grado,220,180,400,2,0,2,402,0,0,0,Ciencias Básicas
 2014,UNVES,G,Ciencias Politicas y Sociales,Grado,166,117,283,2,2,4,287,0,0,0,Derecho y Ciencias Sociales
-2014,UNVES,G,Facultad de Arquitectura e Ingenieria,Grado,64,33,97,0,0,0,97,0,0,0,Ingenieria y Tecnologia
+2014,UNVES,G,Facultad de Arquitectura e Ingenieria,Grado,64,33,97,0,0,0,97,0,0,0,Ingeniería y Tecnología
 2014,UNVES,G,Ciencias Sede Carapegua,Grado,414,379,793,2,0,2,795,0,0,0,Multidisciplinaria
 2014,UNVES,G,Ciencias Sede Caazapa,Grado,416,329,745,0,0,0,745,0,0,0,Multidisciplinaria
 2014,UNVES,G,Ciencias Sede Paraguari,Grado,140,128,268,0,0,0,268,0,0,0,Multidisciplinaria
@@ -2662,18 +2662,18 @@
 2014,UNVES,G,Ciencias Sede Yuty,Grado,70,51,121,0,0,0,121,0,0,0,Multidisciplinaria
 2014,UNVES,P,Postgrado,Especializacion en Terapia Cognitivo Conductual año 2012,11,8,19,7,2,9,28,0,0,0,Salud
 2014,UNVES,P,Postgrado,Especializacion en Psicologia Clinica,22,18,40,32,4,36,76,0,0,0,Salud
-2014,UNVES,P,Postgrado,Especializacion en Didactica Superior Universitaria Seccion Carapegua,18,14,32,15,8,23,55,0,0,0,Educacion y Humanidades
+2014,UNVES,P,Postgrado,Especializacion en Didactica Superior Universitaria Seccion Carapegua,18,14,32,15,8,23,55,0,0,0,Educación y Humanidades
 2014,UNVES,P,Postgrado,Maestria en Ciencias Penales con Enfasis en Derecho Constitucional,7,6,13,0,0,0,13,0,0,0,Derecho y Ciencias Sociales
 2014,UNVES,P,Postgrado,Especializacion en Psiquiatria y Psicologia Clinica de la Infancia y la Adolescencia,37,31,68,40,5,45,113,0,0,0,Salud
 2014,UNVES,P,Postgrado,Especializacion en Terapia Cognitivo Conductual Año 2013,29,24,53,0,0,0,53,0,0,0,Salud
-2014,UNVES,P,Postgrado,Maestria en Didactica Superior Universitaria-Virtual,233,195,428,0,0,0,428,0,0,0,Educacion y Humanidades
-2014,UNVES,P,Postgrado,Especializacion en Didactica Superior Universitaria Villarrica,23,16,39,23,11,34,73,0,0,0,Educacion y Humanidades
-2014,UNCA,G,Ciencias Economicas,Plan Comun,94,59,153,0,0,0,153,0,0,0,Ciencias Economicas y Administracion
-2014,UNCA,G,Ciencias Economicas,Economia,39,17,56,4,2,6,62,0,0,0,Ciencias Economicas y Administracion
-2014,UNCA,G,Ciencias Economicas,Contaduria Publica,51,44,95,10,3,13,108,0,0,0,Ciencias Economicas y Administracion
-2014,UNCA,G,Ciencias Economicas,Administracion de Empresas,63,22,85,11,2,13,98,0,0,0,Ciencias Economicas y Administracion
-2014,UNCA,G,Ciencias Economicas,Tributacion,17,8,25,0,0,0,25,0,0,0,Ciencias Economicas y Administracion
-2014,UNCA,G,Ciencias Economicas,Filial Caaguazu Plan Comun,33,27,60,0,0,0,60,0,0,0,Ciencias Economicas y Administracion
+2014,UNVES,P,Postgrado,Maestria en Didactica Superior Universitaria-Virtual,233,195,428,0,0,0,428,0,0,0,Educación y Humanidades
+2014,UNVES,P,Postgrado,Especializacion en Didactica Superior Universitaria Villarrica,23,16,39,23,11,34,73,0,0,0,Educación y Humanidades
+2014,UNCA,G,Ciencias Economicas,Plan Comun,94,59,153,0,0,0,153,0,0,0,Ciencias Económicas y Administración
+2014,UNCA,G,Ciencias Economicas,Economia,39,17,56,4,2,6,62,0,0,0,Ciencias Económicas y Administración
+2014,UNCA,G,Ciencias Economicas,Contaduria Publica,51,44,95,10,3,13,108,0,0,0,Ciencias Económicas y Administración
+2014,UNCA,G,Ciencias Economicas,Administracion de Empresas,63,22,85,11,2,13,98,0,0,0,Ciencias Económicas y Administración
+2014,UNCA,G,Ciencias Economicas,Tributacion,17,8,25,0,0,0,25,0,0,0,Ciencias Económicas y Administración
+2014,UNCA,G,Ciencias Economicas,Filial Caaguazu Plan Comun,33,27,60,0,0,0,60,0,0,0,Ciencias Económicas y Administración
 2014,UNCA,G,Ciencias Medicas,Medicina,125,89,214,11,4,15,229,0,0,0,Salud
 2014,UNCA,G,Ciencias Sociales y Politicas,Ciencias Politicas,43,49,92,1,1,2,94,0,0,0,Derecho y Ciencias Sociales
 2014,UNCA,G,Ciencias Sociales y Politicas,Abogacia,101,99,200,0,0,0,200,0,0,0,Derecho y Ciencias Sociales
@@ -2688,18 +2688,18 @@
 2014,UNCA,G,Ciencias de la Produccion Filial J.E. Estigarribia,"Ingenieria de Produccion, Medicina Veterinaria",43,78,121,0,0,0,121,0,0,0,Multidisciplinaria
 2014,UNCA,G,Ciencias de la Produccion Seccion San Juan Nepomuceno,"Ingenieria Agroforestal, Ingenieria Zootecnica",32,48,80,0,0,0,80,0,0,0,Multidisciplinaria
 2014,UNCA,G,Ciencias de la Salud,Licenciatura en Enfermeria,172,51,223,74,10,84,307,0,0,0,Salud
-2014,UNCA,G,Ciencias y Tecnologia,Ingenieria en Electricidad,12,74,86,0,0,0,86,0,0,0,Ingenieria y Tecnologia
-2014,UNCA,G,Ciencias y Tecnologia,Ingenieria en Informatica,21,52,73,0,0,0,73,0,0,0,Ingenieria y Tecnologia
-2014,UNCA,G,Ciencias y Tecnologia,Ingenieria en Electronica,12,29,41,0,0,0,41,0,0,0,Ingenieria y Tecnologia
-2014,UNCA,G,Ciencias y Tecnologia,Ingenieria Civil,37,51,88,0,0,0,88,0,0,0,Ingenieria y Tecnologia
+2014,UNCA,G,Ciencias y Tecnologia,Ingenieria en Electricidad,12,74,86,0,0,0,86,0,0,0,Ingeniería y Tecnología
+2014,UNCA,G,Ciencias y Tecnologia,Ingenieria en Informatica,21,52,73,0,0,0,73,0,0,0,Ingeniería y Tecnología
+2014,UNCA,G,Ciencias y Tecnologia,Ingenieria en Electronica,12,29,41,0,0,0,41,0,0,0,Ingeniería y Tecnología
+2014,UNCA,G,Ciencias y Tecnologia,Ingenieria Civil,37,51,88,0,0,0,88,0,0,0,Ingeniería y Tecnología
 2014,UNCA,G,Odontologia,Odontologia,140,43,183,0,0,0,183,0,0,0,Salud
-2014,UNCA,G,Escuela de Artes y Desarrollo de Talentos,Licenciatura en Musica,16,18,34,0,0,0,34,0,0,0,Educacion y Humanidades
-2014,UNCA,P,Ciencias de la Produccion,Especializacion en Didactica Universitaria,54,81,135,0,0,0,135,0,0,0,Educacion y Humanidades
-2014,UNCA,P,Ciencias de la Produccion,Metodologia y Tecnicas de la Investigacion (Grupo I),28,20,48,0,0,0,48,0,0,0,Educacion y Humanidades
-2014,UNCA,P,Ciencias de la Produccion,Metodologia y Tecnicas de la Investigacion (Grupo II),4,10,14,0,0,0,14,0,0,0,Educacion y Humanidades
+2014,UNCA,G,Escuela de Artes y Desarrollo de Talentos,Licenciatura en Musica,16,18,34,0,0,0,34,0,0,0,Educación y Humanidades
+2014,UNCA,P,Ciencias de la Produccion,Especializacion en Didactica Universitaria,54,81,135,0,0,0,135,0,0,0,Educación y Humanidades
+2014,UNCA,P,Ciencias de la Produccion,Metodologia y Tecnicas de la Investigacion (Grupo I),28,20,48,0,0,0,48,0,0,0,Educación y Humanidades
+2014,UNCA,P,Ciencias de la Produccion,Metodologia y Tecnicas de la Investigacion (Grupo II),4,10,14,0,0,0,14,0,0,0,Educación y Humanidades
 2014,UNCA,P,Ciencias de la Produccion,"Diplomados: Liderazgo y Gestion Organizacional; Formacion y Evaluacion de Proyectos; Lengua Portuguesa; Informatica; Metodologia y Tecnicas de la Investigacion",105,92,197,0,0,0,197,0,0,0,Multidisciplinaria
-2014,UNCA,P,Facultad de Ciencias Economicas,Especializacion en Didactica Universitaria Sede,61,54,115,0,0,0,115,0,0,0,Educacion y Humanidades
-2014,UNCA,P,Facultad de Ciencias Economicas,Especializacion en Didactica Universitaria Filial,18,15,33,0,0,0,33,0,0,0,Educacion y Humanidades
+2014,UNCA,P,Facultad de Ciencias Economicas,Especializacion en Didactica Universitaria Sede,61,54,115,0,0,0,115,0,0,0,Educación y Humanidades
+2014,UNCA,P,Facultad de Ciencias Economicas,Especializacion en Didactica Universitaria Filial,18,15,33,0,0,0,33,0,0,0,Educación y Humanidades
 2014,UNCA,P,Ciencias Sociales y Politicas,Diplomado en Servicio Nacional de Facilitadores Judiciales,27,17,44,0,0,0,44,0,0,0,Derecho y Ciencias Sociales
 2014,UNCA,P,Ciencias Medicas,De Formacion de Especialistas en Ecografia General,97,183,280,35,50,85,365,0,0,0,Salud
 2014,UNCA,P,Ciencias Medicas,De Formacion de Especialistas en Climaterio y Menopausia,73,23,96,29,9,38,134,0,0,0,Salud
@@ -2708,10 +2708,10 @@
 2014,UNCA,P,Ciencias Medicas,De Intensivo de Especializacion en Cirugia General y Oncologica,20,38,58,0,0,0,58,0,0,0,Salud
 2014,UNCA,P,Ciencias Medicas,De Diplomado en Reproduccion Asistida de Baja Complejidad,21,7,28,0,0,0,28,0,0,0,Salud
 2014,UNCA,P,Ciencias Medicas,De Formacion de Diplomado y Especialistas en Neonatologia,53,17,70,0,0,0,70,0,0,0,Salud
-2014,UNICAN,G,FACEM,Contabilidad,252,150,402,0,0,0,402,0,0,0,Ciencias Economicas y Administracion
-2014,UNICAN,G,FACEM,Administracion,85,57,142,0,0,0,142,0,0,0,Ciencias Economicas y Administracion
+2014,UNICAN,G,FACEM,Contabilidad,252,150,402,0,0,0,402,0,0,0,Ciencias Económicas y Administración
+2014,UNICAN,G,FACEM,Administracion,85,57,142,0,0,0,142,0,0,0,Ciencias Económicas y Administración
 2014,UNICAN,G,FACIJS,Derecho,118,96,214,0,0,0,214,0,0,0,Derecho y Ciencias Sociales
 2014,UNICAN,G,FCAA,Agronomia,28,73,101,0,0,0,101,0,0,0,Ciencias Agrarias
-2014,UNICAN,G,FACITEC,Analisis de Sistemas,59,143,202,0,0,0,202,0,0,0,Ingenieria y Tecnologia
+2014,UNICAN,G,FACITEC,Analisis de Sistemas,59,143,202,0,0,0,202,0,0,0,Ingeniería y Tecnología
 2014,UNICAN,G,FCV,Veterinaria,17,24,41,0,0,0,41,0,0,0,Ciencias Veterinarias
 2014,UNICAN,G,FACISA,Enfermeria,27,4,31,0,0,0,31,0,0,0,Salud
