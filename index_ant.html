@@ -29,33 +29,6 @@
         select, input { cursor: pointer; }
         @media (max-width: 768px) { .total-number { font-size: 1.6rem; } }
         .chart-container canvas { max-height: 280px; width: 100%; }
-
-        /* ---------- MODO PRESENTACIÓN (carrusel 16:9) ---------- */
-        .presentation-overlay { position: fixed; inset: 0; background: #0a1e2c; z-index: 2000; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1rem; }
-        .presentation-stage-wrap { display: flex; align-items: center; justify-content: center; width: 100vw; height: calc(100vh - 70px); }
-        .presentation-stage { width: 1600px; height: 900px; background: #f4f7fc; border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; flex-shrink: 0; }
-        .presentation-stage-header { padding: 14px 30px; background: linear-gradient(135deg, #0a2b3e 0%, #1b4f6e 100%); color: white; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
-        .presentation-stage-header strong { font-size: 1.15rem; }
-        .presentation-stage-body { flex: 1; padding: 20px 26px; display: grid; gap: 16px; overflow: hidden; min-height: 0; }
-        .presentation-stage-body.slide-1 { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
-        .presentation-stage-body.slide-2, .presentation-stage-body.slide-3 { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); }
-        .presentation-stage-body > * { min-height: 0; min-width: 0; }
-        .presentation-controls { display: flex; gap: 12px; align-items: center; color: white; }
-        body.presentation-mode { overflow: hidden; }
-        body.presentation-mode .chart-container { height: 100%; display: flex; flex-direction: column; padding: 0.75rem 1rem; }
-        body.presentation-mode .chart-container h5 { font-size: 0.85rem; margin-bottom: 0.5rem !important; flex-shrink: 0; }
-        body.presentation-mode .chart-container canvas { flex: 1; max-height: none !important; height: 100% !important; width: 100% !important; }
-        body.presentation-mode .chart-container p.small, body.presentation-mode .chart-container p.text-muted { font-size: 0.65rem; flex-shrink: 0; margin-top: 0.25rem !important; }
-        body.presentation-mode #kpiContainer { height: 100%; margin: 0; }
-        body.presentation-mode #kpiContainer .total-number { font-size: 1.6rem; }
-        body.presentation-mode #kpiContainer .total-label { font-size: 0.65rem; }
-        body.presentation-mode #kpiContainer .card-stats { padding: 0.7rem !important; }
-        body.presentation-mode #colYearChart { height: 100%; }
-        body.presentation-mode #rowBudgetYear, body.presentation-mode #colBudgetPerMat, body.presentation-mode #colBudgetPerGrad,
-        body.presentation-mode #colAreaMat, body.presentation-mode #colAreaEgr, body.presentation-mode #colAreaDoc { height: 100%; margin: 0; }
-        body.presentation-mode #rowBudgetYear .col-12 { height: 100%; }
-        body.presentation-mode #genderSlot, body.presentation-mode #univBarSlot { height: 100%; margin: 0; }
-        body.presentation-mode #genderSlot > div, body.presentation-mode #univBarSlot > div { height: 100%; }
     </style>
 </head>
 <body>
@@ -75,7 +48,6 @@
                     <label for="presupUpload" class="btn btn-outline-secondary rounded-pill ms-2"><i class="bi bi-cash-coin"></i> Cargar presupuesto CSV</label>
                     <input type="file" id="presupUpload" accept=".csv" style="display: none;">
                     <button id="resetFiltersBtn" class="btn btn-light rounded-pill ms-2 border"><i class="bi bi-arrow-repeat"></i> Reiniciar</button>
-                    <button id="presentationModeBtn" class="btn btn-primary-custom rounded-pill ms-2"><i class="bi bi-easel2"></i> Modo presentación</button>
                 </div>
             </div>
         </div>
@@ -131,99 +103,91 @@
     <div class="row g-4 mb-4" id="kpiContainer">
         <div class="col-md-3 col-6">
             <div class="card card-stats p-3 h-100">
-                <div class="total-label"><i class="bi bi-people-fill"></i> MATRICULADOS (promedio anual)</div>
+                <div class="total-label"><i class="bi bi-people-fill"></i> MATRICULADOS</div>
                 <div class="total-number" id="totalMatriculados">0</div>
                 <div class="mt-2 small"><span class="gender-badge"><i class="bi bi-gender-male"></i> H: <span id="totalMatH">0</span></span> <span class="gender-badge ms-2"><i class="bi bi-gender-female"></i> M: <span id="totalMatM">0</span></span></div>
-                <div class="mt-1 small text-muted" id="matYearsNote">—</div>
             </div>
         </div>
         <div class="col-md-3 col-6">
             <div class="card card-stats p-3 h-100">
-                <div class="total-label"><i class="bi bi-mortarboard"></i> EGRESADOS (promedio anual)</div>
+                <div class="total-label"><i class="bi bi-mortarboard"></i> EGRESADOS</div>
                 <div class="total-number" id="totalEgresados">0</div>
                 <div class="mt-2 small"><span class="gender-badge">H: <span id="totalEgrH">0</span></span> <span class="gender-badge ms-2">M: <span id="totalEgrM">0</span></span></div>
-                <div class="mt-1 small text-muted" id="egrYearsNote">—</div>
             </div>
         </div>
         <div class="col-md-3 col-6">
             <div class="card card-stats p-3 h-100">
-                <div class="total-label"><i class="bi bi-person-workspace"></i> DOCENTES (promedio anual)</div>
+                <div class="total-label"><i class="bi bi-person-workspace"></i> DOCENTES</div>
                 <div class="total-number" id="totalDocentes">0</div>
                 <div class="mt-2 small"><span class="gender-badge">H: <span id="totalDocH">0</span></span> <span class="gender-badge ms-2">M: <span id="totalDocM">0</span></span></div>
-                <div class="mt-1 small text-muted" id="docYearsNote">—</div>
             </div>
         </div>
         <div class="col-md-3 col-6">
             <div class="card card-stats p-3 h-100">
-                <div class="total-label"><i class="bi bi-bar-chart-steps"></i> TOTAL GENERAL (promedio anual)</div>
+                <div class="total-label"><i class="bi bi-bar-chart-steps"></i> TOTAL GENERAL</div>
                 <div class="total-number" id="totalGeneral">0</div>
                 <div class="mt-2 small"><i class="bi bi-database"></i> Matriculados + Egresados</div>
-                <div class="mt-1 small text-muted" id="generalYearsNote">—</div>
             </div>
         </div>
     </div>
 
     <!-- Evolución anual (principal) -->
     <div class="row g-4 mb-4">
-        <div class="col-12" id="colYearChart">
+        <div class="col-12">
             <div class="chart-container">
                 <h5 class="fw-semibold mb-3"><i class="bi bi-graph-up-arrow"></i> Evolución anual de indicadores</h5>
                 <canvas id="yearChart" width="400" height="280" style="max-height: 340px; width: 100%;"></canvas>
-                <p class="text-muted small mb-0 mt-2" id="yearChartDocNote"></p>
             </div>
         </div>
     </div>
 
     <!-- NUEVA FILA: Evolución por área (3 gráficos de línea, UNO DEBAJO DEL OTRO y ANCHO COMPLETO) -->
     <div class="row g-4 mb-4">
-        <div class="col-12" id="colAreaMat">
+        <div class="col-12">
             <div class="chart-container">
                 <h5 class="fw-semibold mb-3"><i class="bi bi-graph-up"></i> Evolución de Matriculados por área de conocimiento</h5>
                 <canvas id="areaMatriculadosChart" width="400" height="280"></canvas>
             </div>
         </div>
-        <div class="col-12" id="colAreaEgr">
+        <div class="col-12">
             <div class="chart-container">
                 <h5 class="fw-semibold mb-3"><i class="bi bi-graph-up"></i> Evolución de Egresados por área de conocimiento</h5>
                 <canvas id="areaEgresadosChart" width="400" height="280"></canvas>
             </div>
         </div>
-        <div class="col-12" id="colAreaDoc">
+        <div class="col-12">
             <div class="chart-container">
                 <h5 class="fw-semibold mb-3"><i class="bi bi-graph-up"></i> Evolución de Docentes por área de conocimiento</h5>
                 <canvas id="areaDocentesChart" width="400" height="280"></canvas>
-                <p class="text-muted small mb-0 mt-2"><i class="bi bi-exclamation-circle"></i> No se declararon docentes en 2014; ese punto se omite (no representa un valor real de cero).</p>
             </div>
         </div>
     </div>
 
     <!-- FILA: Distribución por género (Matriculados y Graduados) juntos -->
-    <div class="row g-4 mb-4" id="genderSlot">
-        <div class="col-lg-6" id="colGenderMat">
+    <div class="row g-4 mb-4">
+        <div class="col-lg-6">
             <div class="chart-container">
-                <h5 class="fw-semibold mb-3"><i class="bi bi-pie-chart"></i> Distribución por Género (Matriculados) — Promedio anual</h5>
+                <h5 class="fw-semibold mb-3"><i class="bi bi-pie-chart"></i> Distribución por Género (Matriculados)</h5>
                 <canvas id="genderPieChart" width="400" height="280"></canvas>
-                <p class="text-muted small mb-0 mt-2" id="genderMatNote"></p>
             </div>
         </div>
-        <div class="col-lg-6" id="colGenderGrad">
+        <div class="col-lg-6">
             <div class="chart-container">
-                <h5 class="fw-semibold mb-3"><i class="bi bi-pie-chart"></i> Distribución por Género (Graduados) — Promedio anual</h5>
+                <h5 class="fw-semibold mb-3"><i class="bi bi-pie-chart"></i> Distribución por Género (Graduados)</h5>
                 <canvas id="genderPieChartGraduados" width="400" height="280"></canvas>
-                <p class="text-muted small mb-0 mt-2" id="genderGradNote"></p>
             </div>
         </div>
     </div>
 
     <!-- FILA: Top 8 universidades (matriculados y graduados) -->
-    <div class="row g-4 mb-4" id="univBarSlot">
-        <div class="col-lg-6" id="colUnivMat">
+    <div class="row g-4 mb-4">
+        <div class="col-lg-6">
             <div class="chart-container">
                 <h5 class="fw-semibold mb-3"><i class="bi bi-bar-chart"></i> Matriculados por Universidad (Top 8)</h5>
                 <canvas id="barChartMatriculadosUniv" width="400" height="280"></canvas>
             </div>
         </div>
-        <div class="col-lg-6" id="colUnivGrad">
+        <div class="col-lg-6">
             <div class="chart-container">
                 <h5 class="fw-semibold mb-3"><i class="bi bi-bar-chart"></i> Graduados por Universidad (Top 8)</h5>
                 <canvas id="barChartGraduadosUniv" width="400" height="280"></canvas>
@@ -243,63 +207,44 @@
             <div class="chart-container h-100 d-flex flex-column justify-content-center">
                 <h5 class="fw-semibold mb-3"><i class="bi bi-info-circle"></i> Sobre el presupuesto</h5>
                 <p class="text-muted small mb-0">
-                    Los gráficos de presupuesto, abajo, se calculan con base en el archivo <code>presup_por_univ.csv</code>,
+                    Los gráficos de presupuesto, abajo, se calculan con base en el archivo <code>presup por univ.csv</code>,
                     cruzado por <strong>Año</strong> y <strong>Universidad</strong>. Los filtros de Nivel sí afectan la cantidad
                     de matriculados/graduados usada para los cocientes (presupuesto por matriculado/graduado). Los filtros de
                     Área, Unidad Académica y Programa no tienen equivalencia en el presupuesto institucional y se ignoran
-                    para estos gráficos. Los datos de presupuesto están disponibles solo desde <strong>2016</strong>.
+                    para estos gráficos.
                 </p>
             </div>
         </div>
     </div>
 
-    <!-- Aviso de referencialidad del presupuesto -->
-    <div class="row g-4 mb-4" id="rowBudgetWarning">
-        <div class="col-12">
-            <div class="alert alert-warning rounded-4 shadow-sm d-flex align-items-start gap-2 mb-0" role="alert">
-                <i class="bi bi-exclamation-triangle-fill fs-5"></i>
-                <div>
-                    <strong>Valores referenciales.</strong> Los cocientes <em>presupuesto por matriculado</em> y
-                    <em>presupuesto por graduado</em> sirven únicamente para comparar entre universidades y años entre sí;
-                    no representan el costo real por estudiante (el presupuesto institucional incluye gastos que no se
-                    distribuyen exclusivamente en matrícula o egreso). Además, el presupuesto solo está disponible desde
-                    <strong>2016</strong>: si filtrás por 2014 o 2015 no habrá datos de presupuesto que mostrar.
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Presupuesto por año -->
-    <div class="row g-4 mb-4" id="rowBudgetYear">
+    <div class="row g-4 mb-4">
         <div class="col-12">
-            <div class="chart-container position-relative">
+            <div class="chart-container">
                 <h5 class="fw-semibold mb-3"><i class="bi bi-cash-coin"></i> Presupuesto por Año</h5>
                 <canvas id="budgetYearChart" width="400" height="280"></canvas>
-                <div id="budgetYearEmptyMsg" class="text-muted small text-center py-4 d-none"></div>
             </div>
         </div>
     </div>
 
     <!-- Presupuesto por matriculado / graduado -->
     <div class="row g-4 mb-4">
-        <div class="col-lg-6" id="colBudgetPerMat">
-            <div class="chart-container position-relative">
-                <h5 class="fw-semibold mb-3"><i class="bi bi-graph-up"></i> Presupuesto por Matriculado <span class="badge bg-warning text-dark rounded-pill ms-1" style="font-size:.65rem;">referencial</span></h5>
+        <div class="col-lg-6">
+            <div class="chart-container">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-graph-up"></i> Presupuesto por Matriculado</h5>
                 <canvas id="budgetPerMatriculadoChart" width="400" height="280"></canvas>
-                <div id="budgetPerMatriculadoEmptyMsg" class="text-muted small text-center py-4 d-none"></div>
             </div>
         </div>
-        <div class="col-lg-6" id="colBudgetPerGrad">
-            <div class="chart-container position-relative">
-                <h5 class="fw-semibold mb-3"><i class="bi bi-graph-up"></i> Presupuesto por Graduado <span class="badge bg-warning text-dark rounded-pill ms-1" style="font-size:.65rem;">referencial</span></h5>
+        <div class="col-lg-6">
+            <div class="chart-container">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-graph-up"></i> Presupuesto por Graduado</h5>
                 <canvas id="budgetPerGraduadoChart" width="400" height="280"></canvas>
-                <div id="budgetPerGraduadoEmptyMsg" class="text-muted small text-center py-4 d-none"></div>
             </div>
         </div>
     </div>
 
     <!-- Tabla -->
-    <div class="filter-card p-0 overflow-hidden" id="colDataTable">
+    <div class="filter-card p-0 overflow-hidden">
         <div class="bg-white p-3 border-bottom d-flex justify-content-between align-items-center">
             <h5 class="mb-0 fw-semibold"><i class="bi bi-table"></i> Registros filtrados</h5>
             <span class="badge bg-secondary rounded-pill" id="rowCountBadge">0 registros</span>
@@ -336,7 +281,7 @@
     let budgetPerMatriculadoChart = null, budgetPerGraduadoChart = null;
 
     const UNIVERSIDADES_CSV_PATH = 'universidades_py_con_area.csv';
-    const PRESUPUESTO_CSV_PATH = 'presup_por_univ.csv';
+    const PRESUPUESTO_CSV_PATH = 'presup por univ.csv';
 
     const filterAnho = document.getElementById('filterAnho');
     const filterUniv = document.getElementById('filterUniv');
@@ -574,19 +519,7 @@
     }
 
     // ---------- KPI ----------
-    // Año en el que docentes aún no se declaraban (figura en 0 pero no es un valor real)
-    const DOCENTES_NO_DECLARADO_ANHO = '2014';
-
-    function yearRangeLabel(years) {
-        if (!years.length) return '';
-        if (years.length === 1) return years[0];
-        return `${years[0]}–${years[years.length - 1]}`;
-    }
-
     function updateTotals(data) {
-        const years = uniqueSorted(data.map(d => d.anho), true);
-        const yearCount = years.length || 1;
-
         const totalMatM = data.reduce((sum, d) => sum + d.matriculados_m, 0);
         const totalMatH = data.reduce((sum, d) => sum + d.matriculados_h, 0);
         const totalMat = totalMatM + totalMatH;
@@ -595,43 +528,23 @@
         const totalEgrH = data.reduce((sum, d) => sum + d.egresados_h, 0);
         const totalEgr = totalEgrM + totalEgrH;
 
-        const totalGeneral = data.reduce((sum, d) => sum + (d.total_general || (d.matriculados_t + d.egresados_t)), 0);
-
-        // Docentes: 2014 no se declaraba, se excluye del promedio para no distorsionarlo
-        const docData = data.filter(d => d.anho !== DOCENTES_NO_DECLARADO_ANHO);
-        const docYears = uniqueSorted(docData.map(d => d.anho), true);
-        const docYearCount = docYears.length;
-        const totalDocM = docData.reduce((sum, d) => sum + d.docentes_m, 0);
-        const totalDocH = docData.reduce((sum, d) => sum + d.docentes_h, 0);
+        const totalDocM = data.reduce((sum, d) => sum + d.docentes_m, 0);
+        const totalDocH = data.reduce((sum, d) => sum + d.docentes_h, 0);
         const totalDoc = totalDocM + totalDocH;
 
-        const avg = (n) => Math.round(n / yearCount);
-        const avgMat = avg(totalMat), avgMatM = avg(totalMatM), avgMatH = avg(totalMatH);
-        const avgEgr = avg(totalEgr), avgEgrM = avg(totalEgrM), avgEgrH = avg(totalEgrH);
-        const avgGeneral = avg(totalGeneral);
-        const avgDoc = docYearCount ? Math.round(totalDoc / docYearCount) : 0;
-        const avgDocM = docYearCount ? Math.round(totalDocM / docYearCount) : 0;
-        const avgDocH = docYearCount ? Math.round(totalDocH / docYearCount) : 0;
+        const totalGeneral = data.reduce((sum, d) => sum + (d.total_general || (d.matriculados_t + d.egresados_t)), 0);
 
-        document.getElementById('totalMatriculados').innerText = avgMat.toLocaleString('es-PY');
-        document.getElementById('totalMatM').innerText = avgMatM.toLocaleString('es-PY');
-        document.getElementById('totalMatH').innerText = avgMatH.toLocaleString('es-PY');
-        document.getElementById('totalEgresados').innerText = avgEgr.toLocaleString('es-PY');
-        document.getElementById('totalEgrM').innerText = avgEgrM.toLocaleString('es-PY');
-        document.getElementById('totalEgrH').innerText = avgEgrH.toLocaleString('es-PY');
-        document.getElementById('totalDocentes').innerText = avgDoc.toLocaleString('es-PY');
-        document.getElementById('totalDocM').innerText = avgDocM.toLocaleString('es-PY');
-        document.getElementById('totalDocH').innerText = avgDocH.toLocaleString('es-PY');
-        document.getElementById('totalGeneral').innerText = avgGeneral.toLocaleString('es-PY');
+        document.getElementById('totalMatriculados').innerText = totalMat.toLocaleString('es-PY');
+        document.getElementById('totalMatM').innerText = totalMatM.toLocaleString('es-PY');
+        document.getElementById('totalMatH').innerText = totalMatH.toLocaleString('es-PY');
+        document.getElementById('totalEgresados').innerText = totalEgr.toLocaleString('es-PY');
+        document.getElementById('totalEgrM').innerText = totalEgrM.toLocaleString('es-PY');
+        document.getElementById('totalEgrH').innerText = totalEgrH.toLocaleString('es-PY');
+        document.getElementById('totalDocentes').innerText = totalDoc.toLocaleString('es-PY');
+        document.getElementById('totalDocM').innerText = totalDocM.toLocaleString('es-PY');
+        document.getElementById('totalDocH').innerText = totalDocH.toLocaleString('es-PY');
+        document.getElementById('totalGeneral').innerText = totalGeneral.toLocaleString('es-PY');
         document.getElementById('rowCountBadge').innerText = `${data.length} registros`;
-
-        const yearsNote = `Promedio de ${yearCount} año${yearCount === 1 ? '' : 's'} (${yearRangeLabel(years)})`;
-        document.getElementById('matYearsNote').innerText = yearsNote;
-        document.getElementById('egrYearsNote').innerText = yearsNote;
-        document.getElementById('generalYearsNote').innerText = yearsNote;
-        document.getElementById('docYearsNote').innerText = docYearCount
-            ? `Promedio de ${docYearCount} año${docYearCount === 1 ? '' : 's'} (${yearRangeLabel(docYears)}) · 2014 excluido (no declarado)`
-            : 'Sin datos de docentes declarados en el período seleccionado';
 
         return { totalMatM, totalMatH, totalMat, totalEgr, totalDoc };
     }
@@ -677,9 +590,7 @@
         const labels = [...yearMap.keys()].sort((a, b) => Number(a) - Number(b) || String(a).localeCompare(String(b)));
         const matriculados = labels.map(y => yearMap.get(y).matriculados);
         const egresados = labels.map(y => yearMap.get(y).egresados);
-        // Docentes: 2014 no se declaraba -> null para que el gráfico muestre un corte, no un cero real
-        const docentes = labels.map(y => y === DOCENTES_NO_DECLARADO_ANHO ? null : yearMap.get(y).docentes);
-        const hasDocentesGap = labels.includes(DOCENTES_NO_DECLARADO_ANHO);
+        const docentes = labels.map(y => yearMap.get(y).docentes);
 
         if (yearChart) yearChart.destroy();
         const ctx = document.getElementById('yearChart').getContext('2d');
@@ -690,7 +601,7 @@
                 datasets: [
                     { label: 'Matriculados', data: matriculados, borderWidth: 2, tension: 0.25, fill: false },
                     { label: 'Egresados', data: egresados, borderWidth: 2, tension: 0.25, fill: false },
-                    { label: 'Docentes', data: docentes, borderWidth: 2, tension: 0.25, fill: false, spanGaps: false }
+                    { label: 'Docentes', data: docentes, borderWidth: 2, tension: 0.25, fill: false }
                 ]
             },
             options: {
@@ -698,16 +609,11 @@
                 maintainAspectRatio: true,
                 plugins: {
                     legend: { position: 'top' },
-                    tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${ctx.raw === null ? 'no declarado' : Number(ctx.raw).toLocaleString('es-PY')}` } }
+                    tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString('es-PY')}` } }
                 },
                 scales: { y: { beginAtZero: true, ticks: { callback: (value) => Number(value).toLocaleString('es-PY') } } }
             }
         });
-
-        const note = document.getElementById('yearChartDocNote');
-        note.innerHTML = hasDocentesGap
-            ? '<i class="bi bi-exclamation-circle"></i> El corte en la línea de Docentes en 2014 indica que ese dato no se declaraba ese año, no que el valor fuera cero.'
-            : '';
     }
 
     function updateAreaCharts(data) {
@@ -748,10 +654,7 @@
 
         function buildDataset(metricKey, labelPrefix) {
             return finalAreas.map((area, idx) => {
-                const values = years.map(y => {
-                    if (metricKey === 'doc' && y === DOCENTES_NO_DECLARADO_ANHO) return null; // no declarado, no es cero real
-                    return (dataMap[y] && dataMap[y][area]) ? dataMap[y][area][metricKey] : 0;
-                });
+                const values = years.map(y => (dataMap[y] && dataMap[y][area]) ? dataMap[y][area][metricKey] : 0);
                 return {
                     label: area,
                     data: values,
@@ -759,8 +662,7 @@
                     backgroundColor: colors[idx % colors.length] + '33',
                     borderWidth: 2,
                     tension: 0.25,
-                    fill: false,
-                    spanGaps: false
+                    fill: false
                 };
             });
         }
@@ -828,11 +730,9 @@
             }
         });
 
-        // Género Matriculados (promedio anual)
-        const matYears = uniqueSorted(data.map(d => d.anho), true);
-        const matYearCount = matYears.length || 1;
-        const totalMatH = Math.round(data.reduce((s, d) => s + d.matriculados_h, 0) / matYearCount);
-        const totalMatM = Math.round(data.reduce((s, d) => s + d.matriculados_m, 0) / matYearCount);
+        // Género Matriculados
+        const totalMatH = data.reduce((s, d) => s + d.matriculados_h, 0);
+        const totalMatM = data.reduce((s, d) => s + d.matriculados_m, 0);
         if (pieChart) pieChart.destroy();
         pieChart = new Chart(document.getElementById('genderPieChart').getContext('2d'), {
             type: 'pie',
@@ -855,7 +755,6 @@
                 }
             }
         });
-        document.getElementById('genderMatNote').innerText = `Promedio de ${matYearCount} año${matYearCount === 1 ? '' : 's'} (${yearRangeLabel(matYears)})`;
     }
 
     function updateUnivCharts(data) {
@@ -899,10 +798,8 @@
     }
 
     function updateGraduadosGenderChart(data) {
-        const egrYears = uniqueSorted(data.map(d => d.anho), true);
-        const egrYearCount = egrYears.length || 1;
-        const totalEgrH = Math.round(data.reduce((s, d) => s + d.egresados_h, 0) / egrYearCount);
-        const totalEgrM = Math.round(data.reduce((s, d) => s + d.egresados_m, 0) / egrYearCount);
+        const totalEgrH = data.reduce((s, d) => s + d.egresados_h, 0);
+        const totalEgrM = data.reduce((s, d) => s + d.egresados_m, 0);
         if (pieChartGraduados) pieChartGraduados.destroy();
         pieChartGraduados = new Chart(document.getElementById('genderPieChartGraduados').getContext('2d'), {
             type: 'pie',
@@ -925,25 +822,10 @@
                 }
             }
         });
-        document.getElementById('genderGradNote').innerText = `Promedio de ${egrYearCount} año${egrYearCount === 1 ? '' : 's'} (${yearRangeLabel(egrYears)})`;
-    }
-
-    const PRESUPUESTO_PRIMER_ANHO = '2016';
-
-    function toggleEmptyBudgetMsg(canvas, msgEl, show, text) {
-        if (show) {
-            canvas.classList.add('d-none');
-            msgEl.classList.remove('d-none');
-            msgEl.innerHTML = text;
-        } else {
-            canvas.classList.remove('d-none');
-            msgEl.classList.add('d-none');
-        }
     }
 
     function updateBudgetYearChart() {
         const canvas = document.getElementById('budgetYearChart');
-        const msgEl = document.getElementById('budgetYearEmptyMsg');
         if (!budgetData.length) {
             if (budgetYearChart) { budgetYearChart.destroy(); budgetYearChart = null; }
             canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
@@ -955,15 +837,6 @@
             yearMap.set(item.anho, (yearMap.get(item.anho) || 0) + item.presupuesto);
         });
         const labels = [...yearMap.keys()].sort((a, b) => Number(a) - Number(b) || String(a).localeCompare(String(b)));
-
-        if (labels.length === 0) {
-            if (budgetYearChart) { budgetYearChart.destroy(); budgetYearChart = null; }
-            toggleEmptyBudgetMsg(canvas, msgEl, true,
-                `<i class="bi bi-info-circle"></i> No hay datos de presupuesto para el año seleccionado.<br>El presupuesto institucional está disponible recién desde ${PRESUPUESTO_PRIMER_ANHO}.`);
-            return;
-        }
-        toggleEmptyBudgetMsg(canvas, msgEl, false, '');
-
         const values = labels.map(y => yearMap.get(y));
         if (budgetYearChart) budgetYearChart.destroy();
         budgetYearChart = new Chart(canvas.getContext('2d'), {
@@ -981,15 +854,12 @@
     function updateBudgetRatioCharts() {
         const canvasMat = document.getElementById('budgetPerMatriculadoChart');
         const canvasGrad = document.getElementById('budgetPerGraduadoChart');
-        const msgMat = document.getElementById('budgetPerMatriculadoEmptyMsg');
-        const msgGrad = document.getElementById('budgetPerGraduadoEmptyMsg');
         if (!budgetData.length) {
             if (budgetPerMatriculadoChart) { budgetPerMatriculadoChart.destroy(); budgetPerMatriculadoChart = null; }
             if (budgetPerGraduadoChart) { budgetPerGraduadoChart.destroy(); budgetPerGraduadoChart = null; }
             [canvasMat, canvasGrad].forEach(c => c.getContext('2d').clearRect(0, 0, c.width, c.height));
             return;
         }
-        // Solo se calcula el cociente para años en que existe presupuesto (desde 2016)
         const filteredBudget = getFilteredBudgetData();
         const budgetByYear = new Map();
         filteredBudget.forEach(item => {
@@ -1002,21 +872,8 @@
             matByYear.set(item.anho, (matByYear.get(item.anho) || 0) + item.matriculados_t);
             gradByYear.set(item.anho, (gradByYear.get(item.anho) || 0) + item.egresados_t);
         });
-        // Base de años = solo los que tienen presupuesto (no matriculados/gradYears de 2014-2015)
-        const years = [...budgetByYear.keys()]
+        const years = [...new Set([...budgetByYear.keys(), ...matByYear.keys(), ...gradByYear.keys()])]
             .sort((a, b) => Number(a) - Number(b) || String(a).localeCompare(String(b)));
-
-        if (years.length === 0) {
-            if (budgetPerMatriculadoChart) { budgetPerMatriculadoChart.destroy(); budgetPerMatriculadoChart = null; }
-            if (budgetPerGraduadoChart) { budgetPerGraduadoChart.destroy(); budgetPerGraduadoChart = null; }
-            const emptyText = `<i class="bi bi-info-circle"></i> No hay datos de presupuesto para el año seleccionado.<br>Disponible desde ${PRESUPUESTO_PRIMER_ANHO}.`;
-            toggleEmptyBudgetMsg(canvasMat, msgMat, true, emptyText);
-            toggleEmptyBudgetMsg(canvasGrad, msgGrad, true, emptyText);
-            return;
-        }
-        toggleEmptyBudgetMsg(canvasMat, msgMat, false, '');
-        toggleEmptyBudgetMsg(canvasGrad, msgGrad, false, '');
-
         const perMatriculado = years.map(y => {
             const presup = budgetByYear.get(y) || 0;
             const mat = matByYear.get(y) || 0;
@@ -1210,126 +1067,6 @@
 
         updateMissingFileAlert();
     }
-
-    // ---------- MODO PRESENTACIÓN (carrusel 16:9) ----------
-    const PRESENTATION_SLIDES = [
-        { title: 'Resumen General · Promedios anuales', ids: ['kpiContainer', 'colYearChart'], gridClass: 'slide-1' },
-        { title: 'Evolución por Área y Distribución por Género', ids: ['colAreaMat', 'colAreaEgr', 'colAreaDoc', 'genderSlot'], gridClass: 'slide-2' },
-        { title: 'Presupuesto (referencial) y Ranking de Universidades', ids: ['rowBudgetYear', 'colBudgetPerMat', 'colBudgetPerGrad', 'univBarSlot'], gridClass: 'slide-3' }
-    ];
-    let presentationOriginalPositions = new Map();
-    let presentationCurrentSlide = 0;
-    let presentationOverlayEl = null;
-
-    function getAllChartInstances() {
-        return [
-            yearChart, areaMatChart, areaEgrChart, areaDocChart,
-            pieChart, pieChartGraduados, barChart,
-            barChartMatriculadosUniv, barChartGraduadosUniv,
-            budgetYearChart, budgetPerMatriculadoChart, budgetPerGraduadoChart
-        ].filter(Boolean);
-    }
-
-    function resizeAllCharts() {
-        requestAnimationFrame(() => {
-            getAllChartInstances().forEach(c => { try { c.resize(); } catch (e) { /* noop */ } });
-        });
-    }
-
-    function scalePresentationStage() {
-        const stage = document.getElementById('presentationStage');
-        if (!stage) return;
-        const scale = Math.min((window.innerWidth - 40) / 1600, (window.innerHeight - 130) / 900, 1.3);
-        stage.style.transform = `scale(${scale})`;
-    }
-
-    function restorePresentationElements() {
-        presentationOriginalPositions.forEach((pos, id) => {
-            const el = document.getElementById(id);
-            if (el && pos.parent) {
-                if (pos.next && pos.next.parentNode === pos.parent) pos.parent.insertBefore(el, pos.next);
-                else pos.parent.appendChild(el);
-            }
-        });
-        presentationOriginalPositions.clear();
-    }
-
-    function showPresentationSlide(index) {
-        const slides = PRESENTATION_SLIDES;
-        if (index < 0) index = slides.length - 1;
-        if (index >= slides.length) index = 0;
-        presentationCurrentSlide = index;
-
-        restorePresentationElements();
-
-        const slide = slides[index];
-        const body = document.getElementById('presentationBody');
-        if (!body) return;
-        body.className = 'presentation-stage-body ' + slide.gridClass;
-        body.innerHTML = '';
-        slide.ids.forEach(id => {
-            const el = document.getElementById(id);
-            if (!el) return;
-            presentationOriginalPositions.set(id, { parent: el.parentNode, next: el.nextSibling });
-            body.appendChild(el);
-        });
-
-        const titleEl = document.getElementById('presentationTitle');
-        const counterEl = document.getElementById('presentationCounter');
-        if (titleEl) titleEl.innerText = slide.title;
-        if (counterEl) counterEl.innerText = `Pantalla ${index + 1} / ${slides.length}`;
-
-        resizeAllCharts();
-    }
-
-    function presentationKeyHandler(e) {
-        if (e.key === 'Escape') exitPresentationMode();
-        else if (e.key === 'ArrowRight') showPresentationSlide(presentationCurrentSlide + 1);
-        else if (e.key === 'ArrowLeft') showPresentationSlide(presentationCurrentSlide - 1);
-    }
-
-    function enterPresentationMode() {
-        if (!rawData.length) return;
-        document.body.classList.add('presentation-mode');
-        presentationOverlayEl = document.createElement('div');
-        presentationOverlayEl.className = 'presentation-overlay';
-        presentationOverlayEl.innerHTML = `
-            <div class="presentation-stage-wrap">
-                <div class="presentation-stage" id="presentationStage">
-                    <div class="presentation-stage-header">
-                        <strong id="presentationTitle"></strong>
-                        <span id="presentationCounter" class="small opacity-75"></span>
-                    </div>
-                    <div class="presentation-stage-body" id="presentationBody"></div>
-                </div>
-            </div>
-            <div class="presentation-controls">
-                <button class="btn btn-outline-light btn-sm rounded-pill" id="presPrevBtn"><i class="bi bi-chevron-left"></i> Anterior</button>
-                <button class="btn btn-outline-light btn-sm rounded-pill" id="presNextBtn">Siguiente <i class="bi bi-chevron-right"></i></button>
-                <button class="btn btn-light btn-sm rounded-pill ms-3" id="presExitBtn"><i class="bi bi-x-lg"></i> Salir (Esc)</button>
-            </div>
-        `;
-        document.body.appendChild(presentationOverlayEl);
-        document.getElementById('presPrevBtn').addEventListener('click', () => showPresentationSlide(presentationCurrentSlide - 1));
-        document.getElementById('presNextBtn').addEventListener('click', () => showPresentationSlide(presentationCurrentSlide + 1));
-        document.getElementById('presExitBtn').addEventListener('click', exitPresentationMode);
-        document.addEventListener('keydown', presentationKeyHandler);
-        window.addEventListener('resize', scalePresentationStage);
-
-        showPresentationSlide(0);
-        scalePresentationStage();
-    }
-
-    function exitPresentationMode() {
-        restorePresentationElements();
-        document.body.classList.remove('presentation-mode');
-        document.removeEventListener('keydown', presentationKeyHandler);
-        window.removeEventListener('resize', scalePresentationStage);
-        if (presentationOverlayEl) { presentationOverlayEl.remove(); presentationOverlayEl = null; }
-        resizeAllCharts();
-    }
-
-    document.getElementById('presentationModeBtn').addEventListener('click', enterPresentationMode);
 
     attachEvents();
     initDashboard();
