@@ -35,32 +35,48 @@ Enlace corto:
 
 ```
 .
-├── data/
-│   ├── universidades_publicas.csv
-│   ├── presupuesto.csv
-│   └── ...
+├── index.html
+├── LICENSE
+├── presup_por_univ.csv
+├── README.md
+├── universidades_py_con_area.csv
 │
-├── BAGP/
-│   ├── 2014/
-│   ├── 2015/
-│   └── ...
-│
-├── PGN/
-│
-├── dashboard/
-│
-├── img/
-│
-└── README.md
+└── PDF MEF PY/
+    ├── BAGP/
+    │   ├── bagp 2014/
+    │   ├── bagp 2015/
+    │   ├── bagp 2016/
+    │   ├── bagp 2017/
+    │   ├── bagp 2018/
+    │   ├── bagp 2019/
+    │   ├── bagp 2020/
+    │   ├── bagp 2021/
+    │   ├── bagp 2022/
+    │   ├── bagp 2023/
+    │   ├── bagp 2024/
+    │   └── bagp 2025/
+    │
+    └── PGN/
+        ├── PGN 2016/
+        ├── PGN 2017/
+        ├── PGN 2018/
+        ├── PGN 2019/
+        ├── PGN 2020/
+        ├── PGN 2021/
+        ├── PGN 2022/
+        ├── PGN 2023/
+        └── PGN 2024/
 ```
 
 El repositorio incluye:
 
-- Conjunto de datos consolidado en formato CSV.
-- Código fuente completo del tablero interactivo.
-- Balances Anuales de Gestión Pública (BAGP) utilizados durante el proceso de extracción.
-- Documentos del Presupuesto General de la Nación (PGN) utilizados como fuente complementaria.
-- Recursos gráficos empleados en la documentación del proyecto.
+- Conjunto de datos consolidado en formato CSV (`universidades_py_con_area.csv` y `presup_por_univ.csv`), en la raíz del repositorio.
+- Código fuente completo del tablero interactivo (`index.html`), autocontenido y sin dependencias de build.
+- Balances Anuales de Gestión Pública (BAGP) originales utilizados durante el proceso de extracción, organizados por año en `PDF MEF PY/BAGP/`.
+- Documentos del Presupuesto General de la Nación (PGN) utilizados como fuente complementaria del presupuesto, organizados por año en `PDF MEF PY/PGN/`.
+- Archivo `LICENSE` con el texto completo de la licencia MIT.
+
+> **Nota:** los nombres de archivo de los PDF originales varían año a año (mayúsculas, guiones, sufijos `_0`/`_1`/`_2` por reemplazos de publicación, codificación de caracteres irregular en algunos años de PGN, etc.), ya que se conservan tal como fueron publicados por el Ministerio de Economía y Finanzas, sin renombrarlos, para preservar la trazabilidad hacia la fuente original.
 
 ---
 

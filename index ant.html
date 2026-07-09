@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Dashboard Universidades Paraguay · Datos 2024+</title>
+    <!-- Bootstrap 5 + Icons + Chart.js + PapaParse (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <style>
+        * { transition: all 0.2s ease; }
+        body { background: #f4f7fc; font-family: 'Segoe UI', Roboto, system-ui; }
+        .dashboard-header { background: linear-gradient(135deg, #0a2b3e 0%, #1b4f6e 100%); color: white; border-radius: 0 0 1.5rem 1.5rem; padding: 1.5rem 0; margin-bottom: 2rem; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+        .card-stats { border: none; border-radius: 1.25rem; backdrop-filter: blur(2px); transition: transform 0.2s; box-shadow: 0 6px 14px rgba(0,0,0,0.05); }
+        .card-stats:hover { transform: translateY(-4px); }
+        .filter-card { background: white; border-radius: 1.5rem; padding: 1.2rem; box-shadow: 0 8px 20px rgba(0,0,0,0.05); margin-bottom: 1.8rem; border: 1px solid rgba(0,0,0,0.05); }
+        .badge-filter { background: #eef2f5; color: #1f5e8c; padding: 0.5rem 1rem; border-radius: 2rem; font-weight: 500; }
+        .table-responsive-custom { border-radius: 1.2rem; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.03); }
+        .btn-outline-custom { border-radius: 2rem; padding: 0.4rem 1.2rem; border-color: #cbdbe0; }
+        .btn-primary-custom { background: #1e6f9f; border: none; border-radius: 2rem; padding: 0.5rem 1.5rem; color: white; }
+        .btn-primary-custom:hover { background: #0e4e72; }
+        .chart-container { background: white; border-radius: 1.5rem; padding: 1rem; box-shadow: 0 8px 18px rgba(0,0,0,0.05); height: 100%; }
+        footer { font-size: 0.8rem; color: #6c7a89; text-align: center; margin-top: 3rem; padding: 1rem; border-top: 1px solid #dee2e6; }
+        .total-number { font-size: 2.2rem; font-weight: 800; line-height: 1.2; }
+        .total-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; color: #5a6e7c; }
+        .gender-badge { font-size: 0.75rem; background: #f0f3f8; padding: 0.2rem 0.6rem; border-radius: 1rem; }
+        select, input { cursor: pointer; }
+        @media (max-width: 768px) { .total-number { font-size: 1.6rem; } }
+        .chart-container canvas { max-height: 280px; width: 100%; }
+
+        /* ---------- MODO PRESENTACIÓN (carrusel 16:9) ---------- */
+        .presentation-overlay { position: fixed; inset: 0; background: #0a1e2c; z-index: 2000; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1rem; }
+        .presentation-stage-wrap { display: flex; align-items: center; justify-content: center; width: 100vw; height: calc(100vh - 70px); }
+        .presentation-stage { width: 1600px; height: 900px; background: #f4f7fc; border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); overflow: hidden; display: flex; flex-direction: column; flex-shrink: 0; }
+        .presentation-stage-header { padding: 14px 30px; background: linear-gradient(135deg, #0a2b3e 0%, #1b4f6e 100%); color: white; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
+        .presentation-stage-header strong { font-size: 1.15rem; }
+        .presentation-stage-body { flex: 1; padding: 20px 26px; display: grid; gap: 16px; overflow: hidden; min-height: 0; }
+        .presentation-stage-body.slide-1 { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+        .presentation-stage-body.slide-2, .presentation-stage-body.slide-3 { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); }
+        .presentation-stage-body > * { min-height: 0; min-width: 0; }
+        .presentation-controls { display: flex; gap: 12px; align-items: center; color: white; }
+        body.presentation-mode { overflow: hidden; }
+        body.presentation-mode .chart-container { height: 100%; display: flex; flex-direction: column; padding: 0.75rem 1rem; }
+        body.presentation-mode .chart-container h5 { font-size: 0.85rem; margin-bottom: 0.5rem !important; flex-shrink: 0; }
+        body.presentation-mode .chart-container canvas { flex: 1; max-height: none !important; height: 100% !important; width: 100% !important; }
+        body.presentation-mode .chart-container p.small, body.presentation-mode .chart-container p.text-muted { font-size: 0.65rem; flex-shrink: 0; margin-top: 0.25rem !important; }
+        body.presentation-mode #kpiContainer { height: 100%; margin: 0; }
+        body.presentation-mode #kpiContainer .total-number { font-size: 1.6rem; }
+        body.presentation-mode #kpiContainer .total-label { font-size: 0.65rem; }
+        body.presentation-mode #kpiContainer .card-stats { padding: 0.7rem !important; }
+        body.presentation-mode #colYearChart { height: 100%; }
+        body.presentation-mode #rowBudgetYear, body.presentation-mode #colBudgetPerMat, body.presentation-mode #colBudgetPerGrad,
+        body.presentation-mode #colAreaMat, body.presentation-mode #colAreaEgr, body.presentation-mode #colAreaDoc { height: 100%; margin: 0; }
+        body.presentation-mode #rowBudgetYear .col-12 { height: 100%; }
+        body.presentation-mode #genderSlot, body.presentation-mode #univBarSlot { height: 100%; margin: 0; }
+        body.presentation-mode #genderSlot > div, body.presentation-mode #univBarSlot > div { height: 100%; }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-header">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-between align-items-center">
+            <div>
+                <h1 class="display-6 fw-semibold"><i class="bi bi-graph-up"></i> Dashboard Universidades Nacionales del Paraguay</h1>
+                <p class="mb-0 opacity-75">Análisis dinámico de matriculados, egresados, docentes y presupuesto · <strong>Paraguay</strong> (UNA, UNE, UNP, UNI, UNC, UNVES, UNCA, UNICAN, UPTP, UNAMIS)</p>
+                <p class="small mt-1" id="dataSourceNote"><i class="bi bi-database"></i> Cargando datos automáticamente desde universidades_py_con_area.csv...</p>
+            </div>
+            <div class="mt-2 mt-md-0">
+                <div class="bg-white p-2 rounded-4 shadow-sm">
+                    <label for="csvUpload" class="btn btn-outline-secondary rounded-pill"><i class="bi bi-upload"></i> Cargar universidades CSV</label>
+                    <input type="file" id="csvUpload" accept=".csv" style="display: none;">
+                    <label for="presupUpload" class="btn btn-outline-secondary rounded-pill ms-2"><i class="bi bi-cash-coin"></i> Cargar presupuesto CSV</label>
+                    <input type="file" id="presupUpload" accept=".csv" style="display: none;">
+                    <button id="resetFiltersBtn" class="btn btn-light rounded-pill ms-2 border"><i class="bi bi-arrow-repeat"></i> Reiniciar</button>
+                    <button id="presentationModeBtn" class="btn btn-primary-custom rounded-pill ms-2"><i class="bi bi-easel2"></i> Modo presentación</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mb-4">
+
+    <div id="missingFileAlert" class="alert alert-warning d-none rounded-4 shadow-sm" role="alert">
+        <i class="bi bi-exclamation-triangle-fill"></i> <span id="missingFileText"></span>
+    </div>
+
+    <!-- Panel filtros -->
+    <div class="filter-card">
+        <div class="row g-3 align-items-end">
+            <div class="col-md-2">
+                <label class="form-label fw-semibold"><i class="bi bi-calendar3"></i> Año</label>
+                <select id="filterAnho" class="form-select rounded-pill"></select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label fw-semibold"><i class="bi bi-building"></i> Universidad</label>
+                <select id="filterUniv" class="form-select rounded-pill"></select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label fw-semibold"><i class="bi bi-layers"></i> Nivel</label>
+                <select id="filterNivel" class="form-select rounded-pill">
+                    <option value="TODOS">Todos</option>
+                    <option value="G">Grado</option>
+                    <option value="P">Posgrado</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label fw-semibold"><i class="bi bi-diagram-3"></i> Área de conocimiento</label>
+                <select id="filterArea" class="form-select rounded-pill"></select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label fw-semibold"><i class="bi bi-book"></i> Unidad Académica</label>
+                <select id="filterUnidad" class="form-select rounded-pill"></select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label fw-semibold"><i class="bi bi-mortarboard"></i> Programa / Curso</label>
+                <select id="filterPrograma" class="form-select rounded-pill"></select>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 text-end">
+                <span class="badge-filter"><i class="bi bi-funnel"></i> Aplica filtros: actualiza totales y gráficos</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- KPI -->
+    <div class="row g-4 mb-4" id="kpiContainer">
+        <div class="col-md-3 col-6">
+            <div class="card card-stats p-3 h-100">
+                <div class="total-label"><i class="bi bi-people-fill"></i> MATRICULADOS (promedio anual)</div>
+                <div class="total-number" id="totalMatriculados">0</div>
+                <div class="mt-2 small"><span class="gender-badge"><i class="bi bi-gender-male"></i> H: <span id="totalMatH">0</span></span> <span class="gender-badge ms-2"><i class="bi bi-gender-female"></i> M: <span id="totalMatM">0</span></span></div>
+                <div class="mt-1 small text-muted" id="matYearsNote">—</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="card card-stats p-3 h-100">
+                <div class="total-label"><i class="bi bi-mortarboard"></i> EGRESADOS (promedio anual)</div>
+                <div class="total-number" id="totalEgresados">0</div>
+                <div class="mt-2 small"><span class="gender-badge">H: <span id="totalEgrH">0</span></span> <span class="gender-badge ms-2">M: <span id="totalEgrM">0</span></span></div>
+                <div class="mt-1 small text-muted" id="egrYearsNote">—</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="card card-stats p-3 h-100">
+                <div class="total-label"><i class="bi bi-person-workspace"></i> DOCENTES (promedio anual)</div>
+                <div class="total-number" id="totalDocentes">0</div>
+                <div class="mt-2 small"><span class="gender-badge">H: <span id="totalDocH">0</span></span> <span class="gender-badge ms-2">M: <span id="totalDocM">0</span></span></div>
+                <div class="mt-1 small text-muted" id="docYearsNote">—</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="card card-stats p-3 h-100">
+                <div class="total-label"><i class="bi bi-bar-chart-steps"></i> TOTAL GENERAL (promedio anual)</div>
+                <div class="total-number" id="totalGeneral">0</div>
+                <div class="mt-2 small"><i class="bi bi-database"></i> Matriculados + Egresados</div>
+                <div class="mt-1 small text-muted" id="generalYearsNote">—</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Evolución anual (principal) -->
+    <div class="row g-4 mb-4">
+        <div class="col-12" id="colYearChart">
+            <div class="chart-container">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-graph-up-arrow"></i> Evolución anual de indicadores</h5>
+                <canvas id="yearChart" width="400" height="280" style="max-height: 340px; width: 100%;"></canvas>
+                <p class="text-muted small mb-0 mt-2" id="yearChartDocNote"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- NUEVA FILA: Evolución por área (3 gráficos de línea, UNO DEBAJO DEL OTRO y ANCHO COMPLETO) -->
+    <div class="row g-4 mb-4">
+        <div class="col-12" id="colAreaMat">
+            <div class="chart-container">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-graph-up"></i> Evolución de Matriculados por área de conocimiento</h5>
+                <canvas id="areaMatriculadosChart" width="400" height="280"></canvas>
+            </div>
+        </div>
+        <div class="col-12" id="colAreaEgr">
+            <div class="chart-container">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-graph-up"></i> Evolución de Egresados por área de conocimiento</h5>
+                <canvas id="areaEgresadosChart" width="400" height="280"></canvas>
+            </div>
+        </div>
+        <div class="col-12" id="colAreaDoc">
+            <div class="chart-container">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-graph-up"></i> Evolución de Docentes por área de conocimiento</h5>
+                <canvas id="areaDocentesChart" width="400" height="280"></canvas>
+                <p class="text-muted small mb-0 mt-2"><i class="bi bi-exclamation-circle"></i> No se declararon docentes en 2014; ese punto se omite (no representa un valor real de cero).</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILA: Distribución por género (Matriculados y Graduados) juntos -->
+    <div class="row g-4 mb-4" id="genderSlot">
+        <div class="col-lg-6" id="colGenderMat">
+            <div class="chart-container">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-pie-chart"></i> Distribución por Género (Matriculados) — Promedio anual</h5>
+                <canvas id="genderPieChart" width="400" height="280"></canvas>
+                <p class="text-muted small mb-0 mt-2" id="genderMatNote"></p>
+            </div>
+        </div>
+        <div class="col-lg-6" id="colGenderGrad">
+            <div class="chart-container">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-pie-chart"></i> Distribución por Género (Graduados) — Promedio anual</h5>
+                <canvas id="genderPieChartGraduados" width="400" height="280"></canvas>
+                <p class="text-muted small mb-0 mt-2" id="genderGradNote"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILA: Top 8 universidades (matriculados y graduados) -->
+    <div class="row g-4 mb-4" id="univBarSlot">
+        <div class="col-lg-6" id="colUnivMat">
+            <div class="chart-container">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-bar-chart"></i> Matriculados por Universidad (Top 8)</h5>
+                <canvas id="barChartMatriculadosUniv" width="400" height="280"></canvas>
+            </div>
+        </div>
+        <div class="col-lg-6" id="colUnivGrad">
+            <div class="chart-container">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-bar-chart"></i> Graduados por Universidad (Top 8)</h5>
+                <canvas id="barChartGraduadosUniv" width="400" height="280"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILA: Matriculados por Unidad Académica (Top 8) + texto presupuesto -->
+    <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+            <div class="chart-container">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-bar-chart"></i> Matriculados por Unidad Académica (Top 8)</h5>
+                <canvas id="barChartMatriculados" width="400" height="280"></canvas>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="chart-container h-100 d-flex flex-column justify-content-center">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-info-circle"></i> Sobre el presupuesto</h5>
+                <p class="text-muted small mb-0">
+                    Los gráficos de presupuesto, abajo, se calculan con base en el archivo <code>presup_por_univ.csv</code>,
+                    cruzado por <strong>Año</strong> y <strong>Universidad</strong>. Los filtros de Nivel sí afectan la cantidad
+                    de matriculados/graduados usada para los cocientes (presupuesto por matriculado/graduado). Los filtros de
+                    Área, Unidad Académica y Programa no tienen equivalencia en el presupuesto institucional y se ignoran
+                    para estos gráficos. Los datos de presupuesto están disponibles solo desde <strong>2016</strong>.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Aviso de referencialidad del presupuesto -->
+    <div class="row g-4 mb-4" id="rowBudgetWarning">
+        <div class="col-12">
+            <div class="alert alert-warning rounded-4 shadow-sm d-flex align-items-start gap-2 mb-0" role="alert">
+                <i class="bi bi-exclamation-triangle-fill fs-5"></i>
+                <div>
+                    <strong>Valores referenciales.</strong> Los cocientes <em>presupuesto por matriculado</em> y
+                    <em>presupuesto por graduado</em> sirven únicamente para comparar entre universidades y años entre sí;
+                    no representan el costo real por estudiante (el presupuesto institucional incluye gastos que no se
+                    distribuyen exclusivamente en matrícula o egreso). Además, el presupuesto solo está disponible desde
+                    <strong>2016</strong>: si filtrás por 2014 o 2015 no habrá datos de presupuesto que mostrar.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Presupuesto por año -->
+    <div class="row g-4 mb-4" id="rowBudgetYear">
+        <div class="col-12">
+            <div class="chart-container position-relative">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-cash-coin"></i> Presupuesto por Año</h5>
+                <canvas id="budgetYearChart" width="400" height="280"></canvas>
+                <div id="budgetYearEmptyMsg" class="text-muted small text-center py-4 d-none"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Presupuesto por matriculado / graduado -->
+    <div class="row g-4 mb-4">
+        <div class="col-lg-6" id="colBudgetPerMat">
+            <div class="chart-container position-relative">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-graph-up"></i> Presupuesto por Matriculado <span class="badge bg-warning text-dark rounded-pill ms-1" style="font-size:.65rem;">referencial</span></h5>
+                <canvas id="budgetPerMatriculadoChart" width="400" height="280"></canvas>
+                <div id="budgetPerMatriculadoEmptyMsg" class="text-muted small text-center py-4 d-none"></div>
+            </div>
+        </div>
+        <div class="col-lg-6" id="colBudgetPerGrad">
+            <div class="chart-container position-relative">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-graph-up"></i> Presupuesto por Graduado <span class="badge bg-warning text-dark rounded-pill ms-1" style="font-size:.65rem;">referencial</span></h5>
+                <canvas id="budgetPerGraduadoChart" width="400" height="280"></canvas>
+                <div id="budgetPerGraduadoEmptyMsg" class="text-muted small text-center py-4 d-none"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabla -->
+    <div class="filter-card p-0 overflow-hidden" id="colDataTable">
+        <div class="bg-white p-3 border-bottom d-flex justify-content-between align-items-center">
+            <h5 class="mb-0 fw-semibold"><i class="bi bi-table"></i> Registros filtrados</h5>
+            <span class="badge bg-secondary rounded-pill" id="rowCountBadge">0 registros</span>
+        </div>
+        <div class="table-responsive-custom" style="max-height: 500px; overflow-y: auto;">
+            <table class="table table-hover table-striped mb-0 small" id="dataTable">
+                <thead class="table-light sticky-top">
+                    <tr>
+                        <th>Año</th><th>Universidad</th><th>Nivel</th><th>Área</th><th>Unidad</th><th>Programa/Curso</th><th>Matr. H</th><th>Matr. M</th><th>Egr. H</th><th>Egr. M</th><th>Docentes</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr><td colspan="11" class="text-center">Cargue un archivo CSV para visualizar datos</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer>
+        <i class="bi bi-cpu"></i> Dashboard optimizado · Filtros en cascada · Soporte para múltiples años y presupuesto · Los totales se actualizan dinámicamente según filtros.
+    </footer>
+</div>
+
+<script>
+    // ---------- GLOBALES ----------
+    let rawData = [];
+    let filteredData = [];
+    let budgetData = [];
+    let yearChart = null;
+    let areaMatChart = null, areaEgrChart = null, areaDocChart = null;
+    let pieChart = null, pieChartGraduados = null;
+    let barChart = null;
+    let barChartMatriculadosUniv = null, barChartGraduadosUniv = null;
+    let budgetYearChart = null;
+    let budgetPerMatriculadoChart = null, budgetPerGraduadoChart = null;
+
+    const UNIVERSIDADES_CSV_PATH = 'universidades_py_con_area.csv';
+    const PRESUPUESTO_CSV_PATH = 'presup_por_univ.csv';
+
+    const filterAnho = document.getElementById('filterAnho');
+    const filterUniv = document.getElementById('filterUniv');
+    const filterNivel = document.getElementById('filterNivel');
+    const filterArea = document.getElementById('filterArea');
+    const filterUnidad = document.getElementById('filterUnidad');
+    const filterPrograma = document.getElementById('filterPrograma');
+    const resetBtn = document.getElementById('resetFiltersBtn');
+    const csvUpload = document.getElementById('csvUpload');
+    const presupUpload = document.getElementById('presupUpload');
+    const missingFileAlert = document.getElementById('missingFileAlert');
+    const missingFileText = document.getElementById('missingFileText');
+    const dataSourceNote = document.getElementById('dataSourceNote');
+
+    // ---------- UTILIDADES ----------
+    function normalizeText(value) {
+        return String(value ?? '')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/\s+/g, ' ')
+            .trim()
+            .toLowerCase();
+    }
+
+    function escapeHtml(value) {
+        return String(value ?? '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    function safeInt(value) {
+        if (value === undefined || value === null || value === '') return 0;
+        const cleaned = String(value).trim().replace(/[^\d-]/g, '');
+        if (cleaned === '' || cleaned === '-') return 0;
+        const num = Number(cleaned);
+        return Number.isFinite(num) ? Math.trunc(num) : 0;
+    }
+
+    function uniqueSorted(values, numeric = false) {
+        const cleaned = [...new Set(values.filter(v => v !== undefined && v !== null && String(v).trim() !== '').map(v => String(v).trim()))];
+        if (numeric) {
+            return cleaned.sort((a, b) => Number(a) - Number(b) || a.localeCompare(b));
+        }
+        return cleaned.sort((a, b) => a.localeCompare(b, 'es', { sensitivity: 'base' }));
+    }
+
+    function setSelectOptions(selectEl, options, allLabel, preserveValue = true) {
+        const currentValue = preserveValue ? selectEl.value : 'TODOS';
+        selectEl.innerHTML = `<option value="TODOS">${allLabel}</option>` + options.map(opt => `<option value="${escapeHtml(opt)}">${escapeHtml(opt)}</option>`).join('');
+        if ([...selectEl.options].some(opt => opt.value === currentValue)) {
+            selectEl.value = currentValue;
+        } else {
+            selectEl.value = 'TODOS';
+        }
+    }
+
+    function classifyArea(unidadAcademica, programaCurso, nivel, universidad) {
+        const u = normalizeText(unidadAcademica);
+        const p = normalizeText(programaCurso);
+        const n = normalizeText(nivel);
+        const x = `${u} ${p} ${n}`;
+
+        if (/(medicina|odont|enfermer|obstetric|nutric|farmac|bioquim|kinesi|fisioter|salud)/.test(x)) return 'Salud';
+        if (/veterin/.test(x)) return 'Ciencias Veterinarias';
+        if (/(agrar|agropec|agronom|forestal|facaf|recursos naturales|ganader|zootec)/.test(x)) return 'Ciencias Agrarias';
+        if (/(ingenier|politecn|tecnolog|informat|sistemas|electron|mecanic|industrial|civil|arquitect|computacion|telematic|cyt|ciencia y tecnologia|exactas y tecnolog)/.test(x)) return 'Ingeniería y Tecnología';
+        if (/(econom|contab|administr|facea|empresar|finanz|comercial|gestion|negocios)/.test(x)) return 'Economía y Administración';
+        if (/(derecho|sociales|politic|jurid|abogac|ciencias sociales)/.test(x)) return 'Derecho y Ciencias Sociales';
+        if (/(educacion|humanidad|filosof|letras|artes|psicolog|pedagog|comunic|historia)/.test(x)) return 'Educación y Humanidades';
+        if (/(exactas|matematic|fisic|quimic|biolog|estadistic|naturales)/.test(x)) return 'Ciencias Básicas';
+        if (/(rectorado|postgrado|posgrado|colegio experimental|general|multidisciplin|institucional)/.test(x)) return 'Multidisciplinaria / General';
+        const uni = normalizeText(universidad);
+        if (uni && !u) return 'Multidisciplinaria / General';
+        return 'Otras';
+    }
+
+    // ---------- PARSEO ----------
+    function parseCSVToData(csvString) {
+        const parsed = Papa.parse(csvString, {
+            header: true,
+            skipEmptyLines: true,
+            dynamicTyping: false
+        });
+        if (parsed.errors && parsed.errors.length) console.warn('Advertencias/errores al parsear CSV:', parsed.errors);
+        return (parsed.data || [])
+            .map(row => {
+                const anho = String(row.anho ?? '').trim();
+                const universidad = String(row.universidad ?? '').trim();
+                const nivel = String(row.nivel ?? '').trim().toUpperCase();
+                const unidad_academica = String(row.unidad_academica ?? '').trim();
+                const programa_curso = String(row.programa_curso ?? '').trim();
+
+                const matriculados_m = safeInt(row.matriculados_m);
+                const matriculados_h = safeInt(row.matriculados_h);
+                const matriculados_t = row.matriculados_t !== undefined && String(row.matriculados_t).trim() !== ''
+                    ? safeInt(row.matriculados_t)
+                    : (matriculados_m + matriculados_h);
+
+                const egresados_m = safeInt(row.egresados_m);
+                const egresados_h = safeInt(row.egresados_h);
+                const egresados_t = row.egresados_t !== undefined && String(row.egresados_t).trim() !== ''
+                    ? safeInt(row.egresados_t)
+                    : (egresados_m + egresados_h);
+
+                const total_general = row.total_general !== undefined && String(row.total_general).trim() !== ''
+                    ? safeInt(row.total_general)
+                    : (matriculados_t + egresados_t);
+
+                const docentes_m = safeInt(row.docentes_m);
+                const docentes_h = safeInt(row.docentes_h);
+                const docentes_t = row.docentes_t !== undefined && String(row.docentes_t).trim() !== ''
+                    ? safeInt(row.docentes_t)
+                    : (docentes_m + docentes_h);
+
+                const area_raw = String(row.area_conocimiento ?? '').trim();
+                const area_conocimiento = area_raw || classifyArea(unidad_academica, programa_curso, nivel, universidad);
+
+                return {
+                    anho, universidad, nivel, area_conocimiento, unidad_academica, programa_curso,
+                    matriculados_m, matriculados_h, matriculados_t,
+                    egresados_m, egresados_h, egresados_t,
+                    total_general,
+                    docentes_m, docentes_h, docentes_t
+                };
+            })
+            .filter(d => d.universidad !== '');
+    }
+
+    function parseBudgetCSV(csvString) {
+        const parsed = Papa.parse(csvString, {
+            header: true,
+            skipEmptyLines: true,
+            dynamicTyping: false
+        });
+        if (parsed.errors && parsed.errors.length) console.warn('Advertencias/errores al parsear CSV de presupuesto:', parsed.errors);
+        return (parsed.data || [])
+            .map(row => {
+                const keys = Object.keys(row);
+                const findKey = (target) => keys.find(k => normalizeText(k) === target);
+                const univKey = findKey('univ') || findKey('universidad');
+                const anhoKey = findKey('anho') || findKey('ano');
+                const presupKey = findKey('presupuesto');
+                const universidad = String(row[univKey] ?? '').trim();
+                const anho = String(row[anhoKey] ?? '').trim();
+                const presupuesto = safeInt(row[presupKey]);
+                return { universidad, anho, presupuesto };
+            })
+            .filter(d => d.universidad !== '' && d.anho !== '');
+    }
+
+    // ---------- FILTROS ----------
+    function populateBaseFilters() {
+        if (!rawData.length) return;
+        const years = uniqueSorted(rawData.map(d => d.anho), true);
+        setSelectOptions(filterAnho, years, 'Todos los años', false);
+        filterAnho.value = 'TODOS';
+        const univs = uniqueSorted(rawData.map(d => d.universidad));
+        setSelectOptions(filterUniv, univs, 'Todas las universidades', false);
+        filterUniv.value = 'TODOS';
+        filterNivel.innerHTML = `<option value="TODOS">Todos</option><option value="G">Grado</option><option value="P">Posgrado</option>`;
+        filterNivel.value = 'TODOS';
+    }
+
+    function getFilteredBaseForDependents() {
+        let result = [...rawData];
+        if (filterAnho.value !== 'TODOS') result = result.filter(d => d.anho === filterAnho.value);
+        if (filterUniv.value !== 'TODOS') result = result.filter(d => d.universidad === filterUniv.value);
+        if (filterNivel.value !== 'TODOS') result = result.filter(d => d.nivel === filterNivel.value);
+        if (filterArea.value !== 'TODOS') result = result.filter(d => d.area_conocimiento === filterArea.value);
+        return result;
+    }
+
+    function getFilteredBaseForPrograms() {
+        let result = getFilteredBaseForDependents();
+        if (filterUnidad.value !== 'TODOS') result = result.filter(d => d.unidad_academica === filterUnidad.value);
+        return result;
+    }
+
+    function getFilteredData() {
+        let result = [...rawData];
+        if (filterAnho.value !== 'TODOS') result = result.filter(d => d.anho === filterAnho.value);
+        if (filterUniv.value !== 'TODOS') result = result.filter(d => d.universidad === filterUniv.value);
+        if (filterNivel.value !== 'TODOS') result = result.filter(d => d.nivel === filterNivel.value);
+        if (filterArea.value !== 'TODOS') result = result.filter(d => d.area_conocimiento === filterArea.value);
+        if (filterUnidad.value !== 'TODOS') result = result.filter(d => d.unidad_academica === filterUnidad.value);
+        if (filterPrograma.value !== 'TODOS') result = result.filter(d => d.programa_curso === filterPrograma.value);
+        return result;
+    }
+
+    function getFilteredBudgetData() {
+        let result = [...budgetData];
+        if (filterAnho.value !== 'TODOS') result = result.filter(d => normalizeText(d.anho) === normalizeText(filterAnho.value));
+        if (filterUniv.value !== 'TODOS') result = result.filter(d => normalizeText(d.universidad) === normalizeText(filterUniv.value));
+        return result;
+    }
+
+    function getFilteredDataForBudgetRatios() {
+        let result = [...rawData];
+        if (filterAnho.value !== 'TODOS') result = result.filter(d => d.anho === filterAnho.value);
+        if (filterUniv.value !== 'TODOS') result = result.filter(d => d.universidad === filterUniv.value);
+        if (filterNivel.value !== 'TODOS') result = result.filter(d => d.nivel === filterNivel.value);
+        return result;
+    }
+
+    function updateCascadingFilters() {
+        if (!rawData.length) return;
+        let base = [...rawData];
+        const selectedYear = filterAnho.value;
+        const selectedUniv = filterUniv.value;
+        const selectedNivel = filterNivel.value;
+        const selectedArea = filterArea.value;
+        const selectedUnidad = filterUnidad.value;
+        const selectedPrograma = filterPrograma.value;
+
+        if (selectedYear !== 'TODOS') base = base.filter(d => d.anho === selectedYear);
+        if (selectedUniv !== 'TODOS') base = base.filter(d => d.universidad === selectedUniv);
+        if (selectedNivel !== 'TODOS') base = base.filter(d => d.nivel === selectedNivel);
+
+        const areas = uniqueSorted(base.map(d => d.area_conocimiento));
+        setSelectOptions(filterArea, areas, 'Todas las áreas', true);
+        if (!areas.includes(selectedArea)) filterArea.value = 'TODOS';
+
+        base = getFilteredBaseForDependents();
+        const unidades = uniqueSorted(base.map(d => d.unidad_academica));
+        setSelectOptions(filterUnidad, unidades, 'Todas las unidades', true);
+        if (!unidades.includes(selectedUnidad)) filterUnidad.value = 'TODOS';
+
+        base = getFilteredBaseForPrograms();
+        const programas = uniqueSorted(base.map(d => d.programa_curso));
+        setSelectOptions(filterPrograma, programas, 'Todos los programas/cursos', true);
+        if (!programas.includes(selectedPrograma)) filterPrograma.value = 'TODOS';
+    }
+
+    // ---------- KPI ----------
+    // Año en el que docentes aún no se declaraban (figura en 0 pero no es un valor real)
+    const DOCENTES_NO_DECLARADO_ANHO = '2014';
+
+    function yearRangeLabel(years) {
+        if (!years.length) return '';
+        if (years.length === 1) return years[0];
+        return `${years[0]}–${years[years.length - 1]}`;
+    }
+
+    function updateTotals(data) {
+        const years = uniqueSorted(data.map(d => d.anho), true);
+        const yearCount = years.length || 1;
+
+        const totalMatM = data.reduce((sum, d) => sum + d.matriculados_m, 0);
+        const totalMatH = data.reduce((sum, d) => sum + d.matriculados_h, 0);
+        const totalMat = totalMatM + totalMatH;
+
+        const totalEgrM = data.reduce((sum, d) => sum + d.egresados_m, 0);
+        const totalEgrH = data.reduce((sum, d) => sum + d.egresados_h, 0);
+        const totalEgr = totalEgrM + totalEgrH;
+
+        const totalGeneral = data.reduce((sum, d) => sum + (d.total_general || (d.matriculados_t + d.egresados_t)), 0);
+
+        // Docentes: 2014 no se declaraba, se excluye del promedio para no distorsionarlo
+        const docData = data.filter(d => d.anho !== DOCENTES_NO_DECLARADO_ANHO);
+        const docYears = uniqueSorted(docData.map(d => d.anho), true);
+        const docYearCount = docYears.length;
+        const totalDocM = docData.reduce((sum, d) => sum + d.docentes_m, 0);
+        const totalDocH = docData.reduce((sum, d) => sum + d.docentes_h, 0);
+        const totalDoc = totalDocM + totalDocH;
+
+        const avg = (n) => Math.round(n / yearCount);
+        const avgMat = avg(totalMat), avgMatM = avg(totalMatM), avgMatH = avg(totalMatH);
+        const avgEgr = avg(totalEgr), avgEgrM = avg(totalEgrM), avgEgrH = avg(totalEgrH);
+        const avgGeneral = avg(totalGeneral);
+        const avgDoc = docYearCount ? Math.round(totalDoc / docYearCount) : 0;
+        const avgDocM = docYearCount ? Math.round(totalDocM / docYearCount) : 0;
+        const avgDocH = docYearCount ? Math.round(totalDocH / docYearCount) : 0;
+
+        document.getElementById('totalMatriculados').innerText = avgMat.toLocaleString('es-PY');
+        document.getElementById('totalMatM').innerText = avgMatM.toLocaleString('es-PY');
+        document.getElementById('totalMatH').innerText = avgMatH.toLocaleString('es-PY');
+        document.getElementById('totalEgresados').innerText = avgEgr.toLocaleString('es-PY');
+        document.getElementById('totalEgrM').innerText = avgEgrM.toLocaleString('es-PY');
+        document.getElementById('totalEgrH').innerText = avgEgrH.toLocaleString('es-PY');
+        document.getElementById('totalDocentes').innerText = avgDoc.toLocaleString('es-PY');
+        document.getElementById('totalDocM').innerText = avgDocM.toLocaleString('es-PY');
+        document.getElementById('totalDocH').innerText = avgDocH.toLocaleString('es-PY');
+        document.getElementById('totalGeneral').innerText = avgGeneral.toLocaleString('es-PY');
+        document.getElementById('rowCountBadge').innerText = `${data.length} registros`;
+
+        const yearsNote = `Promedio de ${yearCount} año${yearCount === 1 ? '' : 's'} (${yearRangeLabel(years)})`;
+        document.getElementById('matYearsNote').innerText = yearsNote;
+        document.getElementById('egrYearsNote').innerText = yearsNote;
+        document.getElementById('generalYearsNote').innerText = yearsNote;
+        document.getElementById('docYearsNote').innerText = docYearCount
+            ? `Promedio de ${docYearCount} año${docYearCount === 1 ? '' : 's'} (${yearRangeLabel(docYears)}) · 2014 excluido (no declarado)`
+            : 'Sin datos de docentes declarados en el período seleccionado';
+
+        return { totalMatM, totalMatH, totalMat, totalEgr, totalDoc };
+    }
+
+    // ---------- TABLA ----------
+    function updateTable(data) {
+        const tbody = document.getElementById('tableBody');
+        if (!data.length) {
+            tbody.innerHTML = '<tr><td colspan="11" class="text-center">No hay registros con los filtros seleccionados</td></tr>';
+            return;
+        }
+        const rows = data.slice(0, 500).map(d => {
+            const nivelLabel = d.nivel === 'G' ? 'Grado' : (d.nivel === 'P' ? 'Posgrado' : (d.nivel || '-'));
+            return `<tr>
+                    <td>${escapeHtml(d.anho || '-')}</td>
+                    <td>${escapeHtml(d.universidad || '-')}</td>
+                    <td>${escapeHtml(nivelLabel)}</td>
+                    <td>${escapeHtml(d.area_conocimiento || '-')}</td>
+                    <td>${escapeHtml(d.unidad_academica || '-')}</td>
+                    <td>${escapeHtml(d.programa_curso || '-')}</td>
+                    <td>${d.matriculados_h.toLocaleString('es-PY')}</td>
+                    <td>${d.matriculados_m.toLocaleString('es-PY')}</td>
+                    <td>${d.egresados_h.toLocaleString('es-PY')}</td>
+                    <td>${d.egresados_m.toLocaleString('es-PY')}</td>
+                    <td>${d.docentes_t.toLocaleString('es-PY')}</td>
+                </tr>`;
+        }).join('');
+        tbody.innerHTML = rows;
+        if (data.length > 500) tbody.innerHTML += `<tr><td colspan="11" class="text-muted small">* Mostrando 500 de ${data.length} registros</td></tr>`;
+    }
+
+    // ---------- GRÁFICOS ----------
+    function updateYearChart(data) {
+        const yearMap = new Map();
+        data.forEach(item => {
+            const year = item.anho || 'Sin año';
+            if (!yearMap.has(year)) yearMap.set(year, { matriculados: 0, egresados: 0, docentes: 0 });
+            const bucket = yearMap.get(year);
+            bucket.matriculados += item.matriculados_t;
+            bucket.egresados += item.egresados_t;
+            bucket.docentes += item.docentes_t;
+        });
+        const labels = [...yearMap.keys()].sort((a, b) => Number(a) - Number(b) || String(a).localeCompare(String(b)));
+        const matriculados = labels.map(y => yearMap.get(y).matriculados);
+        const egresados = labels.map(y => yearMap.get(y).egresados);
+        // Docentes: 2014 no se declaraba -> null para que el gráfico muestre un corte, no un cero real
+        const docentes = labels.map(y => y === DOCENTES_NO_DECLARADO_ANHO ? null : yearMap.get(y).docentes);
+        const hasDocentesGap = labels.includes(DOCENTES_NO_DECLARADO_ANHO);
+
+        if (yearChart) yearChart.destroy();
+        const ctx = document.getElementById('yearChart').getContext('2d');
+        yearChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels,
+                datasets: [
+                    { label: 'Matriculados', data: matriculados, borderWidth: 2, tension: 0.25, fill: false },
+                    { label: 'Egresados', data: egresados, borderWidth: 2, tension: 0.25, fill: false },
+                    { label: 'Docentes', data: docentes, borderWidth: 2, tension: 0.25, fill: false, spanGaps: false }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${ctx.raw === null ? 'no declarado' : Number(ctx.raw).toLocaleString('es-PY')}` } }
+                },
+                scales: { y: { beginAtZero: true, ticks: { callback: (value) => Number(value).toLocaleString('es-PY') } } }
+            }
+        });
+
+        const note = document.getElementById('yearChartDocNote');
+        note.innerHTML = hasDocentesGap
+            ? '<i class="bi bi-exclamation-circle"></i> El corte en la línea de Docentes en 2014 indica que ese dato no se declaraba ese año, no que el valor fuera cero.'
+            : '';
+    }
+
+    function updateAreaCharts(data) {
+        // Preparar datos: agrupar por año y área
+        const areasSet = new Set();
+        const yearsSet = new Set();
+        const dataMap = {}; // { año: { area: { mat, egr, doc } } }
+
+        data.forEach(item => {
+            const year = item.anho || 'Sin año';
+            const area = item.area_conocimiento || 'Sin área';
+            yearsSet.add(year);
+            areasSet.add(area);
+            if (!dataMap[year]) dataMap[year] = {};
+            if (!dataMap[year][area]) dataMap[year][area] = { mat: 0, egr: 0, doc: 0 };
+            dataMap[year][area].mat += item.matriculados_t;
+            dataMap[year][area].egr += item.egresados_t;
+            dataMap[year][area].doc += item.docentes_t;
+        });
+
+        const years = [...yearsSet].sort((a, b) => Number(a) - Number(b) || String(a).localeCompare(String(b)));
+        let areas = [...areasSet];
+
+        // Limitar a las 8 áreas con mayor suma total de matriculados (para no saturar)
+        const areaTotals = areas.map(area => {
+            let totalMat = 0;
+            years.forEach(y => { if (dataMap[y] && dataMap[y][area]) totalMat += dataMap[y][area].mat; });
+            return { area, totalMat };
+        });
+        areaTotals.sort((a, b) => b.totalMat - a.totalMat);
+        const topAreas = areaTotals.slice(0, 8).map(a => a.area);
+        const finalAreas = topAreas.length >= 2 ? topAreas : areas;
+
+        const colors = [
+            '#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
+            '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf'
+        ];
+
+        function buildDataset(metricKey, labelPrefix) {
+            return finalAreas.map((area, idx) => {
+                const values = years.map(y => {
+                    if (metricKey === 'doc' && y === DOCENTES_NO_DECLARADO_ANHO) return null; // no declarado, no es cero real
+                    return (dataMap[y] && dataMap[y][area]) ? dataMap[y][area][metricKey] : 0;
+                });
+                return {
+                    label: area,
+                    data: values,
+                    borderColor: colors[idx % colors.length],
+                    backgroundColor: colors[idx % colors.length] + '33',
+                    borderWidth: 2,
+                    tension: 0.25,
+                    fill: false,
+                    spanGaps: false
+                };
+            });
+        }
+
+        // Matriculados
+        if (areaMatChart) areaMatChart.destroy();
+        areaMatChart = new Chart(document.getElementById('areaMatriculadosChart').getContext('2d'), {
+            type: 'line',
+            data: { labels: years, datasets: buildDataset('mat', 'Matriculados') },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: { legend: { position: 'top', labels: { boxWidth: 12 } }, tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString('es-PY')}` } } },
+                scales: { y: { beginAtZero: true, ticks: { callback: (value) => Number(value).toLocaleString('es-PY') } } }
+            }
+        });
+
+        // Egresados
+        if (areaEgrChart) areaEgrChart.destroy();
+        areaEgrChart = new Chart(document.getElementById('areaEgresadosChart').getContext('2d'), {
+            type: 'line',
+            data: { labels: years, datasets: buildDataset('egr', 'Egresados') },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: { legend: { position: 'top', labels: { boxWidth: 12 } }, tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString('es-PY')}` } } },
+                scales: { y: { beginAtZero: true, ticks: { callback: (value) => Number(value).toLocaleString('es-PY') } } }
+            }
+        });
+
+        // Docentes
+        if (areaDocChart) areaDocChart.destroy();
+        areaDocChart = new Chart(document.getElementById('areaDocentesChart').getContext('2d'), {
+            type: 'line',
+            data: { labels: years, datasets: buildDataset('doc', 'Docentes') },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: { legend: { position: 'top', labels: { boxWidth: 12 } }, tooltip: { callbacks: { label: (ctx) => `${ctx.dataset.label}: ${Number(ctx.raw).toLocaleString('es-PY')}` } } },
+                scales: { y: { beginAtZero: true, ticks: { callback: (value) => Number(value).toLocaleString('es-PY') } } }
+            }
+        });
+    }
+
+    function updateCharts(data) {
+        // Matriculados por unidad académica (Top 8)
+        const unidadMap = new Map();
+        data.forEach(item => {
+            const unidad = item.unidad_academica || 'Sin unidad';
+            unidadMap.set(unidad, (unidadMap.get(unidad) || 0) + item.matriculados_t);
+        });
+        const sortedUnits = [...unidadMap.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8);
+        const labels = sortedUnits.map(u => u[0].length > 35 ? u[0].substring(0, 32) + '...' : u[0]);
+        const values = sortedUnits.map(u => u[1]);
+
+        if (barChart) barChart.destroy();
+        barChart = new Chart(document.getElementById('barChartMatriculados').getContext('2d'), {
+            type: 'bar',
+            data: { labels, datasets: [{ label: 'Matriculados Totales', data: values, borderWidth: 0, borderRadius: 8, borderSkipped: false }] },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: { legend: { position: 'top' } },
+                scales: { y: { beginAtZero: true, ticks: { callback: (value) => Number(value).toLocaleString('es-PY') } } }
+            }
+        });
+
+        // Género Matriculados (promedio anual)
+        const matYears = uniqueSorted(data.map(d => d.anho), true);
+        const matYearCount = matYears.length || 1;
+        const totalMatH = Math.round(data.reduce((s, d) => s + d.matriculados_h, 0) / matYearCount);
+        const totalMatM = Math.round(data.reduce((s, d) => s + d.matriculados_m, 0) / matYearCount);
+        if (pieChart) pieChart.destroy();
+        pieChart = new Chart(document.getElementById('genderPieChart').getContext('2d'), {
+            type: 'pie',
+            data: {
+                labels: ['Hombres matriculados', 'Mujeres matriculadas'],
+                datasets: [{ data: [totalMatH, totalMatM], borderWidth: 0 }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: (ctx) => {
+                                const total = totalMatH + totalMatM;
+                                const pct = total ? ((ctx.raw / total) * 100).toFixed(1) : '0.0';
+                                return `${ctx.label}: ${Number(ctx.raw).toLocaleString('es-PY')} (${pct}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        document.getElementById('genderMatNote').innerText = `Promedio de ${matYearCount} año${matYearCount === 1 ? '' : 's'} (${yearRangeLabel(matYears)})`;
+    }
+
+    function updateUnivCharts(data) {
+        const matUnivMap = new Map();
+        const gradUnivMap = new Map();
+        data.forEach(item => {
+            const univ = item.universidad || 'Sin universidad';
+            matUnivMap.set(univ, (matUnivMap.get(univ) || 0) + item.matriculados_t);
+            gradUnivMap.set(univ, (gradUnivMap.get(univ) || 0) + item.egresados_t);
+        });
+
+        const sortedMat = [...matUnivMap.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8);
+        const matLabels = sortedMat.map(u => u[0]);
+        const matValues = sortedMat.map(u => u[1]);
+        if (barChartMatriculadosUniv) barChartMatriculadosUniv.destroy();
+        barChartMatriculadosUniv = new Chart(document.getElementById('barChartMatriculadosUniv').getContext('2d'), {
+            type: 'bar',
+            data: { labels: matLabels, datasets: [{ label: 'Matriculados Totales', data: matValues, borderWidth: 0, borderRadius: 8, borderSkipped: false }] },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: { legend: { position: 'top' } },
+                scales: { y: { beginAtZero: true, ticks: { callback: (value) => Number(value).toLocaleString('es-PY') } } }
+            }
+        });
+
+        const sortedGrad = [...gradUnivMap.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8);
+        const gradLabels = sortedGrad.map(u => u[0]);
+        const gradValues = sortedGrad.map(u => u[1]);
+        if (barChartGraduadosUniv) barChartGraduadosUniv.destroy();
+        barChartGraduadosUniv = new Chart(document.getElementById('barChartGraduadosUniv').getContext('2d'), {
+            type: 'bar',
+            data: { labels: gradLabels, datasets: [{ label: 'Graduados Totales', data: gradValues, borderWidth: 0, borderRadius: 8, borderSkipped: false }] },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: { legend: { position: 'top' } },
+                scales: { y: { beginAtZero: true, ticks: { callback: (value) => Number(value).toLocaleString('es-PY') } } }
+            }
+        });
+    }
+
+    function updateGraduadosGenderChart(data) {
+        const egrYears = uniqueSorted(data.map(d => d.anho), true);
+        const egrYearCount = egrYears.length || 1;
+        const totalEgrH = Math.round(data.reduce((s, d) => s + d.egresados_h, 0) / egrYearCount);
+        const totalEgrM = Math.round(data.reduce((s, d) => s + d.egresados_m, 0) / egrYearCount);
+        if (pieChartGraduados) pieChartGraduados.destroy();
+        pieChartGraduados = new Chart(document.getElementById('genderPieChartGraduados').getContext('2d'), {
+            type: 'pie',
+            data: {
+                labels: ['Hombres graduados', 'Mujeres graduadas'],
+                datasets: [{ data: [totalEgrH, totalEgrM], borderWidth: 0 }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: (ctx) => {
+                                const total = totalEgrH + totalEgrM;
+                                const pct = total ? ((ctx.raw / total) * 100).toFixed(1) : '0.0';
+                                return `${ctx.label}: ${Number(ctx.raw).toLocaleString('es-PY')} (${pct}%)`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        document.getElementById('genderGradNote').innerText = `Promedio de ${egrYearCount} año${egrYearCount === 1 ? '' : 's'} (${yearRangeLabel(egrYears)})`;
+    }
+
+    const PRESUPUESTO_PRIMER_ANHO = '2016';
+
+    function toggleEmptyBudgetMsg(canvas, msgEl, show, text) {
+        if (show) {
+            canvas.classList.add('d-none');
+            msgEl.classList.remove('d-none');
+            msgEl.innerHTML = text;
+        } else {
+            canvas.classList.remove('d-none');
+            msgEl.classList.add('d-none');
+        }
+    }
+
+    function updateBudgetYearChart() {
+        const canvas = document.getElementById('budgetYearChart');
+        const msgEl = document.getElementById('budgetYearEmptyMsg');
+        if (!budgetData.length) {
+            if (budgetYearChart) { budgetYearChart.destroy(); budgetYearChart = null; }
+            canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+            return;
+        }
+        const filteredBudget = getFilteredBudgetData();
+        const yearMap = new Map();
+        filteredBudget.forEach(item => {
+            yearMap.set(item.anho, (yearMap.get(item.anho) || 0) + item.presupuesto);
+        });
+        const labels = [...yearMap.keys()].sort((a, b) => Number(a) - Number(b) || String(a).localeCompare(String(b)));
+
+        if (labels.length === 0) {
+            if (budgetYearChart) { budgetYearChart.destroy(); budgetYearChart = null; }
+            toggleEmptyBudgetMsg(canvas, msgEl, true,
+                `<i class="bi bi-info-circle"></i> No hay datos de presupuesto para el año seleccionado.<br>El presupuesto institucional está disponible recién desde ${PRESUPUESTO_PRIMER_ANHO}.`);
+            return;
+        }
+        toggleEmptyBudgetMsg(canvas, msgEl, false, '');
+
+        const values = labels.map(y => yearMap.get(y));
+        if (budgetYearChart) budgetYearChart.destroy();
+        budgetYearChart = new Chart(canvas.getContext('2d'), {
+            type: 'line',
+            data: { labels, datasets: [{ label: 'Presupuesto', data: values, borderWidth: 2, tension: 0.25, fill: false }] },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: (ctx) => `Presupuesto: ${Number(ctx.raw).toLocaleString('es-PY')}` } } },
+                scales: { y: { beginAtZero: true, ticks: { callback: (value) => Number(value).toLocaleString('es-PY') } } }
+            }
+        });
+    }
+
+    function updateBudgetRatioCharts() {
+        const canvasMat = document.getElementById('budgetPerMatriculadoChart');
+        const canvasGrad = document.getElementById('budgetPerGraduadoChart');
+        const msgMat = document.getElementById('budgetPerMatriculadoEmptyMsg');
+        const msgGrad = document.getElementById('budgetPerGraduadoEmptyMsg');
+        if (!budgetData.length) {
+            if (budgetPerMatriculadoChart) { budgetPerMatriculadoChart.destroy(); budgetPerMatriculadoChart = null; }
+            if (budgetPerGraduadoChart) { budgetPerGraduadoChart.destroy(); budgetPerGraduadoChart = null; }
+            [canvasMat, canvasGrad].forEach(c => c.getContext('2d').clearRect(0, 0, c.width, c.height));
+            return;
+        }
+        // Solo se calcula el cociente para años en que existe presupuesto (desde 2016)
+        const filteredBudget = getFilteredBudgetData();
+        const budgetByYear = new Map();
+        filteredBudget.forEach(item => {
+            budgetByYear.set(item.anho, (budgetByYear.get(item.anho) || 0) + item.presupuesto);
+        });
+        const ratioData = getFilteredDataForBudgetRatios();
+        const matByYear = new Map();
+        const gradByYear = new Map();
+        ratioData.forEach(item => {
+            matByYear.set(item.anho, (matByYear.get(item.anho) || 0) + item.matriculados_t);
+            gradByYear.set(item.anho, (gradByYear.get(item.anho) || 0) + item.egresados_t);
+        });
+        // Base de años = solo los que tienen presupuesto (no matriculados/gradYears de 2014-2015)
+        const years = [...budgetByYear.keys()]
+            .sort((a, b) => Number(a) - Number(b) || String(a).localeCompare(String(b)));
+
+        if (years.length === 0) {
+            if (budgetPerMatriculadoChart) { budgetPerMatriculadoChart.destroy(); budgetPerMatriculadoChart = null; }
+            if (budgetPerGraduadoChart) { budgetPerGraduadoChart.destroy(); budgetPerGraduadoChart = null; }
+            const emptyText = `<i class="bi bi-info-circle"></i> No hay datos de presupuesto para el año seleccionado.<br>Disponible desde ${PRESUPUESTO_PRIMER_ANHO}.`;
+            toggleEmptyBudgetMsg(canvasMat, msgMat, true, emptyText);
+            toggleEmptyBudgetMsg(canvasGrad, msgGrad, true, emptyText);
+            return;
+        }
+        toggleEmptyBudgetMsg(canvasMat, msgMat, false, '');
+        toggleEmptyBudgetMsg(canvasGrad, msgGrad, false, '');
+
+        const perMatriculado = years.map(y => {
+            const presup = budgetByYear.get(y) || 0;
+            const mat = matByYear.get(y) || 0;
+            return mat > 0 ? Math.round(presup / mat) : 0;
+        });
+        const perGraduado = years.map(y => {
+            const presup = budgetByYear.get(y) || 0;
+            const grad = gradByYear.get(y) || 0;
+            return grad > 0 ? Math.round(presup / grad) : 0;
+        });
+
+        if (budgetPerMatriculadoChart) budgetPerMatriculadoChart.destroy();
+        budgetPerMatriculadoChart = new Chart(canvasMat.getContext('2d'), {
+            type: 'line',
+            data: { labels: years, datasets: [{ label: 'Presupuesto por Matriculado', data: perMatriculado, borderWidth: 2, tension: 0.25, fill: false }] },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: (ctx) => `Presup./Matriculado: ${Number(ctx.raw).toLocaleString('es-PY')}` } } },
+                scales: { y: { beginAtZero: true, ticks: { callback: (value) => Number(value).toLocaleString('es-PY') } } }
+            }
+        });
+
+        if (budgetPerGraduadoChart) budgetPerGraduadoChart.destroy();
+        budgetPerGraduadoChart = new Chart(canvasGrad.getContext('2d'), {
+            type: 'line',
+            data: { labels: years, datasets: [{ label: 'Presupuesto por Graduado', data: perGraduado, borderWidth: 2, tension: 0.25, fill: false }] },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: (ctx) => `Presup./Graduado: ${Number(ctx.raw).toLocaleString('es-PY')}` } } },
+                scales: { y: { beginAtZero: true, ticks: { callback: (value) => Number(value).toLocaleString('es-PY') } } }
+            }
+        });
+    }
+
+    function refreshDashboard() {
+        if (!rawData.length) return;
+        updateCascadingFilters();
+        filteredData = getFilteredData();
+        updateTotals(filteredData);
+        updateTable(filteredData);
+        updateYearChart(filteredData);
+        updateAreaCharts(filteredData);
+        updateCharts(filteredData);
+        updateUnivCharts(filteredData);
+        updateGraduadosGenderChart(filteredData);
+        updateBudgetYearChart();
+        updateBudgetRatioCharts();
+    }
+
+    function resetAllFilters() {
+        if (!rawData.length) return;
+        filterAnho.value = 'TODOS';
+        filterUniv.value = 'TODOS';
+        filterNivel.value = 'TODOS';
+        filterArea.value = 'TODOS';
+        filterUnidad.value = 'TODOS';
+        filterPrograma.value = 'TODOS';
+        refreshDashboard();
+    }
+
+    function attachEvents() {
+        filterAnho.addEventListener('change', refreshDashboard);
+        filterUniv.addEventListener('change', refreshDashboard);
+        filterNivel.addEventListener('change', refreshDashboard);
+        filterArea.addEventListener('change', refreshDashboard);
+        filterUnidad.addEventListener('change', refreshDashboard);
+        filterPrograma.addEventListener('change', refreshDashboard);
+        resetBtn.addEventListener('click', resetAllFilters);
+    }
+
+    // ---------- CARGA DE ARCHIVOS ----------
+    function handleFileUpload(file) {
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+            const csvText = evt.target.result;
+            const parsedData = parseCSVToData(csvText);
+            if (parsedData.length === 0) {
+                alert('El archivo CSV no contiene datos válidos. Revisa el formato.');
+                return;
+            }
+            rawData = parsedData;
+            populateBaseFilters();
+            refreshDashboard();
+            updateMissingFileAlert();
+            dataSourceNote.innerHTML = '<i class="bi bi-check-circle"></i> Universidades cargadas manualmente desde archivo subido por el usuario.';
+        };
+        reader.onerror = () => alert('Error al leer el archivo de universidades');
+        reader.readAsText(file, 'UTF-8');
+    }
+
+    function handleBudgetFileUpload(file) {
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+            const csvText = evt.target.result;
+            const parsedBudget = parseBudgetCSV(csvText);
+            if (parsedBudget.length === 0) {
+                alert('El archivo CSV de presupuesto no contiene datos válidos. Revisa el formato (columnas Univ, Anho, Presupuesto).');
+                return;
+            }
+            budgetData = parsedBudget;
+            refreshDashboard();
+            updateMissingFileAlert();
+        };
+        reader.onerror = () => alert('Error al leer el archivo de presupuesto');
+        reader.readAsText(file, 'UTF-8');
+    }
+
+    csvUpload.addEventListener('change', (e) => {
+        if (e.target.files.length) handleFileUpload(e.target.files[0]);
+    });
+    presupUpload.addEventListener('change', (e) => {
+        if (e.target.files.length) handleBudgetFileUpload(e.target.files[0]);
+    });
+
+    // ---------- ESTADO DE CARGA ----------
+    let universidadesLoadedAuto = false;
+    let presupuestoLoadedAuto = false;
+
+    function updateMissingFileAlert() {
+        const missing = [];
+        if (!rawData.length) missing.push(`<code>${UNIVERSIDADES_CSV_PATH}</code>`);
+        if (!budgetData.length) missing.push(`<code>${PRESUPUESTO_CSV_PATH}</code>`);
+
+        if (missing.length === 0) {
+            missingFileAlert.classList.add('d-none');
+            return;
+        }
+
+        missingFileAlert.classList.remove('d-none');
+        missingFileText.innerHTML = `No se pudo cargar automáticamente: ${missing.join(' y ')}. ` +
+            `Esto sucede si abriste el archivo HTML con doble clic (sin servidor web), ya que los navegadores ` +
+            `bloquean la lectura automática de archivos locales por seguridad. Usá los botones ` +
+            `<strong>"Cargar universidades CSV"</strong> y/o <strong>"Cargar presupuesto CSV"</strong> para subirlos manualmente, ` +
+            `o abrí este HTML desde un servidor local (ej. Live Server).`;
+    }
+
+    // ---------- CARGA AUTOMÁTICA ----------
+    async function tryLoadUniversidadesCSV() {
+        try {
+            const response = await fetch(UNIVERSIDADES_CSV_PATH);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const csvText = await response.text();
+            const parsedData = parseCSVToData(csvText);
+            if (parsedData.length === 0) throw new Error('CSV vacío o con formato inválido');
+            rawData = parsedData;
+            universidadesLoadedAuto = true;
+            dataSourceNote.innerHTML = `<i class="bi bi-check-circle"></i> Universidades cargadas automáticamente desde ${UNIVERSIDADES_CSV_PATH}`;
+            return true;
+        } catch (err) {
+            console.warn('No se pudo cargar automáticamente el CSV de universidades:', err);
+            return false;
+        }
+    }
+
+    async function tryLoadPresupuestoCSV() {
+        try {
+            const response = await fetch(PRESUPUESTO_CSV_PATH);
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            const csvText = await response.text();
+            const parsedBudget = parseBudgetCSV(csvText);
+            if (parsedBudget.length === 0) throw new Error('CSV vacío o con formato inválido');
+            budgetData = parsedBudget;
+            presupuestoLoadedAuto = true;
+            return true;
+        } catch (err) {
+            console.warn('No se pudo cargar automáticamente el CSV de presupuesto:', err);
+            return false;
+        }
+    }
+
+    async function initDashboard() {
+        const [univOk, presupOk] = await Promise.all([
+            tryLoadUniversidadesCSV(),
+            tryLoadPresupuestoCSV()
+        ]);
+
+        if (univOk) {
+            populateBaseFilters();
+            refreshDashboard();
+        } else {
+            dataSourceNote.innerHTML = `<i class="bi bi-exclamation-circle"></i> No se encontró ${UNIVERSIDADES_CSV_PATH} automáticamente. Subilo con el botón "Cargar universidades CSV".`;
+        }
+
+        if (!presupOk) {
+            refreshDashboard();
+        }
+
+        updateMissingFileAlert();
+    }
+
+    // ---------- MODO PRESENTACIÓN (carrusel 16:9) ----------
+    const PRESENTATION_SLIDES = [
+        { title: 'Resumen General · Promedios anuales', ids: ['kpiContainer', 'colYearChart'], gridClass: 'slide-1' },
+        { title: 'Evolución por Área y Distribución por Género', ids: ['colAreaMat', 'colAreaEgr', 'colAreaDoc', 'genderSlot'], gridClass: 'slide-2' },
+        { title: 'Presupuesto (referencial) y Ranking de Universidades', ids: ['rowBudgetYear', 'colBudgetPerMat', 'colBudgetPerGrad', 'univBarSlot'], gridClass: 'slide-3' }
+    ];
+    let presentationOriginalPositions = new Map();
+    let presentationCurrentSlide = 0;
+    let presentationOverlayEl = null;
+
+    function getAllChartInstances() {
+        return [
+            yearChart, areaMatChart, areaEgrChart, areaDocChart,
+            pieChart, pieChartGraduados, barChart,
+            barChartMatriculadosUniv, barChartGraduadosUniv,
+            budgetYearChart, budgetPerMatriculadoChart, budgetPerGraduadoChart
+        ].filter(Boolean);
+    }
+
+    function resizeAllCharts() {
+        requestAnimationFrame(() => {
+            getAllChartInstances().forEach(c => { try { c.resize(); } catch (e) { /* noop */ } });
+        });
+    }
+
+    function scalePresentationStage() {
+        const stage = document.getElementById('presentationStage');
+        if (!stage) return;
+        const scale = Math.min((window.innerWidth - 40) / 1600, (window.innerHeight - 130) / 900, 1.3);
+        stage.style.transform = `scale(${scale})`;
+    }
+
+    function restorePresentationElements() {
+        presentationOriginalPositions.forEach((pos, id) => {
+            const el = document.getElementById(id);
+            if (el && pos.parent) {
+                if (pos.next && pos.next.parentNode === pos.parent) pos.parent.insertBefore(el, pos.next);
+                else pos.parent.appendChild(el);
+            }
+        });
+        presentationOriginalPositions.clear();
+    }
+
+    function showPresentationSlide(index) {
+        const slides = PRESENTATION_SLIDES;
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        presentationCurrentSlide = index;
+
+        restorePresentationElements();
+
+        const slide = slides[index];
+        const body = document.getElementById('presentationBody');
+        if (!body) return;
+        body.className = 'presentation-stage-body ' + slide.gridClass;
+        body.innerHTML = '';
+        slide.ids.forEach(id => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            presentationOriginalPositions.set(id, { parent: el.parentNode, next: el.nextSibling });
+            body.appendChild(el);
+        });
+
+        const titleEl = document.getElementById('presentationTitle');
+        const counterEl = document.getElementById('presentationCounter');
+        if (titleEl) titleEl.innerText = slide.title;
+        if (counterEl) counterEl.innerText = `Pantalla ${index + 1} / ${slides.length}`;
+
+        resizeAllCharts();
+    }
+
+    function presentationKeyHandler(e) {
+        if (e.key === 'Escape') exitPresentationMode();
+        else if (e.key === 'ArrowRight') showPresentationSlide(presentationCurrentSlide + 1);
+        else if (e.key === 'ArrowLeft') showPresentationSlide(presentationCurrentSlide - 1);
+    }
+
+    function enterPresentationMode() {
+        if (!rawData.length) return;
+        document.body.classList.add('presentation-mode');
+        presentationOverlayEl = document.createElement('div');
+        presentationOverlayEl.className = 'presentation-overlay';
+        presentationOverlayEl.innerHTML = `
+            <div class="presentation-stage-wrap">
+                <div class="presentation-stage" id="presentationStage">
+                    <div class="presentation-stage-header">
+                        <strong id="presentationTitle"></strong>
+                        <span id="presentationCounter" class="small opacity-75"></span>
+                    </div>
+                    <div class="presentation-stage-body" id="presentationBody"></div>
+                </div>
+            </div>
+            <div class="presentation-controls">
+                <button class="btn btn-outline-light btn-sm rounded-pill" id="presPrevBtn"><i class="bi bi-chevron-left"></i> Anterior</button>
+                <button class="btn btn-outline-light btn-sm rounded-pill" id="presNextBtn">Siguiente <i class="bi bi-chevron-right"></i></button>
+                <button class="btn btn-light btn-sm rounded-pill ms-3" id="presExitBtn"><i class="bi bi-x-lg"></i> Salir (Esc)</button>
+            </div>
+        `;
+        document.body.appendChild(presentationOverlayEl);
+        document.getElementById('presPrevBtn').addEventListener('click', () => showPresentationSlide(presentationCurrentSlide - 1));
+        document.getElementById('presNextBtn').addEventListener('click', () => showPresentationSlide(presentationCurrentSlide + 1));
+        document.getElementById('presExitBtn').addEventListener('click', exitPresentationMode);
+        document.addEventListener('keydown', presentationKeyHandler);
+        window.addEventListener('resize', scalePresentationStage);
+
+        showPresentationSlide(0);
+        scalePresentationStage();
+    }
+
+    function exitPresentationMode() {
+        restorePresentationElements();
+        document.body.classList.remove('presentation-mode');
+        document.removeEventListener('keydown', presentationKeyHandler);
+        window.removeEventListener('resize', scalePresentationStage);
+        if (presentationOverlayEl) { presentationOverlayEl.remove(); presentationOverlayEl = null; }
+        resizeAllCharts();
+    }
+
+    document.getElementById('presentationModeBtn').addEventListener('click', enterPresentationMode);
+
+    attachEvents();
+    initDashboard();
+</script>
+
+</body>
+</html>
