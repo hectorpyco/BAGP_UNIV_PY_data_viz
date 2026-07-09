@@ -101,6 +101,16 @@ El repositorio incluye:
 | docentes_t | Total de docentes informado en la fuente |
 | total_general | Total general reportado por la institución cuando corresponde |
 
+**Archivo:** `presup_por_univ.csv`
+
+| Campo | Descripción |
+|--------|-------------|
+| Univ | Universidad pública |
+| Anho | Año del Presupuesto General de la Nación (PGN) |
+| Presupuesto | Presupuesto institucional asignado, en guaraníes |
+
+> **Nota:** este conjunto de datos está disponible solo desde **2016**, ya que no se identificaron registros de presupuesto anteriores a ese año en las fuentes oficiales relevadas.
+
 ---
 
 # Calidad de los datos
