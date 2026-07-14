@@ -82,6 +82,8 @@ El repositorio incluye:
 
 # Variables principales
 
+**Archivo:** `universidades_py_con_area.csv`
+
 | Campo | Descripción |
 |--------|-------------|
 | anho | Año del Balance Anual de Gestión Pública |
@@ -129,7 +131,7 @@ No se realizaron imputaciones estadísticas ni estimaciones para completar infor
 
 El conjunto de datos fue construido mediante las siguientes etapas:
 
-1. Recopilación de los BAGP publicados por el Ministerio de Economía y Finanzas.
+1. Recopilación de los BAGP y PGN publicados por el Ministerio de Economía y Finanzas.
 2. Extracción de las tablas de interés.
 3. Validación manual de los registros.
 4. Normalización de nombres de instituciones, unidades académicas y programas.
@@ -167,5 +169,5 @@ Los conjuntos de datos fueron elaborados a partir de documentos públicos public
 # Contacto
 
 Héctor R. Estigarribia Barreto
-
+FCyT UNCA, Dirección de investigación
 https://github.com/hectorpyco
